@@ -743,80 +743,81 @@
         });
 
         /*========== GOOGLE MAP ==========*/
-        function initialize() {
-            var map;
-            var panorama;
-            var var_latitude = 37.8614626; // Google Map Latitude
-            var var_longitude = 20.625886; // Google Map Longitude
-            var pin = 'images/icons/pin.svg';
+         function initialize() {
+        var map;
+        var panorama;
 
-            //Map pin-window details
-            var title = "Hotel Marina Canek - Click to see";
-            var hotel_name = "Hotel Marina Canek";
-            var hotel_address = "25, Navagio Zakynthos, Greece";
-            var hotel_desc = "5 star deluxe Hotel";
-            var hotel_more_desc = "Lorem ipsum dolor sit amet, consectetur.";
+        // Coordenadas de Hotel Marina Canek (Palenque, Chiapas)
+        var var_latitude = 17.509757; 
+        var var_longitude = -91.981700; 
+        var pin = 'images/icons/pin.svg';
 
-            var hotel_location = new google.maps.LatLng(var_latitude, var_longitude);
-            var mapOptions = {
-                center: hotel_location,
-                zoom: 15,
-                scrollwheel: false, 
-                streetViewControl: false
+        // Map pin-window details
+        var title = "Hotel Marina Canek - Click to see";
+        var hotel_name = "Hotel Marina Canek";
+        var hotel_address = "2a. Avenida Sur Pte., Centro, 29960 Palenque, Chis.";
+        var hotel_desc = "Tu puerto de descanso en Palenque";
+        var hotel_more_desc = "Habitaciones cómodas, excelente ubicación y un ambiente único.";
+
+        var hotel_location = new google.maps.LatLng(var_latitude, var_longitude);
+
+        var mapOptions = {
+            center: hotel_location,
+            zoom: 16,
+            scrollwheel: false,
+            streetViewControl: true
+        };
+
+        map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+        var contentString =
+            '<div id="infowindow_content">' +
+            '<p><strong>' + hotel_name + '</strong><br>' +
+            hotel_address + '<br>' +
+            hotel_desc + '<br>' +
+            hotel_more_desc + '</p>' +
+            '</div>';
+
+        var var_infowindow = new google.maps.InfoWindow({
+            content: contentString
+        });
+
+        var marker = new google.maps.Marker({
+            position: hotel_location,
+            map: map,
+            icon: pin,
+            title: title,
+            optimized: false,
+        });
+
+        google.maps.event.addListener(marker, 'click', function () {
+            var_infowindow.open(map, marker);
+        });
+
+        panorama = map.getStreetView();
+        panorama.setPosition(hotel_location);
+        panorama.setPov({
+            heading: 265,
+            pitch: 0
+        });
+
+        var openStreet = document.getElementById('openStreetView');
+        if (openStreet) {
+            document.getElementById("openStreetView").onclick = function () {
+                toggleStreetView()
             };
-            map = new google.maps.Map(document.getElementById('map-canvas'),
-                mapOptions);
-            var contentString =
-                '<div id="infowindow_content">' +
-                '<p><strong>' + hotel_name + '</strong><br>' +
-                hotel_address + '<br>' +
-                hotel_desc + '<br>' +
-                hotel_more_desc + '</p>' +
-                '</div>';
-
-            var var_infowindow = new google.maps.InfoWindow({
-                content: contentString
-            });
-
-            var marker = new google.maps.Marker({
-                position: hotel_location,
-                map: map,
-                icon: pin,
-                title: title,
-                maxWidth: 500,
-                optimized: false,
-            });
-            google.maps.event.addListener(marker, 'click', function () {
-                var_infowindow.open(map, marker);
-            });
-            panorama = map.getStreetView();
-            panorama.setPosition(hotel_location);
-            panorama.setPov( /** @type {google.maps.StreetViewPov} */ ({
-                heading: 265,
-                pitch: 0
-            }));
-
-            var openStreet = document.getElementById('openStreetView');
-            if (openStreet) {
-                document.getElementById("openStreetView").onclick = function () {
-                    toggleStreetView()
-                };
-            }
-            
-            function toggleStreetView() {
-                var toggle = panorama.getVisible();
-                if (toggle == false) {
-                    panorama.setVisible(true);
-                } else {
-                    panorama.setVisible(false);
-                }
-            }
         }
 
-        //Check if google map div exist
-        if ($("#map-canvas").length > 0){
-           google.maps.event.addDomListener(window, 'load', initialize);
+        function toggleStreetView() {
+            var toggle = panorama.getVisible();
+            panorama.setVisible(!toggle);
         }
+    }
+
+    //Check if google map div exist
+    if ($("#map-canvas").length > 0) {
+        google.maps.event.addDomListener(window, 'load', initialize);
+    }
 
         /*========== BACK TO TOP ==========*/
         var amountScrolled = 500;

@@ -513,7 +513,7 @@ blockquote .quote_text {
     display: block;
     position: relative;
     background: none;
-    /* overflow: hidden; */
+    overflow: hidden;
     -webkit-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
 }
@@ -570,6 +570,7 @@ blockquote .quote_text {
     -khtml-opacity: 0.4;
     opacity: 0.4;
 }
+
 
 .hover_effect.h_blue:hover {
     background: #1dc1f8;

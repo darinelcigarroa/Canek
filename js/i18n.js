@@ -46,7 +46,7 @@ window.translations = {
     'Fax': 'Fax',
     'Email': 'Email',
     'All Rights Reserved.': 'All Rights Reserved.',
-    features_title: "OUR AWESOME SERVICES",
+    features_title: "OUR SERVICES",
     features_intro:
       "We are committed to making your stay comfortable and memorable. From relaxing spaces to delicious breakfasts and essential amenities, we provide everything you need to feel at home while enjoying your trip.",
 
@@ -65,7 +65,10 @@ window.translations = {
     amenities_title: "Room Amenities",
     amenities_desc:
       "Each room is fully equipped with high-speed internet, private bathrooms, cleaning service, coffee maker, microwave, television, and an in-room dining area for your comfort.",
-    rooms_intro: "Our hotel offers Junior, Master, and Extra Master rooms, each designed to provide you with a unique experience. The difference lies not only in the design, but also in the finishes, accessories, and details that make each category special. With carefully selected decoration, every room has its own style so you can choose the one that best suits your taste and enjoy a comfortable, distinctive stay."
+    rooms_intro: "Our hotel offers Junior, Master, and Extra Master rooms, each designed to provide you with a unique experience. The difference lies not only in the design, but also in the finishes, accessories, and details that make each category special. With carefully selected decoration, every room has its own style so you can choose the one that best suits your taste and enjoy a comfortable, distinctive stay.",
+    image_gallery_title: "IMAGE GALLERY",
+    image_gallery_desc: "Explore our beautiful image gallery showcasing the best of our hotel.",
+    title_galery: 'Discover our facilities through this gallery. Explore the rooms, common areas, and details that will make your stay a comfortable and pleasant experience.'
   },
   es: {
     'HOME': 'INICIO',
@@ -113,7 +116,7 @@ window.translations = {
     'Fax': 'Fax',
     'Email': 'Correo',
     'All Rights Reserved.': 'Todos los derechos reservados.',
-    features_title: "NUESTROS EXCELENTES SERVICIOS",
+    features_title: "NUESTROS SERVICIOS",
     features_intro:
       "Nos comprometemos a que tu estancia sea cómoda e inolvidable. Desde espacios para relajarte hasta desayunos deliciosos y comodidades esenciales, tenemos todo para que te sientas como en casa mientras disfrutas tu viaje.",
     rooftop_terrace_title: "Terraza en la Azotea",
@@ -129,7 +132,9 @@ window.translations = {
     amenities_title: "Servicios en Habitación",
     amenities_desc:
       "Cada habitación está equipada con internet de alta velocidad, baño privado, servicio de limpieza, cafetera, microondas, televisión y un área de comedor dentro de la habitación para tu comodidad.",
-    rooms_intro: "En nuestro hotel contamos con habitaciones Junior, Master y Extra Master, cada una pensada para ofrecerte una experiencia distinta. La diferencia no está únicamente en el diseño, sino también en los acabados, accesorios y detalles que hacen única a cada categoría. Decoración cuidadosamente seleccionada, cada habitación tiene su propio estilo para que elijas la que mejor se adapte a tu gusto y vivas una estancia cómoda y especial."
+    rooms_intro: "En nuestro hotel contamos con habitaciones Junior, Master y Extra Master, cada una pensada para ofrecerte una experiencia distinta. La diferencia no está únicamente en el diseño, sino también en los acabados, accesorios y detalles que hacen única a cada categoría. Decoración cuidadosamente seleccionada, cada habitación tiene su propio estilo para que elijas la que mejor se adapte a tu gusto y vivas una estancia cómoda y especial.",
+    image_gallery_title: 'GALERÍA DE IMÁGENES',
+    title_galery: 'Descubre nuestras instalaciones a través de esta galería. Conoce las habitaciones, áreas comunes y detalles que harán de tu estancia una experiencia cómoda y placentera.'
   }
 };
 
