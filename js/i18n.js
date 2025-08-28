@@ -134,7 +134,8 @@ window.translations = {
       "Cada habitación está equipada con internet de alta velocidad, baño privado, servicio de limpieza, cafetera, microondas, televisión y un área de comedor dentro de la habitación para tu comodidad.",
     rooms_intro: "En nuestro hotel contamos con habitaciones Junior, Master y Extra Master, cada una pensada para ofrecerte una experiencia distinta. La diferencia no está únicamente en el diseño, sino también en los acabados, accesorios y detalles que hacen única a cada categoría. Decoración cuidadosamente seleccionada, cada habitación tiene su propio estilo para que elijas la que mejor se adapte a tu gusto y vivas una estancia cómoda y especial.",
     image_gallery_title: 'GALERÍA DE IMÁGENES',
-    title_galery: 'Descubre nuestras instalaciones a través de esta galería. Conoce las habitaciones, áreas comunes y detalles que harán de tu estancia una experiencia cómoda y placentera.'
+    title_galery: 'Descubre nuestras instalaciones a través de esta galería. Conoce las habitaciones, áreas comunes y detalles que harán de tu estancia una experiencia cómoda y placentera.',
+    location_info:'Encuéntranos fácilmente en el corazón de Palenque. El Hotel Marina Canek está a solo 2 minutos del Parque Central, en una ubicación privilegiada que te permite disfrutar de la ciudad con total comodidad. Aquí está la ubicación exacta de nuestro hotel.'
   }
 };
 
