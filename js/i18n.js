@@ -68,7 +68,9 @@ window.translations = {
     rooms_intro: "Our hotel offers Junior, Master, and Extra Master rooms, each designed to provide you with a unique experience. The difference lies not only in the design, but also in the finishes, accessories, and details that make each category special. With carefully selected decoration, every room has its own style so you can choose the one that best suits your taste and enjoy a comfortable, distinctive stay.",
     image_gallery_title: "IMAGE GALLERY",
     image_gallery_desc: "Explore our beautiful image gallery showcasing the best of our hotel.",
-    title_galery: 'Discover our facilities through this gallery. Explore the rooms, common areas, and details that will make your stay a comfortable and pleasant experience.'
+    title_galery: 'Discover our facilities through this gallery. Explore the rooms, common areas, and details that will make your stay a comfortable and pleasant experience.',
+    location_info: "Find us easily in the heart of Palenque. Hotel Marina Canek is just 2 minutes from the Central Park, in a prime location that lets you enjoy the city with complete convenience. Here’s the exact location of our hotel.",
+    '/night': '/ night'
   },
   es: {
     'HOME': 'INICIO',
@@ -135,7 +137,8 @@ window.translations = {
     rooms_intro: "En nuestro hotel contamos con habitaciones Junior, Master y Extra Master, cada una pensada para ofrecerte una experiencia distinta. La diferencia no está únicamente en el diseño, sino también en los acabados, accesorios y detalles que hacen única a cada categoría. Decoración cuidadosamente seleccionada, cada habitación tiene su propio estilo para que elijas la que mejor se adapte a tu gusto y vivas una estancia cómoda y especial.",
     image_gallery_title: 'GALERÍA DE IMÁGENES',
     title_galery: 'Descubre nuestras instalaciones a través de esta galería. Conoce las habitaciones, áreas comunes y detalles que harán de tu estancia una experiencia cómoda y placentera.',
-    location_info:'Encuéntranos fácilmente en el corazón de Palenque. El Hotel Marina Canek está a solo 2 minutos del Parque Central, en una ubicación privilegiada que te permite disfrutar de la ciudad con total comodidad. Aquí está la ubicación exacta de nuestro hotel.'
+    location_info:'Encuéntranos fácilmente en el corazón de Palenque. El Hotel Marina Canek está a solo 2 minutos del Parque Central, en una ubicación privilegiada que te permite disfrutar de la ciudad con total comodidad. Aquí está la ubicación exacta de nuestro hotel.',
+    '/night': '/ por noche'
   }
 };
 
