@@ -46,8 +46,10 @@ body.full_screen {
 }
 
 main {
-    padding: 150px 0;
-    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-item: center;
+    padding-top: 108px;
 }
 
 .full_width {
@@ -834,6 +836,8 @@ button {
     background: #bfa14a;
     border-color: #bfa14a;
     color: #fff;
+    border-radius: 5px;
+    padding: 10px;
 }
 
 .button.btn_gold {
@@ -2306,8 +2310,13 @@ section .main_title {
 
 .room figcaption {
     padding: 15px 10px;
-    border: 1px solid #f0f2f6;
     border-top: none;
+      border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+
+  /* equivalente en shorthand: TL TR BR BL */
+  /* border-radius: 0 0 12px 12px; */
+  border: 1px solid #ddd;
 }
 
 .room figcaption h4,
@@ -2323,20 +2332,27 @@ section .main_title {
 }
 
 .room figure .price {
-    position: absolute;
+       position: absolute;
     top: 15px;
     left: 15px;
     font-size: 14px;
     text-align: center;
     padding: 5px 10px;
-    background: #0b0b0bff;
+    background: #0000008f;
     color: #eaeaea;
-    border-radius: 2px;
+    border-radius: 20px;
     font-weight: 700;
     z-index: 9;
-    border-top: none;
-    border-left: none;
 }
+
+.rounded-box {
+  border-radius: 12px;
+  overflow: hidden;               /* recorta imagen y overlay */
+  border: 1px solid rgba(0,0,0,.12);
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+}
+.rounded-box figure { margin: 0; } /* quita espacio extra del figure */
+.rounded-box img { display: block; width: 100%; height: auto; } /* evita “gaps” */
 
 /* ---------- 5.4 Features ---------- */
 #features .owl-thumb-item {
