@@ -3,6 +3,10 @@
     margin: 0;
     padding: 0;
 }
+  :root{
+    --animate-duration: .8s;
+    --animate-delay: .2s;
+  }
 
 html {
     height: 100%;
@@ -5088,15 +5092,18 @@ figure:hover .room_list_slider .owl-nav .owl-next {
     appearance: none; 
     border: 1px solid #e2e8f0;
     border-radius: 999px;
-    padding: .5rem .9rem; 
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     text-decoration: none;
     cursor: pointer;
     background: #fff; 
-    transition: transform .05s ease, box-shadow .2s ease;
+    transition: transform .05s ease, box-shadow .3s ease;
   }
-  .map-cta-bar .btn:hover { box-shadow: 0 2px 10px rgba(0,0,0,.08); transform: translateY(-1px); }
-
+  .map-cta-bar .btn:hover { 
+    box-shadow: 0 2px 10px rgba(0,0,0,.08); 
+    background: #14B8A6; 
+    color: #fff;
+     transform: scale(1.05);  
+    }
     #floating-buttons-container {
             position: fixed;
             right: 20px;
