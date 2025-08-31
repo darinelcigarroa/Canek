@@ -836,6 +836,7 @@ button {
     background: #bfa14a;
     border-color: #bfa14a;
     color: #fff;
+    font-size: 0.8em;
 }
 
 .button.btn_yellow {
@@ -2617,7 +2618,6 @@ section .main_title {
     position: relative;
     padding: 0;
     margin: 0;
-    background-image: url(../images/video_bg.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -5238,7 +5238,7 @@ figure:hover .room_list_slider .owl-nav .owl-next {
 }
 .room-card__desc{
   margin:0;
-  font-size:.95rem;
+  font-size:1.4rem;
   line-height:1.5;
   color:#44525c;
   max-width:620px;
@@ -5277,7 +5277,7 @@ figure:hover .room_list_slider .owl-nav .owl-next {
 }
 .room-card__controls label{
   margin:0;
-  font-size:.65rem;
+  font-size:.99rem;
   font-weight:700;
   letter-spacing:1px;
   text-transform:uppercase;
