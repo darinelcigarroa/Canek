@@ -2310,13 +2310,6 @@ section .main_title {
 
 .room figcaption {
     padding: 15px 10px;
-    border-top: none;
-      border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
-
-  /* equivalente en shorthand: TL TR BR BL */
-  /* border-radius: 0 0 12px 12px; */
-  border: 1px solid #ddd;
 }
 
 .room figcaption h4,
