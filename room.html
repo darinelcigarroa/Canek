@@ -3,603 +3,825 @@
 
 <head>
     <meta charset="utf-8">
-    <meta content="IE=edge" http-equiv="X-UA-Compatible">
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <!-- ========== SEO ========== -->
     <title>Hotel Marina Canek - Single Room</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
-    <meta content="" name="author">
 
-    <!-- ========== FAVICON ========== -->
+    <!-- Favicon -->
     <link rel="apple-touch-icon-precomposed" href="images/favicon-apple.png" />
     <link rel="icon" href="images/favicon.png">
 
-    <!-- ========== STYLESHEETS ========== -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="revolution/css/layers.css" rel="stylesheet" type="text/css" />
-    <link href="revolution/css/settings.css" rel="stylesheet" type="text/css" />
-    <link href="revolution/css/navigation.css" rel="stylesheet" type="text/css" />
-    <link href="css/bootstrap-select.min.css" rel="stylesheet" type="text/css">
-    <link href="css/animate.min.css" rel="stylesheet" type="text/css">
-    <link href="css/famfamfam-flags.css" rel="stylesheet" type="text/css">
-    <link href="css/magnific-popup.css" rel="stylesheet" type="text/css">
-    <link href="css/owl.carousel.min.css" rel="stylesheet" type="text/css">
-    <link href="css/style.css" rel="stylesheet" type="text/css">
-    <link href="css/responsive.css" rel="stylesheet" type="text/css">
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="revolution/css/layers.css" />
+    <link rel="stylesheet" href="revolution/css/settings.css" />
+    <link rel="stylesheet" href="revolution/css/navigation.css" />
+    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="css/famfamfam-flags.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
 
-    <!-- ========== ICON FONTS ========== -->
-    <link href="fonts/font-awesome.min.css" rel="stylesheet">
-    <link href="fonts/flaticon.css" rel="stylesheet">
+    <!-- Font Awesome 6 (único) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- ========== GOOGLE FONTS ========== -->
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900%7cRaleway:400,500,600,700" rel="stylesheet">
+    <!-- Icon font extra (si lo usas) -->
+    <link rel="stylesheet" href="fonts/flaticon.css">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900%7cRaleway:400,500,600,700"
+        rel="stylesheet">
+
+    <style>
+        /* ====== FIX CARRUSEL EN MÓVIL + ESTILOS BÁSICOS ====== */
+
+        /* Reset útil */
+        html {
+            box-sizing: border-box;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Contenedores full-width en esta página */
+        #room_page>.container {
+            width: 100%;
+            max-width: 1220px;
+        }
+
+        /* Galería */
+        .room-gallery-wrapper {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .room-gallery-main {
+            position: relative;
+            border-radius: 22px;
+            overflow: hidden;
+            box-shadow: 0 10px 32px -14px rgba(0, 0, 0, .35), 0 4px 14px -6px rgba(0, 0, 0, .18);
+        }
+
+        .room-gallery-main .rg-item {
+            position: relative;
+            aspect-ratio: 16/10;
+            /* base */
+            background: #dfe5e9;
+        }
+
+        .room-gallery-main .rg-item img {
+            width: 100%;
+            height: auto;
+            /* clave para móvil */
+            object-fit: cover;
+            display: block;
+            transition: transform 1.2s ease;
+            cursor: zoom-in;
+        }
+
+        .room-gallery-main .rg-item:hover img {
+            transform: scale(1.04);
+        }
+
+        /* Fallback si el navegador NO soporta aspect-ratio */
+        @supports not (aspect-ratio: 1 / 1) {
+            .room-gallery-main .rg-item {
+                position: relative;
+            }
+
+            .room-gallery-main .rg-item::before {
+                content: "";
+                display: block;
+                padding-top: 62.5%;
+                /* 16:10 */
+            }
+
+            .room-gallery-main .rg-item>* {
+                position: absolute;
+                inset: 0;
+            }
+
+            .room-gallery-main .rg-item img {
+                height: 100%;
+            }
+        }
+
+        /* Mínima altura en móvil para evitar colapso */
+        @media (max-width: 640px) {
+            .room-gallery-main .rg-item {
+                min-height: 240px;
+            }
+
+            .room-gallery-main {
+                border-radius: 0;
+                box-shadow: none;
+            }
+
+            .room-gallery-wrapper {
+                margin-left: -16px;
+                margin-right: -16px;
+            }
+        }
+
+        /* Navegación del carrusel (una sola definición) */
+        .room-gallery-main .owl-nav {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 8px;
+            pointer-events: none;
+            z-index: 20;
+        }
+
+        .room-gallery-main .owl-nav button {
+            pointer-events: auto;
+            border: 0;
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(15, 31, 42, .55);
+            color: #fff;
+            transition: .3s;
+        }
+
+        .room-gallery-main .owl-nav button:hover {
+            background: #154D71;
+        }
+
+        .room-gallery-main .owl-nav .rg-arw {
+            font-size: 30px;
+            line-height: 1;
+        }
+
+        @media (max-width: 600px) {
+            .room-gallery-main .owl-nav button {
+                width: 46px;
+                height: 46px;
+            }
+
+            .room-gallery-main .owl-nav .rg-arw {
+                font-size: 26px;
+            }
+        }
+
+        /* Thumbs */
+        .room-gallery-thumbs {
+            display: grid;
+            gap: 10px;
+            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+        }
+
+        .rg-thumb {
+            border: 2px solid transparent;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            aspect-ratio: 4/3;
+            background: none;
+            padding: 0;
+            transition: .3s;
+        }
+
+        .rg-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(.85);
+        }
+
+        .rg-thumb:hover img {
+            filter: brightness(.72) contrast(1.05) saturate(1.1);
+        }
+
+        .rg-thumb.is-active {
+            border-color: #154D71;
+            box-shadow: 0 4px 12px -4px rgba(21, 77, 113, .45);
+        }
+
+        .rg-thumb.is-active img {
+            filter: brightness(.95);
+        }
+
+        /* Panel de servicios (solo lo justo) */
+        .room-services-panel__title {
+            margin: 0 0 10px;
+            font-weight: 800;
+        }
+
+        .services-grid {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 10px;
+        }
+
+        .services-grid li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 10px;
+            border: 1px solid #d7e4eb;
+            border-radius: 14px;
+        }
+
+        .services-grid i {
+            width: 18px;
+            text-align: center;
+        }
+
+        /* ===== Servicios: mostrar 2 por fila en pantallas grandes ===== */
+        @media (min-width: 1200px) {
+            .room-services-panel .services-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr) !important;
+                /* fuerza 2 columnas */
+                gap: 14px 18px;
+            }
+
+            .room-services-panel .services-grid li {
+                width: 100%;
+                justify-content: flex-start;
+                font-size: 1rem;
+            }
+        }
+
+        /* Opcional: 1 columna en móvil muy pequeño */
+        @media (max-width: 520px) {
+            .room-services-panel .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Responsive de estructura */
+        @media (max-width: 991px) {
+
+            .room-gallery-wrapper {
+                margin-bottom: 0px;
+            }
+
+            section {
+                padding-bottom: 0px;
+            }
+
+            .gallery {
+                display: flex;
+                justify-content: center;
+            }
+
+            .room-align-row {
+                display: block;
+            }
+
+            .room-align-row .col-md-8,
+            .room-align-row .col-md-4 {
+                width: 100%;
+                float: none;
+                padding: 20px;
+            }
+
+            .room-services-panel {
+                margin-top: 20px;
+            }
+        }
+
+        /* ===== FIX: limitar tamaño del logo en pantallas grandes ===== */
+        .site-header .navbar-brand {
+            padding: 10px 0;
+            line-height: 1;
+        }
+
+        .site-header .navbar-brand img {
+            height: 56px !important;
+            /* tamaño base */
+            max-height: 56px !important;
+            width: auto !important;
+            object-fit: contain;
+        }
+
+        /* Opcional: un poco más grande en desktop XL */
+        @media (min-width: 1400px) {
+            .site-header .navbar-brand img {
+                height: 60px !important;
+                max-height: 60px !important;
+            }
+        }
+
+        /* Logo más pequeño en móvil */
+        @media (max-width: 640px) {
+            .site-header .navbar-brand img {
+                height: 48px !important;
+                max-height: 48px !important;
+            }
+        }
+
+        /* Si el theme añade clases al hacer scroll (.shrink, .scrolled, etc.) forzamos */
+        .site-header.shrink .navbar-brand img,
+        .site-header.scrolled .navbar-brand img {
+            height: 50px !important;
+            max-height: 50px !important;
+        }
+
+        /* ===== END FIX ===== */
+
+
+        /* ===== AMPLIAR DISEÑO EN PANTALLAS GRANDES ===== */
+        @media (min-width: 1200px) {
+            #room_page> .container {
+                max-width: 1400px;
+                /* antes 1220 */
+            }
+
+            .room-align-row .col-md-8 {
+                flex: 1 1 960px;
+            }
+
+            .room-align-row .col-md-4 {
+                flex: 0 0 440px;
+            }
+
+            .room-gallery-main .rg-item {
+                aspect-ratio: 16/9;
+            }
+
+            .jo-title {
+                font-size: 2.4rem;
+            }
+
+            .jo-sub {
+                font-size: 1.02rem;
+            }
+
+            .jo-text {
+                font-size: .95rem;
+                line-height: 1.6;
+            }
+
+            .jo-features li {
+                font-size: .7rem;
+                padding: 10px 18px;
+            }
+
+            .jo-hcard h3 {
+                font-size: .95rem;
+            }
+
+            .jo-hcard p {
+                font-size: .75rem;
+            }
+
+            .services-grid li {
+                font-size: .85rem;
+                padding: 12px 14px;
+                gap: 12px;
+            }
+
+            .services-grid li span {
+                letter-spacing: .2px;
+            }
+
+            .services-grid i {
+                font-size: 22px;
+                width: 42px;
+                height: 42px;
+                line-height: 42px;
+                background: #e9f1f6;
+                border-radius: 14px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #154D71;
+            }
+        }
+
+        @media (min-width: 1600px) {
+            #room_page> .container {
+                max-width: 1540px;
+            }
+
+            .room-align-row .col-md-8 {
+                flex: 1 1 1040px;
+            }
+
+            .room-align-row .col-md-4 {
+                flex: 0 0 460px;
+            }
+
+            .jo-title {
+                font-size: 2.65rem;
+            }
+
+            .jo-sub {
+                font-size: 1.08rem;
+                max-width: 1050px;
+            }
+
+            .jo-text {
+                font-size: 1rem;
+            }
+
+            .jo-features li {
+                font-size: .75rem;
+            }
+
+            .jo-hcard h3 {
+                font-size: 1rem;
+            }
+
+            .jo-hcard p {
+                font-size: .78rem;
+            }
+
+            .services-grid li {
+                font-size: .9rem;
+            }
+        }
+
+        /* Mejor legibilidad en servicios (icono + texto) */
+        .room-services-panel .services-grid li {
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        .room-services-panel .services-grid li:hover {
+            background: #154D71;
+            color: #fff;
+            border-color: #154D71;
+        }
+
+        .room-services-panel .services-grid li:hover i {
+            background: #10364d;
+            color: #fff;
+        }
+
+        /* Tipografía escalable usando clamp para pantallas intermedias */
+        .jo-title {
+            font-size: clamp(1.9rem, 2vw + 1.2rem, 2.65rem);
+        }
+
+        .jo-sub {
+            font-size: clamp(.85rem, .5vw + .7rem, 1.08rem);
+        }
+
+        .jo-text {
+            font-size: clamp(.85rem, .35vw + .75rem, 1rem);
+        }
+
+        /* ===== FIN AMPLIAR DISEÑO ===== */
+    </style>
 </head>
 
 <body>
-
     <div id="smoothpage" class="wrapper">
-
-        <!-- ========== TOP MENU ========== -->
-        <div class="top_menu">
-            <div class="container">
-                <div class="welcome_mssg hidden-xs">
-                    Welcome to Hotel Marina Canek
-                </div>
-                <ul class="top_menu_right">
-                    <li><i class="fa fa-phone"></i><a href="tel:18475555555"> 1-888-123-4567 </a></li>
-                    <li class="email hidden-xxs"><i class="fa fa-envelope-o "></i> <a href="mailto:contact@site.com">contact@site.com</a></li>
-                    <li class="language-switcher">
-                        <nav class="dropdown">
-                            <a href="#" class="dropdown-toggle select" data-hover="dropdown" data-toggle="dropdown">
-                                <i class="famfamfam-flag-gb "></i>English<b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#"><i class="famfamfam-flag-gr"></i>Ελληνικά</a></li>
-                                <li><a href="#"><i class="famfamfam-flag-it"></i>Italiano</a></li>
-                                <li><a href="#"><i class="famfamfam-flag-de"></i>Deutsch</a></li>
-                                <li><a href="#"><i class="famfamfam-flag-fr"></i>Français</a></li>
-                                <li><a href="#"><i class="famfamfam-flag-es"></i>Español</a></li>
-                            </ul>
-                        </nav>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- ========== HEADER ========== -->
-        <header class="fixed">
+        <!-- HEADER -->
+        <header class="site-header fixed transparent">
             <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle mobile_menu_btn" data-toggle="collapse" data-target=".mobile_menu" aria-expanded="false">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
+                    <button type="button" class="navbar-toggle mobile_menu_btn" data-toggle="collapse"
+                        data-target=".mobile_menu" aria-expanded="false">
+                        <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html">
-                        <img src="images/logo.svg" height="32" alt="Logo">
+                    <a class="navbar-brand light" href="index.html"><img src="images/logo_ligth.png" height="70"
+                            alt="Logo"></a>
+                    <a class="navbar-brand dark nodisplay" href="index.html"><img src="images/logo_ligth.png"
+                            height="70" alt="Logo"></a>
+                </div>
+
+                <!-- Botones flotantes -->
+                <div id="floating-buttons-container">
+                    <div id="lang-flag-switcher"
+                        style="cursor:pointer;background:#fff;border-radius:50%;box-shadow:0 2px 8px #0002;padding:6px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;">
+                        <img id="lang-flag-img" src="images/icons/gb.png" alt="Switch language"
+                            style="height:36px;width:auto;border-radius:3px;display:block;">
+                    </div>
+                    <a id="floating-whatsapp" href="https://wa.me/9163489026" target="_blank" rel="noopener"
+                        aria-label="WhatsApp"
+                        style="background:#25d366;border-radius:50%;box-shadow:0 2px 8px #0002;padding:8px;display:flex;align-items:center;justify-content:center;">
+                        <img src="images/icons/wp.png" alt="WhatsApp" style="height:36px;width:36px;display:block;">
                     </a>
                 </div>
+
                 <nav id="main_menu" class="mobile_menu navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li class="mobile_menu_title" style="display:none;">MENU</li>
+                        <li class="dropdown simple_menu active"><a href="index.html"
+                                style="font-weight:bold;letter-spacing:1px;" data-i18n="HOME">HOME</a></li>
                         <li class="dropdown simple_menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">HOME <b class="caret"></b></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-i18n="ROOMS">ROOMS <b
+                                    class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="index.html">Home Version 1</a></li>
-                                <li><a href="index2.html">Home Version 2</a></li>
-                                <li><a href="index3.html">Home Version 3</a></li>
-                                <li><a href="index4.html">Home Version 4</a></li>
-                                <li><a href="boxed.html">Boxed Layout</a></li>
+                                <li><a href="#" data-i18n="VIEW ROOMS LIST">Rooms List View</a></li>
+                                <li><a href="#">Rooms Grid View</a></li>
+                                <li><a href="#">Rooms Block View</a></li>
+                                <li><a href="#">Room Details 1</a></li>
+                                <li><a href="#">Room Details 2</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown simple_menu active">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">ROOMS <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="rooms-list.html">Rooms List View</a></li>
-                                <li><a href="rooms-grid.html">Rooms Grid View</a></li>
-                                <li><a href="rooms-block.html">Rooms Block View</a></li>
-                                <li><a href="room.html">Room Details 1</a></li>
-                                <li><a href="room2.html">Room Details 2</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown mega_menu mega_menu_fullwidth"><a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="true">PAGES <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <div class="mega_menu_inner">
-                                        <div class="row">
-                                            <ul class="col-md-3">
-                                                <li class="list_title">PAGES</li>
-                                                <li><a href="gallery.html">Gallery 4 Columns</a></li>
-                                                <li><a href="gallery-3columns.html">Gallery 3 Columns</a></li>
-                                                <li><a href="gallery-2columns.html">Gallery 2 Columns</a></li>
-                                                <li><a href="gallery-withoutdetails.html">Gallery Without Details</a></li>
-                                                <li><a href="gallery-withoutfilters.html">Gallery Without Filters</a></li>
-                                                <li><a href="gallery-slider.html">Gallery Slider</a></li>
-                                                <li><a href="gallery2.html">Gallery Version 2</a></li>
-                                            </ul>
-                                            <ul class="col-md-3">
-                                                <li class="list_title">PAGES</li>
-                                                <li><a href="contact2.html">Contact Us Version 2</a></li>
-                                                <li><a href="about-us.html">About Us</a></li>
-                                                <li><a href="404.html">404 Page Version 1</a></li>
-                                                <li><a href="404-v2.html">404 Page Version 2</a></li>
-                                                <li><a href="coming-soon.html">Coming Soon</a></li>
-                                                <li><a href="location.html">Our Location</a></li>
-                                                <li><a href="restaurant.html">Our Restaurant</a></li>
-                                            </ul>
-                                            <ul class="col-md-3">
-                                                <li class="list_title">PAGES</li>
-                                                <li><a href="blog-post.html">Blog Details 1</a></li>
-                                                <li><a href="blog-post2.html">Blog Details 2</a></li>
-                                                <li><a href="places.html">Places</a></li>
-                                                <li><a href="place-details.html">Place Details</a></li>
-                                                <li><a href="events.html">Events</a></li>
-                                                <li><a href="event-details.html">Event Details</a></li>
-                                                <li><a href="spa.html">Our Spa</a></li>
-                                            </ul>
-                                            <ul class="col-md-3">
-                                                <li class="list_title">MORE PAGES</li>
-                                                <li><a href="loading.html">Loading Page </a></li>
-                                                <li><a href="loading2.html">Loading Page 2</a></li>
-                                                <li><a href="loading3.html">Loading Page 3</a></li>
-                                                <li><a href="full-width.html">Full Width Page</a></li>
-                                                <li><a href="right-sidebar.html">Right Sidebar Page</a></li>
-                                                <li><a href="left-sidebar.html">Left Sidebar Page</a></li>
-                                                <li><a href="our-staff.html">Our Staff</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown simple_menu"><a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="true">ELEMENTS <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="typography.html">Typography</a></li>
-                                <li><a href="buttons.html">Buttons</a></li>
-                                <li><a href="icons.html">Icons</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="contact.html">CONTACT US</a></li>
-                        <li><a href="blog.html">BLOG</a></li>
-                        <li class="menu_button">
-                            <a href="booking-form.html" class="button  btn_yellow"><i class="fa fa-calendar"></i>BOOK ONLINE</a>
-                        </li>
+                        <li><a href="#" data-i18n="CONTACT US">CONTACT US</a></li>
                     </ul>
                 </nav>
             </div>
         </header>
 
-        <!-- =========== PAGE TITLE ========== -->
-        <div class="page_title gradient_overlay" style="background: url(images/page_title_bg.jpg);">
-            <div class="container">
-                <div class="inner">
-                    <div class="row">
-                        <div class="col-md-6 col-sm-6">
-                            <h1>Single Room</h1>
-                            <ol class="breadcrumb">
-                                <li><a href="index.html">Home</a></li>
-                                <li>Rooms</li>
-                                <li>Single Room</li>
-                            </ol>
-                        </div>
-                        <div class="col-md-6 col-sm-6">
-                            <div class="price">
-                                <div class="inner">
-                                    €90 <span>per night</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- =========== MAIN ========== -->
+        <!-- MAIN -->
         <main id="room_page">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8">
-                        <div class="slider">
-                            <div id="slider-larg" class="owl-carousel image-gallery">
-                                <!-- ITEM -->
-                                <div class="item lightbox-image-icon">
-                                    <a href="images/rooms/single-room/single-room1.jpg" class="hover_effect h_lightbox h_blue">
-                                        <img class="img-responsive" src="images/rooms/single-room/single-room1.jpg" alt="Image">
-                                    </a>
-                                </div>
-                                <!-- ITEM -->
-                                <div class="item lightbox-image-icon">
-                                    <a href="images/rooms/single-room/single-room2.jpg" class="hover_effect h_lightbox h_blue">
-                                        <img class="img-responsive" src="images/rooms/single-room/single-room2.jpg" alt="Image">
-                                    </a>
-                                </div>
-                                <!-- ITEM -->
-                                <div class="item lightbox-image-icon">
-                                    <a href="images/rooms/single-room/single-room3.jpg" class="hover_effect h_lightbox h_blue">
-                                        <img class="img-responsive" src="images/rooms/single-room/single-room3.jpg" alt="Image">
-                                    </a>
-                                </div>
-                                <!-- ITEM -->
-                                <div class="item lightbox-image-icon">
-                                    <a href="images/rooms/single-room/single-room4.jpg" class="hover_effect h_lightbox h_blue">
-                                        <img class="img-responsive" src="images/rooms/single-room/single-room4.jpg" alt="Image">
-                                    </a>
-                                </div>
-                                <!-- ITEM -->
-                                <div class="item lightbox-image-icon">
-                                    <a href="images/rooms/single-room/single-room5.jpg" class="hover_effect h_lightbox h_blue">
-                                        <img class="img-responsive" src="images/rooms/single-room/single-room5.jpg" alt="Image">
-                                    </a>
-                                </div>
-                                <!-- ITEM -->
-                                <div class="item lightbox-image-icon">
-                                    <a href="images/rooms/single-room/single-room6.jpg" class="hover_effect h_lightbox h_blue">
-                                        <img class="img-responsive" src="images/rooms/single-room/single-room6.jpg" alt="Image">
-                                    </a>
-                                </div>
-                                <!-- ITEM -->
-                                <div class="item lightbox-image-icon">
-                                    <a href="images/rooms/single-room/single-room7.jpg" class="hover_effect h_lightbox h_blue">
-                                        <img class="img-responsive" src="images/rooms/single-room/single-room7.jpg" alt="Image">
-                                    </a>
-                                </div>
-                                <!-- ITEM -->
-                                <div class="item  lightbox-image-icon">
-                                    <a href="images/rooms/single-room/single-room8.jpg" class="hover_effect h_lightbox h_blue">
-                                        <img class="img-responsive" src="images/rooms/single-room/single-room8.jpg" alt="Image">
-                                    </a>
-                                </div>
+            <div class="container" style="margin-bottom:30px;">
+                <div class="main_title mt_wave mt_blue a_center wow animate__animated animate__fadeInUp">
+                    <h2 data-i18n="image_gallery_title">JUNIOR - DOS MATRIMONIALES</h2>
+                </div>
+
+                <div class="row room-align-row">
+                    <!-- Galería -->
+                    <div class="col-md-8 gallery">
+                        <section class="room-gallery-wrapper" style="padding-top: 20px;">
+                            <div id="roomGalleryMain" class="owl-carousel room-gallery-main">
+                                <div class="rg-item"><a href="images/rooms/junior/junior-1.jpg"
+                                        title="Habitación Junior 1"><img src="images/rooms/junior/junior-1.jpg"
+                                            alt="Habitación Junior 1"></a></div>
+                                <div class="rg-item"><a href="images/rooms/junior/junior-2.jpg"
+                                        title="Habitación Junior 2"><img src="images/rooms/junior/junior-2.jpg"
+                                            alt="Habitación Junior 2"></a></div>
+                                <div class="rg-item"><a href="images/rooms/junior/junior-3.jpg"
+                                        title="Habitación Junior 3"><img src="images/rooms/junior/junior-3.jpg"
+                                            alt="Habitación Junior 3"></a></div>
+                                <div class="rg-item"><a href="images/rooms/junior/junior-4.jpg"
+                                        title="Habitación Junior 4"><img src="images/rooms/junior/junior-4.jpg"
+                                            alt="Habitación Junior 4"></a></div>
+                                <div class="rg-item"><a href="images/rooms/junior/junior-5.jpg"
+                                        title="Habitación Junior 5"><img src="images/rooms/junior/junior-5.jpg"
+                                            alt="Habitación Junior 5"></a></div>
+                                <div class="rg-item"><a href="images/rooms/junior/junior-6.jpg"
+                                        title="Habitación Junior 6"><img src="images/rooms/junior/junior-6.jpg"
+                                            alt="Habitación Junior 6"></a></div>
+                                <div class="rg-item"><a href="images/rooms/junior/junior-7.jpg"
+                                        title="Habitación Junior 7"><img src="images/rooms/junior/junior-7.jpg"
+                                            alt="Habitación Junior 7"></a></div>
                             </div>
-                            <div id="thumbs" class="owl-carousel">
-                                <!-- ITEM -->
-                                <div class="item"><img class="img-responsive" src="images/rooms/single-room/single-room-thumb1.jpg" alt="Image"></div>
-                                <!-- ITEM -->
-                                <div class="item"><img class="img-responsive" src="images/rooms/single-room/single-room-thumb2.jpg" alt="Image"></div>
-                                <!-- ITEM -->
-                                <div class="item"><img class="img-responsive" src="images/rooms/single-room/single-room-thumb3.jpg" alt="Image"></div>
-                                <!-- ITEM -->
-                                <div class="item"><img class="img-responsive" src="images/rooms/single-room/single-room-thumb4.jpg" alt="Image"></div>
-                                <!-- ITEM -->
-                                <div class="item"><img class="img-responsive" src="images/rooms/single-room/single-room-thumb5.jpg" alt="Image"></div>
-                                <!-- ITEM -->
-                                <div class="item"><img class="img-responsive" src="images/rooms/single-room/single-room-thumb6.jpg" alt="Image"></div>
-                                <!-- ITEM -->
-                                <div class="item"><img class="img-responsive" src="images/rooms/single-room/single-room-thumb7.jpg" alt="Image"></div>
-                                <!-- ITEM -->
-                                <div class="item"><img class="img-responsive" src="images/rooms/single-room/single-room-thumb8.jpg" alt="Image"></div>
+
+                            <div id="roomGalleryThumbs" class="room-gallery-thumbs">
+                                <button class="rg-thumb is-active" data-index="0"><img
+                                        src="images/rooms/junior/junior-1.jpg" alt=""></button>
+                                <button class="rg-thumb" data-index="1"><img src="images/rooms/junior/junior-2.jpg"
+                                        alt=""></button>
+                                <button class="rg-thumb" data-index="2"><img src="images/rooms/junior/junior-3.jpg"
+                                        alt=""></button>
+                                <button class="rg-thumb" data-index="3"><img src="images/rooms/junior/junior-4.jpg"
+                                        alt=""></button>
+                                <button class="rg-thumb" data-index="4"><img src="images/rooms/junior/junior-5.jpg"
+                                        alt=""></button>
+                                <button class="rg-thumb" data-index="5"><img src="images/rooms/junior/junior-6.jpg"
+                                        alt=""></button>
+                                <button class="rg-thumb" data-index="6"><img src="images/rooms/junior/junior-7.jpg"
+                                        alt=""></button>
                             </div>
-                        </div>
-                        <div class="main_title mt50">
-                            <h2>ABOUT HOTEL MARINA CANEK</h2>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis</p>
-                        
-                        <p> at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius</p>
-                        
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-                        
-                        <div class="main_title t_style a_left s_title mt50">
-                            <div class="c_inner">
-                                <h2 class="c_title">ROOM SERVICES</h2>
-                            </div>
-                        </div>
-                        <div class="room_facilitys_list">
-                            <div class="all_facility_list">
-                                <div class="col-sm-4 nopadding">
-                                    <ul class="list-unstyled">
-                                        <li><i class="fa fa-check"></i>Double Bed</li>
-                                        <li><i class="fa fa-check"></i>80 Sq mt</li>
-                                        <li><i class="fa fa-check"></i>6 Persons</li>
-                                        <li><i class="fa fa-check"></i>Free Internet</li>
-                                    </ul>
-                                </div>
-                                <div class="col-sm-4 nopadding">
-                                    <ul class="list-unstyled">
-                                        <li><i class="fa fa-check"></i>Free Wi-Fi</li>
-                                        <li><i class="fa fa-check"></i>Breakfast Include</li>
-                                        <li><i class="fa fa-check"></i>Private Balcony</li>
-                                        <li class="no"><i class="fa fa-times"></i>Free Newspaper</li>
-                                    </ul>
-                                </div>
-                                <div class="col-sm-4 nopadding_left">
-                                    <ul class="list-unstyled">
-                                        <li class="no"><i class="fa fa-times"></i>Flat Screen Tv</li>
-                                        <li><i class="fa fa-check"></i>Full Ac</li>
-                                        <li class="no"><i class="fa fa-times"></i>Beach View</li>
-                                        <li><i class="fa fa-check"></i>Room Service</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="similar_rooms">
-                            <div class="main_title t_style5 l_blue s_title a_left">
-                                <div class="c_inner">
-                                    <h2 class="c_title">SIMILAR ROOMS</h2>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <article>
-                                        <figure>
-                                            <a href="room.html" class="hover_effect h_blue h_link"><img src="images/rooms/single-room.jpg" alt="Image" class="img-responsive"></a>
-                                            <div class="price">€99<span> night</span></div>
-                                            <figcaption>
-                                                <h4><a href="room.html">Double Room</a></h4>
-                                            </figcaption>
-                                        </figure>
-                                    </article>
-                                </div>
-                                <div class="col-md-4">
-                                    <article>
-                                        <figure>
-                                            <a href="room.html" class="hover_effect h_blue h_link"><img src="images/rooms/double-room.jpg" alt="Image" class="img-responsive"></a>
-                                            <div class="price">€129<span> night</span></div>
-                                            <figcaption>
-                                                <h4><a href="room.html">Single Room </a></h4>
-                                            </figcaption>
-                                        </figure>
-                                    </article>
-                                </div>
-                                <div class="col-md-4">
-                                    <article>
-                                        <figure>
-                                            <a href="room.html" class="hover_effect h_blue h_link"><img src="images/rooms/deluxe-room.jpg" alt="Image" class="img-responsive"></a>
-                                            <div class="price">€189<span> night</span></div>
-                                            <figcaption>
-                                                <h4><a href="room.html">Deluxe Room </a></h4>
-                                            </figcaption>
-                                        </figure>
-                                    </article>
-                                </div>
-                            </div>
-                        </div>
+                        </section>
                     </div>
-                    <div class="col-md-4">
-                        <div class="sidebar">
-                            <aside class="widget">
-                                <div class="vbf">
-                                    <h2 class="form_title"><i class="fa fa-calendar"></i> BOOK ONLINE</h2>
-                                    <form id="booking-form" class="inner">
-                                        <div class="form-group">
-                                            <input class="form-control" name="booking-name" placeholder="Enter Your Name" type="text">
-                                        </div>
-                                        <div class="form-group">
-                                            <input class="form-control" name="booking-email" placeholder="Enter Your Email Address" type="email">
-                                        </div>
-                                        <div class="form-group">
-                                            <input class="form-control" name="booking-phone" placeholder="Enter Your Phone Number" type="text">
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="form_select">
-                                                <select name="booking-roomtype" class="form-control" title="Select Room Type" data-header="Room Type" disabled>
-                                                    <option value="Single Room" selected>Single Room</option>
-                                                    <option value="Double Room">Double Room</option>
-                                                    <option value="Deluxe Room">Deluxe Room</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="form-group col-md-6 col-sm-6 col-xs-12 nopadding">
-                                            <div class="form_select">
-                                                <select name="booking-adults" class="form-control md_noborder_right" title="Adults" data-header="Adults">
-                                                    <option value="0">0</option>
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="form-group col-md-6 col-sm-6 col-xs-12 nopadding">
-                                            <div class="form_select">
-                                                <select name="booking-children" class="form-control" title="Children" data-header="Children">
-                                                    <option value="0">0</option>
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="form-group col-md-6 col-sm-6 col-xs-12 nopadding">
-                                            <div class="input-group">
-                                                <div class="form_date">
-                                                    <input type="text" class="datepicker form-control md_noborder_right" name="booking-checkin" placeholder="Arrival Date" readonly>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group col-md-6 col-sm-6 col-xs-12 nopadding">
-                                            <div class="input-group">
-                                                <div class="form_date">
-                                                    <input type="text" class="datepicker form-control" name="booking-checkout" placeholder="Departure Date" readonly>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <button class="button btn_lg btn_blue btn_full" type="submit">BOOK A ROOM NOW</button>
-                                        <div class="a_center mt10">
-                                            <a href="booking-form.html" class="a_b_f">Advanced Booking Form</a>
-                                        </div>
-                                    </form>
-                                </div>
-                            </aside>
-                            <aside class="widget">
-                                <h4>NEED HELP?</h4>
-                                <div class="help">
-                                    If you have any question please don't hesitate to contact us
-                                    <div class="phone"><i class="fa  fa-phone"></i><a href="tel:18475555555"> 1-888-123-4567 </a></div>
-                                    <div class="email"><i class="fa  fa-envelope-o "></i><a href="mailto:contact@site.com">contact@site.com</a> or use <a href="contact.html"> contact form</a></div>
-                                </div>
-                            </aside>
-                            <aside class="widget">
-                                <h4>Latest Posts</h4>
-                                <div class="latest_posts">
-                                    <article class="latest_post">
-                                        <figure>
-                                            <a href="blog-post.html" class="hover_effect h_link h_blue">
-                                                <img src="images/blog/thumb1.jpg" alt="Image">
-                                            </a>
-                                        </figure>
-                                        <div class="details">
-                                            <h6><a href="blog-post.html">Live your myth in Greece</a></h6>
-                                            <span><i class="fa fa-calendar"></i>23/11/2017</span>
-                                        </div>
-                                    </article>
-                                    <article class="latest_post">
-                                        <figure>
-                                            <a href="blog-post.html" class="hover_effect h_link h_blue">
-                                                <img src="images/blog/thumb2.jpg" alt="Image">
-                                            </a>
-                                        </figure>
-                                        <div class="details">
-                                            <h6><a href="blog-post.html">Hotel Marina Canek in pictures</a></h6>
-                                            <span><i class="fa fa-calendar"></i>18/10/2017</span>
-                                        </div>
-                                    </article>
-                                    <article class="latest_post">
-                                        <figure>
-                                            <a href="blog-post.html" class="hover_effect h_link h_blue">
-                                                <img src="images/blog/thumb3.jpg" alt="Image">
-                                            </a>
-                                        </figure>
-                                        <div class="details">
-                                            <h6><a href="blog-post.html">Hotel Marina Canek family party</a></h6>
-                                            <span><i class="fa fa-calendar"></i>13/08/2017</span>
-                                        </div>
-                                    </article>
-                                    <article class="latest_post">
-                                        <figure>
-                                            <a href="blog-post.html" class="hover_effect h_link h_blue">
-                                                <img src="images/blog/thumb4.jpg" alt="Image">
-                                            </a>
-                                        </figure>
-                                        <div class="details">
-                                            <h6><a href="blog-post.html">Hotel Marina Canek weddings</a></h6>
-                                            <span><i class="fa fa-calendar"></i>13/08/2017</span>
-                                        </div>
-                                    </article>
-                                    <article class="latest_post">
-                                        <figure>
-                                            <a href="blog-post.html" class="hover_effect h_link h_blue">
-                                                <img src="images/blog/thumb5.jpg" alt="Image">
-                                            </a>
-                                        </figure>
-                                        <div class="details">
-                                            <h6><a href="blog-post.html">10 things you should know</a></h6>
-                                            <span><i class="fa fa-calendar"></i>13/08/2017</span>
-                                        </div>
-                                    </article>
-                                </div>
-                            </aside>
-                        </div>
+
+                    <!-- Servicios -->
+                    <div class="col-md-4" style="padding-top: 20px;">
+                        <aside class="room-side">
+                            <section class="room-services-panel">
+                                <h3 class="room-services-panel__title">Servicios</h3>
+                                <ul class="services-grid">
+                                    <li><i class="fa-solid fa-wifi"></i><span>Free WiFi</span></li>
+                                    <li><i class="fa-solid fa-tv"></i><span>Flat-screen TV</span></li>
+                                    <li><i class="fa-solid fa-mug-saucer"></i><span>Coffee maker</span></li>
+                                    <li><i class="fa-solid fa-temperature-half"></i><span>Mini fridge</span></li>
+                                    <li><i class="fa-regular fa-snowflake"></i><span>Air conditioning</span></li>
+                                    <li><i class="fa-solid fa-bath"></i><span>Private bathroom</span></li>
+                                    <li><i class="fa-solid fa-bed"></i><span>King-size bed</span></li>
+                                    <li><i class="fa-solid fa-door-closed"></i><span>Closet</span></li>
+                                </ul>
+                            </section>
+                        </aside>
                     </div>
+
+                    <!-- Texto -->
+                     <section class="junior-overview col-md-12" id="junior-info">
+                        <div class="jo-head">
+                            <h2 class="jo-title">Habitaciones Junior</h2>
+                            <p class="jo-sub">Doble cama matrimonial o King + matrimonial · Espacios climatizados ·
+                                Comodidad limpia y práctica.</p>
+                        </div>
+
+                        <ul class="jo-features" aria-label="Incluye">
+                            <li><i class="fa-solid fa-bath"></i> Toallas</li>
+                            <li><i class="fa-solid fa-shower"></i> Shampoo</li>
+                            <li><i class="fa-solid fa-leaf"></i> Crema corporal</li>
+                            <li><i class="fa-regular fa-hand"></i> Jabón manos</li>
+                            <li><i class="fa-solid fa-snowflake"></i> Climatizadas</li>
+                            <li><i class="fa-solid fa-mug-saucer"></i> Café / Té cortesía</li>
+                        </ul>
+
+
+                        <div class="jo-text cols-3">
+                            <p>Diseñadas para familias pequeñas, parejas o viajeros que buscan un equilibrio
+                                inteligente entre precio y comodidad: colchones confort firm, aire acondicionado
+                                eficiente y buena acústica para un descanso real sin interrupciones.</p>
+                            <p>Baño privado con agua caliente, señal WiFi estable para trabajo ligero y mobiliario
+                                funcional que mantiene el espacio ordenado. Elige configuración 2 matrimoniales o
+                                King + matrimonial según la dinámica de tu grupo.</p>
+                            <p>Amenidades frescas se renuevan a diario: toallas esponjosas, shampoo, crema y jabón
+                                de manos. Comienza la mañana con café o té de cortesía antes de explorar la zona
+                                arqueológica y las cascadas cercanas.</p>
+                        </div>
+
+
+                        <div class="jo-highlights">
+                            <article class="jo-hcard">
+                                <i class="fa fa-check"></i>
+                                <h3>Descanso real</h3>
+                                <p>Colchones seleccionados + climatización silenciosa.</p>
+                            </article>
+                            <article class="jo-hcard">
+                                <i class="fa fa-shield"></i>
+                                <h3>Higiene cuidada</h3>
+                                <p>Protocolos de limpieza y textiles frescos.</p>
+                            </article>
+                            <article class="jo-hcard">
+                                <i class="fa fa-map-marker"></i>
+                                <h3>Ubicación céntrica</h3>
+                                <p>Acceso rápido a terminal, comida y tours.</p>
+                            </article>
+                            <article class="jo-hcard">
+                                <i class="fa fa-whatsapp"></i>
+                                <h3>Atención directa</h3>
+                                <p>Confirmación rápida vía WhatsApp.</p>
+                            </article>
+                        </div>
+                    </section>
                 </div>
             </div>
         </main>
 
-        <!-- ========== FOOTER ========== -->
-        <footer>
-            <div class="inner">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-3 col-sm-6 widget">
-                            <div class="about">
-                                <a href="index.html"><img class="logo" src="images/logo.svg" height="32" alt="Logo"></a>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</p>
-                                <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 widget">
-                            <h5>Latest News</h5>
-                            <ul class="blog_posts">
-                                <li><a href="blog-post.html">Live your myth in Greece</a> <small>AUGUST 13, 2017</small></li>
-                                <li><a href="blog-post.html">Hotel Marina Canek in pictures</a> <small>AUGUST 16, 2017</small></li>
-                                <li><a href="blog-post.html">Hotel Marina Canek family party</a> <small>SEPTEMBER 15, 2017</small></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-3 col-sm-6 widget">
-                            <h5>Useful Links</h5>
-                            <ul class="useful_links">
-                                <li><a href="#">About us</a></li>
-                                <li><a href="#">Contact us</a></li>
-                                <li><a href="#">History</a></li>
-                                <li><a href="#">Gallery</a></li>
-                                <li><a href="#">Location</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-3 col-sm-6 widget">
-                            <h5>Contact Us</h5>
-                            <address>
-								<ul class="address_details">
-									<li><i class="glyphicon glyphicon-map-marker"></i> 25, Navagio Zakynthos, Greece</li>
-									<li><i class="glyphicon glyphicon-phone-alt"></i> Phone: 800 123 3456 </li>
-									<li><i class="fa fa-fax"></i> Fax: 800 123 3456</li>
-									<li><i class="fa fa-envelope"></i> Email: <a href="mailto:info@site.com">contact@site.com</a></li>
-								</ul>
-							</address>
+        <!-- FOOTER -->
+        <footer class="footer_dark"
+            style="background:#0f1b2a;color:#d0d6dc;padding:60px 0 30px;font-size:14px;line-height:1.6;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6">
+                        <h5 style="color:#fff;font-weight:700;margin-bottom:15px;">Hotel Marina Canek</h5>
+                        <p style="margin-bottom:12px;color:#fff;">Tu puerto de descanso en Palenque.</p>
+                        <p style="opacity:.85;color:#fff;">Experiencia acogedora, ubicación céntrica y atención cordial
+                            para tu estancia.</p>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <h5 style="color:#fff;font-weight:700;margin-bottom:15px;">Contacto</h5>
+                        <ul style="list-style:none;padding:0;margin:0;">
+                            <li><strong>Dirección:</strong><br>2a. Avenida Sur Pte., Centro, 29960 Palenque, Chiapas,
+                                México</li>
+                            <li style="margin-top:10px;"><strong>WhatsApp:</strong><br><a
+                                    href="https://wa.me/5219163489026" target="_blank"
+                                    style="color:#58b1ff;text-decoration:none;">+52 1 916 348 9026</a></li>
+                            <li style="margin-top:10px;"><strong>Email:</strong><br><a
+                                    href="mailto:reservas@hotelmarinacanek.com"
+                                    style="color:#58b1ff;text-decoration:none;">reservas@hotelmarinacanek.com</a></li>
+                            <li style="margin-top:10px;"><strong>Coordenadas:</strong><br>17.509757, -91.981700</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <h5 style="color:#fff;font-weight:700;margin-bottom:15px;">Enlaces rápidos</h5>
+                        <ul style="list-style:none;padding:0;margin:0;columns:2;gap:0;">
+                            <li><a href="#features" style="color:#d0d6dc;text-decoration:none;">Características</a></li>
+                            <li><a href="#rooms" style="color:#d0d6dc;text-decoration:none;">Habitaciones</a></li>
+                            <li><a href="#contact" style="color:#d0d6dc;text-decoration:none;">Contacto</a></li>
+                            <li><a href="#gallery" style="color:#d0d6dc;text-decoration:none;">Galería</a></li>
+                            <li><a href="#offers" style="color:#d0d6dc;text-decoration:none;">Ofertas</a></li>
+                            <li><a href="#booking" style="color:#d0d6dc;text-decoration:none;">Reservar</a></li>
+                        </ul>
+                        <div style="margin-top:18px;display:flex;gap:10px;">
+                            <a href="https://wa.me/5219163489026" target="_blank" aria-label="WhatsApp"
+                                style="width:38px;height:38px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:18px;">
+                                <span class="fa-brands fa-whatsapp"></span>
+                            </a>
+                            <a href="#" aria-label="Facebook"
+                                style="width:38px;height:38px;background:#154D71;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:15px;">
+                                <span class="fa-brands fa-facebook-f"></span>
+                            </a>
+                            <a href="#" aria-label="Instagram"
+                                style="width:38px;height:38px;background:#154D71;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:15px;">
+                                <span class="fa-brands fa-instagram"></span>
+                            </a>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="subfooter">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6 col-sm-6">
-                            <div class="copyrights">
-                                Copyright 2021 <a href="index.html">Hotel Marina Canek</a> All Rights Reserved.
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6">
-                            <div class="social_media">
-                                <a class="facebook" data-original-title="Facebook" data-toggle="tooltip" href="#"><i class="fa fa-facebook"></i></a>
-                                <a class="twitter" data-original-title="Twitter" data-toggle="tooltip" href="#"><i class="fa fa-twitter"></i></a>
-                                <a class="googleplus" data-original-title="Google Plus" data-toggle="tooltip" href="#"><i class="fa fa-google-plus"></i></a>
-                                <a class="pinterest" data-original-title="Pinterest" data-toggle="tooltip" href="#"><i class="fa fa-pinterest"></i></a>
-                                <a class="linkedin" data-original-title="Linkedin" data-toggle="tooltip" href="#"><i class="fa fa-linkedin"></i></a>
-                                <a class="instagram" data-original-title="Instagram" data-toggle="tooltip" href="#"><i class="fa fa-instagram"></i></a>
-                            </div>
-                        </div>
+                <hr style="border:none;border-top:1px solid rgba(255,255,255,.08);margin:35px 0 20px;">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p style="margin:0;font-size:13px;color:#fff;">© <span id="yearCopy"></span> Hotel Marina Canek.
+                            Todos los derechos reservados.</p>
                     </div>
+                    <div class="col-sm-6" style="text-align:right;"><a href="#top"
+                            style="color:#58b1ff;text-decoration:none;font-size:13px;">Volver arriba ↑</a></div>
                 </div>
             </div>
         </footer>
     </div>
 
-    <!-- ========== BACK TO TOP ========== -->
-    <div id="back_to_top">
-        <i class="fa fa-angle-up" aria-hidden="true"></i>
-    </div>
+    <!-- JS -->
+    <script src="js/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-datepicker.min.js"></script>
+    <script src="js/bootstrap-select.min.js"></script>
+    <script src="js/jquery.smoothState.js"></script>
+    <script src="js/moment.min.js"></script>
+    <script src="js/morphext.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/owl.carousel.thumbs.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jPushMenu.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/countUp.min.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/main.js"></script>
 
-    <!-- ========== NOTIFICATION ========== -->
-    <div id="notification"></div>
+    <!-- Init unificado del carrusel (con fixes móvil) -->
+    <script>
+        $(function () {
+            const $main = $('#roomGalleryMain');
 
-    <!-- ========== JAVASCRIPT ========== -->
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap-datepicker.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap-select.min.js"></script>
-    <script type="text/javascript" src="js/jquery.smoothState.js"></script>
-    <script type="text/javascript" src="js/moment.min.js"></script>
-    <script type="text/javascript" src="js/morphext.min.js"></script>
-    <script type="text/javascript" src="js/wow.min.js"></script>
-    <script type="text/javascript" src="js/jquery.easing.min.js"></script>
-    <script type="text/javascript" src="js/owl.carousel.min.js"></script>
-    <script type="text/javascript" src="js/owl.carousel.thumbs.min.js"></script>
-    <script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
-    <script type="text/javascript" src="js/jPushMenu.js"></script>
-    <script type="text/javascript" src="js/isotope.pkgd.min.js"></script>
-    <script type="text/javascript" src="js/imagesloaded.pkgd.min.js"></script>
-    <script type="text/javascript" src="js/countUp.min.js"></script>
-    <script type="text/javascript" src="js/jquery.countdown.min.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+            // Evita doble inicialización
+            if ($main.data('owl.carousel')) {
+                $main.trigger('destroy.owl.carousel');
+                $main.find('.owl-stage-outer').children().unwrap();
+            }
 
+            $main.owlCarousel({
+                items: 1,
+                loop: true,
+                nav: true,
+                dots: false,
+                smartSpeed: 450,
+                navText: ['<span class="rg-arw">&lsaquo;</span>', '<span class="rg-arw">&rsaquo;</span>'],
+                autoplay: false,
+                autoplayHoverPause: true,
+                touchDrag: true,
+                mouseDrag: true,
+                autoHeight: true   // <--- clave para que no colapse en móvil
+            });
+
+            // Refresca cuando todo cargó (si el init fue temprano)
+            $(window).on('load', function () {
+                $main.trigger('refresh.owl.carousel');
+            });
+
+            // Refresca al rotar / cambiar tamaño
+            $(window).on('orientationchange resize', function () {
+                $main.trigger('refresh.owl.carousel');
+            });
+
+            // Thumbs
+            const $thumbsWrap = $('#roomGalleryThumbs');
+            $thumbsWrap.on('click', '.rg-thumb', function () {
+                $main.trigger('to.owl.carousel', [+this.dataset.index, 400, true]);
+            });
+            $main.on('changed.owl.carousel', function (e) {
+                const count = e.item.count;
+                let realIndex = (e.item.index - e.relatedTarget._clones.length / 2) % count;
+                if (realIndex < 0) realIndex += count;
+                $thumbsWrap.find('.rg-thumb').removeClass('is-active').eq(realIndex).addClass('is-active');
+            });
+
+            // Lightbox
+            if ($.fn.magnificPopup) {
+                $main.magnificPopup({
+                    delegate: 'a',
+                    type: 'image',
+                    gallery: { enabled: true },
+                    image: { titleSrc: 'title' },
+                    removalDelay: 150,
+                    mainClass: 'mfp-fade'
+                });
+            }
+
+            // Año en footer
+            document.getElementById('yearCopy').textContent = new Date().getFullYear();
+        });
+    </script>
 </body>
+
 </html>
