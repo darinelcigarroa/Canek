@@ -1,827 +1,496 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-    <title>Hotel Marina Canek - Single Room</title>
-
-    <!-- Favicon -->
-    <link rel="apple-touch-icon-precomposed" href="images/favicon-apple.png" />
-    <link rel="icon" href="images/favicon.png">
-
-    <!-- Core CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="revolution/css/layers.css" />
-    <link rel="stylesheet" href="revolution/css/settings.css" />
-    <link rel="stylesheet" href="revolution/css/navigation.css" />
-    <link rel="stylesheet" href="css/bootstrap-select.min.css">
-    <link rel="stylesheet" href="css/famfamfam-flags.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
-
-    <!-- Font Awesome 6 (único) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- Icon font extra (si lo usas) -->
-    <link rel="stylesheet" href="fonts/flaticon.css">
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900%7cRaleway:400,500,600,700"
-        rel="stylesheet">
-
-    <style>
-        /* ====== FIX CARRUSEL EN MÓVIL + ESTILOS BÁSICOS ====== */
-
-        /* Reset útil */
-        html {
-            box-sizing: border-box;
-        }
-
-        *,
-        *::before,
-        *::after {
-            box-sizing: inherit;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        /* Contenedores full-width en esta página */
-        #room_page>.container {
-            width: 100%;
-            max-width: 1220px;
-        }
-
-        /* Galería */
-        .room-gallery-wrapper {
-            margin-bottom: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
-
-        .room-gallery-main {
-            position: relative;
-            border-radius: 22px;
-            overflow: hidden;
-            box-shadow: 0 10px 32px -14px rgba(0, 0, 0, .35), 0 4px 14px -6px rgba(0, 0, 0, .18);
-        }
-
-        .room-gallery-main .rg-item {
-            position: relative;
-            aspect-ratio: 16/10;
-            /* base */
-            background: #dfe5e9;
-        }
-
-        .room-gallery-main .rg-item img {
-            width: 100%;
-            height: auto;
-            /* clave para móvil */
-            object-fit: cover;
-            display: block;
-            transition: transform 1.2s ease;
-            cursor: zoom-in;
-        }
-
-        .room-gallery-main .rg-item:hover img {
-            transform: scale(1.04);
-        }
-
-        /* Fallback si el navegador NO soporta aspect-ratio */
-        @supports not (aspect-ratio: 1 / 1) {
-            .room-gallery-main .rg-item {
-                position: relative;
-            }
-
-            .room-gallery-main .rg-item::before {
-                content: "";
-                display: block;
-                padding-top: 62.5%;
-                /* 16:10 */
-            }
-
-            .room-gallery-main .rg-item>* {
-                position: absolute;
-                inset: 0;
-            }
-
-            .room-gallery-main .rg-item img {
-                height: 100%;
-            }
-        }
-
-        /* Mínima altura en móvil para evitar colapso */
-        @media (max-width: 640px) {
-            .room-gallery-main .rg-item {
-                min-height: 240px;
-            }
-
-            .room-gallery-main {
-                border-radius: 0;
-                box-shadow: none;
-            }
-
-            .room-gallery-wrapper {
-                margin-left: -16px;
-                margin-right: -16px;
-            }
-        }
-
-        /* Navegación del carrusel (una sola definición) */
-        .room-gallery-main .owl-nav {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 8px;
-            pointer-events: none;
-            z-index: 20;
-        }
-
-        .room-gallery-main .owl-nav button {
-            pointer-events: auto;
-            border: 0;
-            width: 54px;
-            height: 54px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(15, 31, 42, .55);
-            color: #fff;
-            transition: .3s;
-        }
-
-        .room-gallery-main .owl-nav button:hover {
-            background: #154D71;
-        }
-
-        .room-gallery-main .owl-nav .rg-arw {
-            font-size: 30px;
-            line-height: 1;
-        }
-
-        @media (max-width: 600px) {
-            .room-gallery-main .owl-nav button {
-                width: 46px;
-                height: 46px;
-            }
-
-            .room-gallery-main .owl-nav .rg-arw {
-                font-size: 26px;
-            }
-        }
-
-        /* Thumbs */
-        .room-gallery-thumbs {
-            display: grid;
-            gap: 10px;
-            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-        }
-
-        .rg-thumb {
-            border: 2px solid transparent;
-            border-radius: 12px;
-            overflow: hidden;
-            cursor: pointer;
-            aspect-ratio: 4/3;
-            background: none;
-            padding: 0;
-            transition: .3s;
-        }
-
-        .rg-thumb img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            filter: brightness(.85);
-        }
-
-        .rg-thumb:hover img {
-            filter: brightness(.72) contrast(1.05) saturate(1.1);
-        }
-
-        .rg-thumb.is-active {
-            border-color: #154D71;
-            box-shadow: 0 4px 12px -4px rgba(21, 77, 113, .45);
-        }
-
-        .rg-thumb.is-active img {
-            filter: brightness(.95);
-        }
-
-        /* Panel de servicios (solo lo justo) */
-        .room-services-panel__title {
-            margin: 0 0 10px;
-            font-weight: 800;
-        }
-
-        .services-grid {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-            gap: 10px;
-        }
-
-        .services-grid li {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 10px;
-            border: 1px solid #d7e4eb;
-            border-radius: 14px;
-        }
-
-        .services-grid i {
-            width: 18px;
-            text-align: center;
-        }
-
-        /* ===== Servicios: mostrar 2 por fila en pantallas grandes ===== */
-        @media (min-width: 1200px) {
-            .room-services-panel .services-grid {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr) !important;
-                /* fuerza 2 columnas */
-                gap: 14px 18px;
-            }
-
-            .room-services-panel .services-grid li {
-                width: 100%;
-                justify-content: flex-start;
-                font-size: 1rem;
-            }
-        }
-
-        /* Opcional: 1 columna en móvil muy pequeño */
-        @media (max-width: 520px) {
-            .room-services-panel .services-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Responsive de estructura */
-        @media (max-width: 991px) {
-
-            .room-gallery-wrapper {
-                margin-bottom: 0px;
-            }
-
-            section {
-                padding-bottom: 0px;
-            }
-
-            .gallery {
-                display: flex;
-                justify-content: center;
-            }
-
-            .room-align-row {
-                display: block;
-            }
-
-            .room-align-row .col-md-8,
-            .room-align-row .col-md-4 {
-                width: 100%;
-                float: none;
-                padding: 20px;
-            }
-
-            .room-services-panel {
-                margin-top: 20px;
-            }
-        }
-
-        /* ===== FIX: limitar tamaño del logo en pantallas grandes ===== */
-        .site-header .navbar-brand {
-            padding: 10px 0;
-            line-height: 1;
-        }
-
-        .site-header .navbar-brand img {
-            height: 56px !important;
-            /* tamaño base */
-            max-height: 56px !important;
-            width: auto !important;
-            object-fit: contain;
-        }
-
-        /* Opcional: un poco más grande en desktop XL */
-        @media (min-width: 1400px) {
-            .site-header .navbar-brand img {
-                height: 60px !important;
-                max-height: 60px !important;
-            }
-        }
-
-        /* Logo más pequeño en móvil */
-        @media (max-width: 640px) {
-            .site-header .navbar-brand img {
-                height: 48px !important;
-                max-height: 48px !important;
-            }
-        }
-
-        /* Si el theme añade clases al hacer scroll (.shrink, .scrolled, etc.) forzamos */
-        .site-header.shrink .navbar-brand img,
-        .site-header.scrolled .navbar-brand img {
-            height: 50px !important;
-            max-height: 50px !important;
-        }
-
-        /* ===== END FIX ===== */
-
-
-        /* ===== AMPLIAR DISEÑO EN PANTALLAS GRANDES ===== */
-        @media (min-width: 1200px) {
-            #room_page> .container {
-                max-width: 1400px;
-                /* antes 1220 */
-            }
-
-            .room-align-row .col-md-8 {
-                flex: 1 1 960px;
-            }
-
-            .room-align-row .col-md-4 {
-                flex: 0 0 440px;
-            }
-
-            .room-gallery-main .rg-item {
-                aspect-ratio: 16/9;
-            }
-
-            .jo-title {
-                font-size: 2.4rem;
-            }
-
-            .jo-sub {
-                font-size: 1.02rem;
-            }
-
-            .jo-text {
-                font-size: .95rem;
-                line-height: 1.6;
-            }
-
-            .jo-features li {
-                font-size: .7rem;
-                padding: 10px 18px;
-            }
-
-            .jo-hcard h3 {
-                font-size: .95rem;
-            }
-
-            .jo-hcard p {
-                font-size: .75rem;
-            }
-
-            .services-grid li {
-                font-size: .85rem;
-                padding: 12px 14px;
-                gap: 12px;
-            }
-
-            .services-grid li span {
-                letter-spacing: .2px;
-            }
-
-            .services-grid i {
-                font-size: 22px;
-                width: 42px;
-                height: 42px;
-                line-height: 42px;
-                background: #e9f1f6;
-                border-radius: 14px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: #154D71;
-            }
-        }
-
-        @media (min-width: 1600px) {
-            #room_page> .container {
-                max-width: 1540px;
-            }
-
-            .room-align-row .col-md-8 {
-                flex: 1 1 1040px;
-            }
-
-            .room-align-row .col-md-4 {
-                flex: 0 0 460px;
-            }
-
-            .jo-title {
-                font-size: 2.65rem;
-            }
-
-            .jo-sub {
-                font-size: 1.08rem;
-                max-width: 1050px;
-            }
-
-            .jo-text {
-                font-size: 1rem;
-            }
-
-            .jo-features li {
-                font-size: .75rem;
-            }
-
-            .jo-hcard h3 {
-                font-size: 1rem;
-            }
-
-            .jo-hcard p {
-                font-size: .78rem;
-            }
-
-            .services-grid li {
-                font-size: .9rem;
-            }
-        }
-
-        /* Mejor legibilidad en servicios (icono + texto) */
-        .room-services-panel .services-grid li {
-            font-weight: 600;
-            transition: .3s;
-        }
-
-        .room-services-panel .services-grid li:hover {
-            background: #154D71;
-            color: #fff;
-            border-color: #154D71;
-        }
-
-        .room-services-panel .services-grid li:hover i {
-            background: #10364d;
-            color: #fff;
-        }
-
-        /* Tipografía escalable usando clamp para pantallas intermedias */
-        .jo-title {
-            font-size: clamp(1.9rem, 2vw + 1.2rem, 2.65rem);
-        }
-
-        .jo-sub {
-            font-size: clamp(.85rem, .5vw + .7rem, 1.08rem);
-        }
-
-        .jo-text {
-            font-size: clamp(.85rem, .35vw + .75rem, 1rem);
-        }
-
-        /* ===== FIN AMPLIAR DISEÑO ===== */
-    </style>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>Hotel Marina Canek - Single Room</title>
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon-precomposed" href="images/favicon-apple.png" />
+  <link rel="icon" href="images/favicon.png">
+
+  <!-- Core CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="revolution/css/layers.css" />
+  <link rel="stylesheet" href="revolution/css/settings.css" />
+  <link rel="stylesheet" href="revolution/css/navigation.css" />
+  <link rel="stylesheet" href="css/bootstrap-select.min.css">
+  <link rel="stylesheet" href="css/famfamfam-flags.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Icon font extra -->
+  <link rel="stylesheet" href="fonts/flaticon.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900%7cRaleway:400,500,600,700" rel="stylesheet">
+
+  <style>
+    /* ====== FIX CARRUSEL EN MÓVIL + ESTILOS BÁSICOS ====== */
+    html{ box-sizing:border-box; }
+    *,*::before,*::after{ box-sizing:inherit; }
+    img{ max-width:100%; height:auto; }
+
+    /* Contenedores full-width en esta página */
+    #room_page>.container{ width:100%; max-width:1220px; }
+
+    /* Galería principal */
+    .room-gallery-wrapper{ margin-bottom:20px; display:flex; flex-direction:column; gap:14px; }
+    .room-gallery-main{ position:relative; border-radius:22px; overflow:hidden;
+      box-shadow:0 10px 32px -14px rgba(0,0,0,.35), 0 4px 14px -6px rgba(0,0,0,.18);
+    }
+    .room-gallery-main .rg-item{ position:relative; aspect-ratio:16/10; background:#dfe5e9; }
+    .room-gallery-main .rg-item img{ width:100%; height:auto; object-fit:cover; display:block; transition:transform 1.2s ease; cursor:zoom-in; }
+    .room-gallery-main .rg-item:hover img{ transform:scale(1.04); }
+
+    @supports not (aspect-ratio:1/1){
+      .room-gallery-main .rg-item{ position:relative; }
+      .room-gallery-main .rg-item::before{ content:""; display:block; padding-top:62.5%; }
+      .room-gallery-main .rg-item>*{ position:absolute; inset:0; }
+      .room-gallery-main .rg-item img{ height:100%; }
+    }
+
+    @media (max-width:640px){
+      .room-gallery-main .rg-item{ min-height:240px; }
+      .room-gallery-main{ border-radius:0; box-shadow:none; }
+      .room-gallery-wrapper{ margin-left:-16px; margin-right:-16px; }
+    }
+
+    .room-gallery-main .owl-nav{ position:absolute; inset:0; display:flex; justify-content:space-between; align-items:center; padding:0 8px; pointer-events:none; z-index:20; }
+    .room-gallery-main .owl-nav button{ pointer-events:auto; border:0; width:54px; height:54px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:rgba(15,31,42,.55); color:#fff; transition:.3s; }
+    .room-gallery-main .owl-nav button:hover{ background:#154D71; }
+    .room-gallery-main .owl-nav .rg-arw{ font-size:30px; line-height:1; }
+    @media (max-width:600px){
+      .room-gallery-main .owl-nav button{ width:46px; height:46px; }
+      .room-gallery-main .owl-nav .rg-arw{ font-size:26px; }
+    }
+
+    /* Thumbs */
+    .room-gallery-thumbs{ display:grid; gap:10px; grid-template-columns:repeat(auto-fill, minmax(80px,1fr)); }
+    .rg-thumb{ border:2px solid transparent; border-radius:12px; overflow:hidden; cursor:pointer; aspect-ratio:4/3; background:none; padding:0; transition:.3s; }
+    .rg-thumb img{ width:100%; height:100%; object-fit:cover; display:block; filter:brightness(.85); }
+    .rg-thumb:hover img{ filter:brightness(.72) contrast(1.05) saturate(1.1); }
+    .rg-thumb.is-active{ border-color:#154D71; box-shadow:0 4px 12px -4px rgba(21,77,113,.45); }
+    .rg-thumb.is-active img{ filter:brightness(.95); }
+
+    /* Panel de servicios */
+    .room-services-panel__title{ margin:0 0 10px; font-weight:800; }
+    .services-grid{ list-style:none; padding:0; margin:0; display:grid; grid-template-columns:repeat(auto-fill, minmax(160px,1fr)); gap:10px; }
+    .services-grid li{ display:flex; align-items:center; gap:8px; padding:8px 10px; border:1px solid #d7e4eb; border-radius:14px; }
+    .services-grid i{ width:18px; text-align:center; }
+
+    @media (min-width:1200px){
+      .room-services-panel .services-grid{ display:grid; grid-template-columns:repeat(2,1fr)!important; gap:14px 18px; }
+      .room-services-panel .services-grid li{ width:100%; justify-content:flex-start; font-size:1rem; }
+    }
+    @media (max-width:520px){ .room-services-panel .services-grid{ grid-template-columns:1fr; } }
+
+    /* Responsive de estructura */
+    @media (max-width:991px){
+      .room-gallery-wrapper{ margin-bottom:0; }
+      section{ padding-bottom:0; }
+      .gallery{ display:flex; justify-content:center; }
+      .room-align-row{ display:block; }
+      .room-align-row .col-md-8, .room-align-row .col-md-4{ width:100%; float:none; padding:20px; }
+      .room-services-panel{ margin-top:20px; }
+    }
+
+    /* Header logo sizing */
+    .site-header .navbar-brand{ padding:10px 0; line-height:1; }
+    .site-header .navbar-brand img{ height:56px!important; max-height:56px!important; width:auto!important; object-fit:contain; }
+    @media (min-width:1400px){ .site-header .navbar-brand img{ height:60px!important; max-height:60px!important; } }
+    @media (max-width:640px){ .site-header .navbar-brand img{ height:48px!important; max-height:48px!important; } }
+    .site-header.shrink .navbar-brand img,
+    .site-header.scrolled .navbar-brand img{ height:50px!important; max-height:50px!important; }
+
+    /* Ampliar diseño en pantallas grandes */
+    @media (min-width:1200px){
+      #room_page>.container{ max-width:1400px; }
+      .room-align-row .col-md-8{ flex:1 1 960px; }
+      .room-align-row .col-md-4{ flex:0 0 440px; }
+      .room-gallery-main .rg-item{ aspect-ratio:16/9; }
+      .jo-title{ font-size:2.4rem; }
+      .jo-sub{ font-size:1.02rem; }
+      .jo-text{ font-size:.95rem; line-height:1.6; }
+      .jo-features li{ font-size:.7rem; padding:10px 18px; }
+      .jo-hcard h3{ font-size:.95rem; }
+      .jo-hcard p{ font-size:.75rem; }
+      .services-grid li{ font-size:.85rem; padding:12px 14px; gap:12px; }
+      .services-grid li span{ letter-spacing:.2px; }
+      .services-grid i{ font-size:22px; width:42px; height:42px; line-height:42px; background:#e9f1f6; border-radius:14px; display:flex; align-items:center; justify-content:center; color:#154D71; }
+    }
+    @media (min-width:1600px){
+      #room_page>.container{ max-width:1540px; }
+      .room-align-row .col-md-8{ flex:1 1 1040px; }
+      .room-align-row .col-md-4{ flex:0 0 460px; }
+      .jo-title{ font-size:2.65rem; }
+      .jo-sub{ font-size:1.08rem; max-width:1050px; }
+      .jo-text{ font-size:1rem; }
+      .jo-features li{ font-size:.75rem; }
+      .jo-hcard h3{ font-size:1rem; }
+      .jo-hcard p{ font-size:.78rem; }
+      .services-grid li{ font-size:.9rem; }
+    }
+
+    .room-services-panel .services-grid li{ font-weight:600; transition:.3s; }
+    .room-services-panel .services-grid li:hover{ background:#154D71; color:#fff; border-color:#154D71; }
+    .room-services-panel .services-grid li:hover i{ background:#10364d; color:#fff; }
+
+    .jo-title{ font-size:clamp(1.9rem, 2vw + 1.2rem, 2.65rem); }
+    .jo-sub{ font-size:clamp(.85rem, .5vw + .7rem, 1.08rem); }
+    .jo-text{ font-size:clamp(.85rem, .35vw + .75rem, 1rem); }
+
+    /* ===== Accessories (Bootstrap 3 Carousel) ===== */
+    .accessories-carousel{ margin-top:34px; }
+    .accessories-carousel .acc-title{ font:700 .95rem 'Raleway', sans-serif; letter-spacing:.8px; text-transform:uppercase; margin:0 0 14px; color:#154D71; }
+    #accCarousel{ position:relative; border:1px solid #e0eaef; border-radius:22px; overflow:hidden; background:#f5f9fb; box-shadow:0 8px 26px -14px rgba(0,0,0,.25), 0 4px 14px -8px rgba(0,0,0,.12); }
+    #accCarousel .item{ text-align:center; position:relative; min-height:260px; display:flex; align-items:center; justify-content:center; padding:24px 40px 54px; }
+    #accCarousel .item img{ width:100%; height:100%; object-fit:contain; max-height:220px; filter:drop-shadow(0 8px 20px rgba(0,0,0,.18)); transition:.6s; }
+    #accCarousel .item:hover img{ transform:scale(1.04); }
+    #accCarousel .acc-caption{ position:absolute; left:0; right:0; bottom:0; padding:10px 14px 12px; font-size:.65rem; letter-spacing:1.2px; font-weight:700; text-transform:uppercase; background:linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.9) 55%, rgba(255,255,255,.95) 100%); color:#123344; }
+    #accCarousel .carousel-indicators{ bottom:6px; }
+    #accCarousel .carousel-indicators li{ width:10px; height:10px; margin:0 4px; background:#b9ccd4; border:none; border-radius:50%; transition:.35s; }
+    #accCarousel .carousel-indicators .active{ width:22px; border-radius:10px; background:#154D71; }
+    #accCarousel .carousel-control{ width:54px; color:#fff; text-shadow:none; opacity:1; transition:.35s; }
+    #accCarousel .carousel-control .acc-arrow{ position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-size:34px; text-shadow:0 4px 14px rgba(0,0,0,.4); }
+    #accCarousel .left.carousel-control{ background:linear-gradient(90deg, rgba(0,0,0,.35), transparent); }
+    #accCarousel .right.carousel-control{ background:linear-gradient(270deg, rgba(0,0,0,.35), transparent); }
+    #accCarousel .carousel-control:hover{ background:rgba(21,77,113,.55); }
+    @media (max-width:700px){
+      #accCarousel .item{ min-height:220px; padding:18px 26px 50px; }
+      #accCarousel .item img{ max-height:180px; }
+      #accCarousel .carousel-control{ width:46px; }
+      #accCarousel .carousel-control .acc-arrow{ font-size:28px; }
+      #accCarousel .acc-caption{ font-size:.58rem; }
+    }
+    .dark-theme #accCarousel{ background:#162633; border-color:#2c4655; }
+    .dark-theme #accCarousel .acc-caption{ background:linear-gradient(180deg, rgba(22,38,51,0) 0%, rgba(22,38,51,.92) 60%, rgba(22,38,51,.95) 100%); color:#cfe2ec; }
+    .dark-theme #accCarousel .carousel-indicators li{ background:#345362; }
+    .dark-theme #accCarousel .carousel-indicators .active{ background:#82c9ff; }
+
+    /* ===== Service Gallery (BLUR-FILL) ===== */
+    .service-gallery{ --sg-h:220px; border:1px solid #e0eaef; border-radius:14px; overflow:hidden; background:#f7fafb; }
+    .service-gallery .sg-item{ position:relative; height:var(--sg-h); display:flex; align-items:center; justify-content:center; overflow:hidden; padding:6px; border-radius:14px; }
+    .service-gallery .sg-item::before{
+      content:""; position:absolute; inset:0;
+      background-image:var(--sg-bg, none); background-position:center; background-size:cover;
+      filter:blur(16px) brightness(.96); transform:scale(1.06);
+    }
+    .service-gallery .sg-item img{ position:relative; z-index:1; max-width:92%; max-height:92%; width:auto; height:auto; object-fit:contain; object-position:center; display:block; }
+
+    @media (max-width:600px){ .service-gallery{ --sg-h:180px; } }
+    @media (min-width:1200px){ .service-gallery{ --sg-h:240px; } }
+
+    /* Opción puntual para alguna imagen con mucho margen: <div class="sg-item is-cover"> */
+    .service-gallery .sg-item.is-cover img{ width:100%; height:100%; max-width:none; max-height:none; object-fit:cover; object-position:center; }
+  </style>
 </head>
 
 <body>
-    <div id="smoothpage" class="wrapper">
-        <!-- HEADER -->
-        <header class="site-header fixed transparent">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle mobile_menu_btn" data-toggle="collapse"
-                        data-target=".mobile_menu" aria-expanded="false">
-                        <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand light" href="index.html"><img src="images/logo_ligth.png" height="70"
-                            alt="Logo"></a>
-                    <a class="navbar-brand dark nodisplay" href="index.html"><img src="images/logo_ligth.png"
-                            height="70" alt="Logo"></a>
-                </div>
+  <div id="smoothpage" class="wrapper">
+    <!-- HEADER -->
+    <header class="site-header fixed transparent">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle mobile_menu_btn" data-toggle="collapse" data-target=".mobile_menu" aria-expanded="false">
+            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand light" href="index.html"><img src="images/logo_ligth.png" height="70" alt="Logo"></a>
+          <a class="navbar-brand dark nodisplay" href="index.html"><img src="images/logo_ligth.png" height="70" alt="Logo"></a>
+        </div>
 
-                <!-- Botones flotantes -->
-                <div id="floating-buttons-container">
-                    <div id="lang-flag-switcher"
-                        style="cursor:pointer;background:#fff;border-radius:50%;box-shadow:0 2px 8px #0002;padding:6px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;">
-                        <img id="lang-flag-img" src="images/icons/gb.png" alt="Switch language"
-                            style="height:36px;width:auto;border-radius:3px;display:block;">
-                    </div>
-                    <a id="floating-whatsapp" href="https://wa.me/9163489026" target="_blank" rel="noopener"
-                        aria-label="WhatsApp"
-                        style="background:#25d366;border-radius:50%;box-shadow:0 2px 8px #0002;padding:8px;display:flex;align-items:center;justify-content:center;">
-                        <img src="images/icons/wp.png" alt="WhatsApp" style="height:36px;width:36px;display:block;">
-                    </a>
-                </div>
+        <!-- Botones flotantes -->
+        <div id="floating-buttons-container">
+          <div id="lang-flag-switcher" style="cursor:pointer;background:#fff;border-radius:50%;box-shadow:0 2px 8px #0002;padding:6px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;">
+            <img id="lang-flag-img" src="images/icons/gb.png" alt="Switch language" style="height:36px;width:auto;border-radius:3px;display:block;">
+          </div>
+          <a id="floating-whatsapp" href="https://wa.me/9163489026" target="_blank" rel="noopener" aria-label="WhatsApp" style="background:#25d366;border-radius:50%;box-shadow:0 2px 8px #0002;padding:8px;display:flex;align-items:center;justify-content:center;">
+            <img src="images/icons/wp.png" alt="WhatsApp" style="height:36px;width:36px;display:block;">
+          </a>
+        </div>
 
-                <nav id="main_menu" class="mobile_menu navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="mobile_menu_title" style="display:none;">MENU</li>
-                        <li class="dropdown simple_menu active"><a href="index.html"
-                                style="font-weight:bold;letter-spacing:1px;" data-i18n="HOME">HOME</a></li>
-                        <li class="dropdown simple_menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-i18n="ROOMS">ROOMS <b
-                                    class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#" data-i18n="VIEW ROOMS LIST">Rooms List View</a></li>
-                                <li><a href="#">Rooms Grid View</a></li>
-                                <li><a href="#">Rooms Block View</a></li>
-                                <li><a href="#">Room Details 1</a></li>
-                                <li><a href="#">Room Details 2</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#" data-i18n="CONTACT US">CONTACT US</a></li>
-                    </ul>
-                </nav>
+        <nav id="main_menu" class="mobile_menu navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="mobile_menu_title" style="display:none;">MENU</li>
+            <li class="dropdown simple_menu active"><a href="index.html" style="font-weight:bold;letter-spacing:1px;" data-i18n="HOME">HOME</a></li>
+            <li class="dropdown simple_menu">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-i18n="ROOMS">ROOMS <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#" data-i18n="VIEW ROOMS LIST">Rooms List View</a></li>
+                <li><a href="#">Rooms Grid View</a></li>
+                <li><a href="#">Rooms Block View</a></li>
+                <li><a href="#">Room Details 1</a></li>
+                <li><a href="#">Room Details 2</a></li>
+              </ul>
+            </li>
+            <li><a href="#" data-i18n="CONTACT US">CONTACT US</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main id="room_page">
+      <div class="container" style="margin-bottom:30px;">
+        <div class="main_title mt_wave mt_blue a_center wow animate__animated animate__fadeInUp">
+          <h2 data-i18n="image_gallery_title">JUNIOR - DOS MATRIMONIALES</h2>
+        </div>
+
+        <div class="row room-align-row">
+          <!-- Galería -->
+          <div class="col-md-8 gallery">
+            <section class="room-gallery-wrapper" style="padding-top: 20px;">
+              <div id="roomGalleryMain" class="owl-carousel room-gallery-main">
+                <div class="rg-item"><a href="images/rooms/junior/junior-1.jpg" title="Habitación Junior 1"><img src="images/rooms/junior/junior-1.jpg" alt="Habitación Junior 1"></a></div>
+                <div class="rg-item"><a href="images/rooms/junior/junior-2.jpg" title="Habitación Junior 2"><img src="images/rooms/junior/junior-2.jpg" alt="Habitación Junior 2"></a></div>
+                <div class="rg-item"><a href="images/rooms/junior/junior-3.jpg" title="Habitación Junior 3"><img src="images/rooms/junior/junior-3.jpg" alt="Habitación Junior 3"></a></div>
+                <div class="rg-item"><a href="images/rooms/junior/junior-4.jpg" title="Habitación Junior 4"><img src="images/rooms/junior/junior-4.jpg" alt="Habitación Junior 4"></a></div>
+                <div class="rg-item"><a href="images/rooms/junior/junior-5.jpg" title="Habitación Junior 5"><img src="images/rooms/junior/junior-5.jpg" alt="Habitación Junior 5"></a></div>
+                <div class="rg-item"><a href="images/rooms/junior/junior-6.jpg" title="Habitación Junior 6"><img src="images/rooms/junior/junior-6.jpg" alt="Habitación Junior 6"></a></div>
+                <div class="rg-item"><a href="images/rooms/junior/junior-7.jpg" title="Habitación Junior 7"><img src="images/rooms/junior/junior-7.jpg" alt="Habitación Junior 7"></a></div>
+              </div>
+
+              <div id="roomGalleryThumbs" class="room-gallery-thumbs">
+                <button class="rg-thumb is-active" data-index="0"><img src="images/rooms/junior/junior-1.jpg" alt=""></button>
+                <button class="rg-thumb" data-index="1"><img src="images/rooms/junior/junior-2.jpg" alt=""></button>
+                <button class="rg-thumb" data-index="2"><img src="images/rooms/junior/junior-3.jpg" alt=""></button>
+                <button class="rg-thumb" data-index="3"><img src="images/rooms/junior/junior-4.jpg" alt=""></button>
+                <button class="rg-thumb" data-index="4"><img src="images/rooms/junior/junior-5.jpg" alt=""></button>
+                <button class="rg-thumb" data-index="5"><img src="images/rooms/junior/junior-6.jpg" alt=""></button>
+                <button class="rg-thumb" data-index="6"><img src="images/rooms/junior/junior-7.jpg" alt=""></button>
+              </div>
+            </section>
+          </div>
+
+          <!-- Servicios -->
+          <div class="col-md-4" style="padding-top: 20px">
+            <aside class="room-side" style="gap:20px">
+              <!-- Panel de servicios primero -->
+              <section class="room-services-panel">
+                <h3 class="room-services-panel__title">Servicios</h3>
+                <ul class="services-grid">
+                  <li><i class="fa-solid fa-wifi"></i><span>Free WiFi</span></li>
+                  <li><i class="fa-solid fa-tv"></i><span>Flat-screen TV</span></li>
+                  <li><i class="fa-solid fa-mug-saucer"></i><span>Coffee maker</span></li>
+                  <li><i class="fa-solid fa-temperature-half"></i><span>Mini fridge</span></li>
+                  <li><i class="fa-regular fa-snowflake"></i><span>Air conditioning</span></li>
+                  <li><i class="fa-solid fa-bath"></i><span>Private bathroom</span></li>
+                  <li><i class="fa-solid fa-bed"></i><span>King-size bed</span></li>
+                  <li><i class="fa-solid fa-door-closed"></i><span>Closet</span></li>
+                </ul>
+              </section>
+              <!-- Carrusel de accesorios abajo -->
+              <section class="service-gallery-wrapper" style="padding-top:0;margin-top:20px;">
+                <div id="serviceGallery" class="owl-carousel service-gallery">
+                  <div class="sg-item"><img src="images/accesories/bata_bano.png" alt="Detalle 1"></div>
+                  <div class="sg-item"><img src="images/accesories/crema-corporal.png" alt="Detalle 2"></div>
+                  <div class="sg-item"><img src="images/accesories/jabon-mano.png" alt="Detalle 3"></div>
+                  <div class="sg-item"><img src="images/accesories/pantuflas.png" alt="Detalle 4"></div>
+                  <div class="sg-item"><img src="images/accesories/plancha.png" alt="Detalle 5"></div>
+                  <div class="sg-item"><img src="images/accesories/secadora.png" alt="Detalle 6"></div>
+                  <div class="sg-item"><img src="images/accesories/shampoo.png" alt="Detalle 7"></div>
+                  <div class="sg-item"><img src="images/accesories/toalla_manos.png" alt="Detalle 8"></div>
+                  <div class="sg-item"><img src="images/accesories/toallas.png" alt="Detalle 9"></div>
+                </div>
+              </section>
+            </aside>
+          </div>
+
+          <!-- Texto -->
+          <section class="junior-overview col-md-12" id="junior-info">
+            <div class="jo-head">
+              <h2 class="jo-title">Habitaciones Junior</h2>
+              <p class="jo-sub">Doble cama matrimonial o King + matrimonial · Espacios climatizados · Comodidad limpia y práctica.</p>
             </div>
-        </header>
 
-        <!-- MAIN -->
-        <main id="room_page">
-            <div class="container" style="margin-bottom:30px;">
-                <div class="main_title mt_wave mt_blue a_center wow animate__animated animate__fadeInUp">
-                    <h2 data-i18n="image_gallery_title">JUNIOR - DOS MATRIMONIALES</h2>
-                </div>
+            <ul class="jo-features" aria-label="Incluye">
+              <li><i class="fa-solid fa-bath"></i> Toallas</li>
+              <li><i class="fa-solid fa-shower"></i> Shampoo</li>
+              <li><i class="fa-solid fa-leaf"></i> Crema corporal</li>
+              <li><i class="fa-regular fa-hand"></i> Jabón manos</li>
+              <li><i class="fa-solid fa-snowflake"></i> Climatizadas</li>
+              <li><i class="fa-solid fa-mug-saucer"></i> Café / Té cortesía</li>
+            </ul>
 
-                <div class="row room-align-row">
-                    <!-- Galería -->
-                    <div class="col-md-8 gallery">
-                        <section class="room-gallery-wrapper" style="padding-top: 20px;">
-                            <div id="roomGalleryMain" class="owl-carousel room-gallery-main">
-                                <div class="rg-item"><a href="images/rooms/junior/junior-1.jpg"
-                                        title="Habitación Junior 1"><img src="images/rooms/junior/junior-1.jpg"
-                                            alt="Habitación Junior 1"></a></div>
-                                <div class="rg-item"><a href="images/rooms/junior/junior-2.jpg"
-                                        title="Habitación Junior 2"><img src="images/rooms/junior/junior-2.jpg"
-                                            alt="Habitación Junior 2"></a></div>
-                                <div class="rg-item"><a href="images/rooms/junior/junior-3.jpg"
-                                        title="Habitación Junior 3"><img src="images/rooms/junior/junior-3.jpg"
-                                            alt="Habitación Junior 3"></a></div>
-                                <div class="rg-item"><a href="images/rooms/junior/junior-4.jpg"
-                                        title="Habitación Junior 4"><img src="images/rooms/junior/junior-4.jpg"
-                                            alt="Habitación Junior 4"></a></div>
-                                <div class="rg-item"><a href="images/rooms/junior/junior-5.jpg"
-                                        title="Habitación Junior 5"><img src="images/rooms/junior/junior-5.jpg"
-                                            alt="Habitación Junior 5"></a></div>
-                                <div class="rg-item"><a href="images/rooms/junior/junior-6.jpg"
-                                        title="Habitación Junior 6"><img src="images/rooms/junior/junior-6.jpg"
-                                            alt="Habitación Junior 6"></a></div>
-                                <div class="rg-item"><a href="images/rooms/junior/junior-7.jpg"
-                                        title="Habitación Junior 7"><img src="images/rooms/junior/junior-7.jpg"
-                                            alt="Habitación Junior 7"></a></div>
-                            </div>
-
-                            <div id="roomGalleryThumbs" class="room-gallery-thumbs">
-                                <button class="rg-thumb is-active" data-index="0"><img
-                                        src="images/rooms/junior/junior-1.jpg" alt=""></button>
-                                <button class="rg-thumb" data-index="1"><img src="images/rooms/junior/junior-2.jpg"
-                                        alt=""></button>
-                                <button class="rg-thumb" data-index="2"><img src="images/rooms/junior/junior-3.jpg"
-                                        alt=""></button>
-                                <button class="rg-thumb" data-index="3"><img src="images/rooms/junior/junior-4.jpg"
-                                        alt=""></button>
-                                <button class="rg-thumb" data-index="4"><img src="images/rooms/junior/junior-5.jpg"
-                                        alt=""></button>
-                                <button class="rg-thumb" data-index="5"><img src="images/rooms/junior/junior-6.jpg"
-                                        alt=""></button>
-                                <button class="rg-thumb" data-index="6"><img src="images/rooms/junior/junior-7.jpg"
-                                        alt=""></button>
-                            </div>
-                        </section>
-                    </div>
-
-                    <!-- Servicios -->
-                    <div class="col-md-4" style="padding-top: 20px;">
-                        <aside class="room-side">
-                            <section class="room-services-panel">
-                                <h3 class="room-services-panel__title">Servicios</h3>
-                                <ul class="services-grid">
-                                    <li><i class="fa-solid fa-wifi"></i><span>Free WiFi</span></li>
-                                    <li><i class="fa-solid fa-tv"></i><span>Flat-screen TV</span></li>
-                                    <li><i class="fa-solid fa-mug-saucer"></i><span>Coffee maker</span></li>
-                                    <li><i class="fa-solid fa-temperature-half"></i><span>Mini fridge</span></li>
-                                    <li><i class="fa-regular fa-snowflake"></i><span>Air conditioning</span></li>
-                                    <li><i class="fa-solid fa-bath"></i><span>Private bathroom</span></li>
-                                    <li><i class="fa-solid fa-bed"></i><span>King-size bed</span></li>
-                                    <li><i class="fa-solid fa-door-closed"></i><span>Closet</span></li>
-                                </ul>
-                            </section>
-                        </aside>
-                    </div>
-
-                    <!-- Texto -->
-                     <section class="junior-overview col-md-12" id="junior-info">
-                        <div class="jo-head">
-                            <h2 class="jo-title">Habitaciones Junior</h2>
-                            <p class="jo-sub">Doble cama matrimonial o King + matrimonial · Espacios climatizados ·
-                                Comodidad limpia y práctica.</p>
-                        </div>
-
-                        <ul class="jo-features" aria-label="Incluye">
-                            <li><i class="fa-solid fa-bath"></i> Toallas</li>
-                            <li><i class="fa-solid fa-shower"></i> Shampoo</li>
-                            <li><i class="fa-solid fa-leaf"></i> Crema corporal</li>
-                            <li><i class="fa-regular fa-hand"></i> Jabón manos</li>
-                            <li><i class="fa-solid fa-snowflake"></i> Climatizadas</li>
-                            <li><i class="fa-solid fa-mug-saucer"></i> Café / Té cortesía</li>
-                        </ul>
-
-
-                        <div class="jo-text cols-3">
-                            <p>Diseñadas para familias pequeñas, parejas o viajeros que buscan un equilibrio
-                                inteligente entre precio y comodidad: colchones confort firm, aire acondicionado
-                                eficiente y buena acústica para un descanso real sin interrupciones.</p>
-                            <p>Baño privado con agua caliente, señal WiFi estable para trabajo ligero y mobiliario
-                                funcional que mantiene el espacio ordenado. Elige configuración 2 matrimoniales o
-                                King + matrimonial según la dinámica de tu grupo.</p>
-                            <p>Amenidades frescas se renuevan a diario: toallas esponjosas, shampoo, crema y jabón
-                                de manos. Comienza la mañana con café o té de cortesía antes de explorar la zona
-                                arqueológica y las cascadas cercanas.</p>
-                        </div>
-
-
-                        <div class="jo-highlights">
-                            <article class="jo-hcard">
-                                <i class="fa fa-check"></i>
-                                <h3>Descanso real</h3>
-                                <p>Colchones seleccionados + climatización silenciosa.</p>
-                            </article>
-                            <article class="jo-hcard">
-                                <i class="fa fa-shield"></i>
-                                <h3>Higiene cuidada</h3>
-                                <p>Protocolos de limpieza y textiles frescos.</p>
-                            </article>
-                            <article class="jo-hcard">
-                                <i class="fa fa-map-marker"></i>
-                                <h3>Ubicación céntrica</h3>
-                                <p>Acceso rápido a terminal, comida y tours.</p>
-                            </article>
-                            <article class="jo-hcard">
-                                <i class="fa fa-whatsapp"></i>
-                                <h3>Atención directa</h3>
-                                <p>Confirmación rápida vía WhatsApp.</p>
-                            </article>
-                        </div>
-                    </section>
-                </div>
+            <div class="jo-text cols-3">
+              <p>Diseñadas para familias pequeñas, parejas o viajeros que buscan un equilibrio inteligente entre precio y comodidad: colchones confort firm, aire acondicionado eficiente y buena acústica para un descanso real sin interrupciones.</p>
+              <p>Baño privado con agua caliente, señal WiFi estable para trabajo ligero y mobiliario funcional que mantiene el espacio ordenado. Elige configuración 2 matrimoniales o King + matrimonial según la dinámica de tu grupo.</p>
+              <p>Amenidades frescas se renuevan a diario: toallas esponjosas, shampoo, crema y jabón de manos. Comienza la mañana con café o té de cortesía antes de explorar la zona arqueológica y las cascadas cercanas.</p>
             </div>
-        </main>
 
-        <!-- FOOTER -->
-        <footer class="footer_dark"
-            style="background:#0f1b2a;color:#d0d6dc;padding:60px 0 30px;font-size:14px;line-height:1.6;">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4 col-sm-6">
-                        <h5 style="color:#fff;font-weight:700;margin-bottom:15px;">Hotel Marina Canek</h5>
-                        <p style="margin-bottom:12px;color:#fff;">Tu puerto de descanso en Palenque.</p>
-                        <p style="opacity:.85;color:#fff;">Experiencia acogedora, ubicación céntrica y atención cordial
-                            para tu estancia.</p>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <h5 style="color:#fff;font-weight:700;margin-bottom:15px;">Contacto</h5>
-                        <ul style="list-style:none;padding:0;margin:0;">
-                            <li><strong>Dirección:</strong><br>2a. Avenida Sur Pte., Centro, 29960 Palenque, Chiapas,
-                                México</li>
-                            <li style="margin-top:10px;"><strong>WhatsApp:</strong><br><a
-                                    href="https://wa.me/5219163489026" target="_blank"
-                                    style="color:#58b1ff;text-decoration:none;">+52 1 916 348 9026</a></li>
-                            <li style="margin-top:10px;"><strong>Email:</strong><br><a
-                                    href="mailto:reservas@hotelmarinacanek.com"
-                                    style="color:#58b1ff;text-decoration:none;">reservas@hotelmarinacanek.com</a></li>
-                            <li style="margin-top:10px;"><strong>Coordenadas:</strong><br>17.509757, -91.981700</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4 col-sm-12">
-                        <h5 style="color:#fff;font-weight:700;margin-bottom:15px;">Enlaces rápidos</h5>
-                        <ul style="list-style:none;padding:0;margin:0;columns:2;gap:0;">
-                            <li><a href="#features" style="color:#d0d6dc;text-decoration:none;">Características</a></li>
-                            <li><a href="#rooms" style="color:#d0d6dc;text-decoration:none;">Habitaciones</a></li>
-                            <li><a href="#contact" style="color:#d0d6dc;text-decoration:none;">Contacto</a></li>
-                            <li><a href="#gallery" style="color:#d0d6dc;text-decoration:none;">Galería</a></li>
-                            <li><a href="#offers" style="color:#d0d6dc;text-decoration:none;">Ofertas</a></li>
-                            <li><a href="#booking" style="color:#d0d6dc;text-decoration:none;">Reservar</a></li>
-                        </ul>
-                        <div style="margin-top:18px;display:flex;gap:10px;">
-                            <a href="https://wa.me/5219163489026" target="_blank" aria-label="WhatsApp"
-                                style="width:38px;height:38px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:18px;">
-                                <span class="fa-brands fa-whatsapp"></span>
-                            </a>
-                            <a href="#" aria-label="Facebook"
-                                style="width:38px;height:38px;background:#154D71;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:15px;">
-                                <span class="fa-brands fa-facebook-f"></span>
-                            </a>
-                            <a href="#" aria-label="Instagram"
-                                style="width:38px;height:38px;background:#154D71;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:15px;">
-                                <span class="fa-brands fa-instagram"></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <hr style="border:none;border-top:1px solid rgba(255,255,255,.08);margin:35px 0 20px;">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <p style="margin:0;font-size:13px;color:#fff;">© <span id="yearCopy"></span> Hotel Marina Canek.
-                            Todos los derechos reservados.</p>
-                    </div>
-                    <div class="col-sm-6" style="text-align:right;"><a href="#top"
-                            style="color:#58b1ff;text-decoration:none;font-size:13px;">Volver arriba ↑</a></div>
-                </div>
+            <div class="jo-highlights">
+              <article class="jo-hcard"><i class="fa fa-check"></i><h3>Descanso real</h3><p>Colchones seleccionados + climatización silenciosa.</p></article>
+              <article class="jo-hcard"><i class="fa fa-shield"></i><h3>Higiene cuidada</h3><p>Protocolos de limpieza y textiles frescos.</p></article>
+              <article class="jo-hcard"><i class="fa fa-map-marker"></i><h3>Ubicación céntrica</h3><p>Acceso rápido a terminal, comida y tours.</p></article>
+              <article class="jo-hcard"><i class="fa fa-whatsapp"></i><h3>Atención directa</h3><p>Confirmación rápida vía WhatsApp.</p></article>
             </div>
-        </footer>
-    </div>
+          </section>
+        </div>
+      </div>
+    </main>
 
-    <!-- JS -->
-    <script src="js/jquery.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/bootstrap-datepicker.min.js"></script>
-    <script src="js/bootstrap-select.min.js"></script>
-    <script src="js/jquery.smoothState.js"></script>
-    <script src="js/moment.min.js"></script>
-    <script src="js/morphext.min.js"></script>
-    <script src="js/wow.min.js"></script>
-    <script src="js/jquery.easing.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/owl.carousel.thumbs.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/jPushMenu.js"></script>
-    <script src="js/isotope.pkgd.min.js"></script>
-    <script src="js/imagesloaded.pkgd.min.js"></script>
-    <script src="js/countUp.min.js"></script>
-    <script src="js/jquery.countdown.min.js"></script>
-    <script src="js/main.js"></script>
+    <!-- FOOTER -->
+    <footer class="footer_dark" style="background:#0f1b2a;color:#d0d6dc;padding:60px 0 30px;font-size:14px;line-height:1.6;">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-6">
+            <h5 style="color:#fff;font-weight:700;margin-bottom:15px;">Hotel Marina Canek</h5>
+            <p style="margin-bottom:12px;color:#fff;">Tu puerto de descanso en Palenque.</p>
+            <p style="opacity:.85;color:#fff;">Experiencia acogedora, ubicación céntrica y atención cordial para tu estancia.</p>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <h5 style="color:#fff;font-weight:700;margin-bottom:15px;">Contacto</h5>
+            <ul style="list-style:none;padding:0;margin:0;">
+              <li><strong>Dirección:</strong><br>2a. Avenida Sur Pte., Centro, 29960 Palenque, Chiapas, México</li>
+              <li style="margin-top:10px;"><strong>WhatsApp:</strong><br><a href="https://wa.me/5219163489026" target="_blank" style="color:#58b1ff;text-decoration:none;">+52 1 916 348 9026</a></li>
+              <li style="margin-top:10px;"><strong>Email:</strong><br><a href="mailto:reservas@hotelmarinacanek.com" style="color:#58b1ff;text-decoration:none;">reservas@hotelmarinacanek.com</a></li>
+              <li style="margin-top:10px;"><strong>Coordenadas:</strong><br>17.509757, -91.981700</li>
+            </ul>
+          </div>
+          <div class="col-md-4 col-sm-12">
+            <h5 style="color:#fff;font-weight:700;margin-bottom:15px;">Enlaces rápidos</h5>
+            <ul style="list-style:none;padding:0;margin:0;columns:2;gap:0;">
+              <li><a href="#features" style="color:#d0d6dc;text-decoration:none;">Características</a></li>
+              <li><a href="#rooms" style="color:#d0d6dc;text-decoration:none;">Habitaciones</a></li>
+              <li><a href="#contact" style="color:#d0d6dc;text-decoration:none;">Contacto</a></li>
+              <li><a href="#gallery" style="color:#d0d6dc;text-decoration:none;">Galería</a></li>
+              <li><a href="#offers" style="color:#d0d6dc;text-decoration:none;">Ofertas</a></li>
+              <li><a href="#booking" style="color:#d0d6dc;text-decoration:none;">Reservar</a></li>
+            </ul>
+            <div style="margin-top:18px;display:flex;gap:10px;">
+              <a href="https://wa.me/5219163489026" target="_blank" aria-label="WhatsApp" style="width:38px;height:38px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:18px;">
+                <span class="fa-brands fa-whatsapp"></span>
+              </a>
+              <a href="#" aria-label="Facebook" style="width:38px;height:38px;background:#154D71;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:15px;">
+                <span class="fa-brands fa-facebook-f"></span>
+              </a>
+              <a href="#" aria-label="Instagram" style="width:38px;height:38px;background:#154D71;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:15px;">
+                <span class="fa-brands fa-instagram"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <hr style="border:none;border-top:1px solid rgba(255,255,255,.08);margin:35px 0 20px;">
+        <div class="row">
+          <div class="col-sm-6">
+            <p style="margin:0;font-size:13px;color:#fff;">© <span id="yearCopy"></span> Hotel Marina Canek. Todos los derechos reservados.</p>
+          </div>
+          <div class="col-sm-6" style="text-align:right;"><a href="#top" style="color:#58b1ff;text-decoration:none;font-size:13px;">Volver arriba ↑</a></div>
+        </div>
+      </div>
+    </footer>
+  </div>
 
-    <!-- Init unificado del carrusel (con fixes móvil) -->
-    <script>
-        $(function () {
-            const $main = $('#roomGalleryMain');
+  <!-- JS -->
+  <script src="js/jquery.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/bootstrap-datepicker.min.js"></script>
+  <script src="js/bootstrap-select.min.js"></script>
+  <script src="js/jquery.smoothState.js"></script>
+  <script src="js/moment.min.js"></script>
+  <script src="js/morphext.min.js"></script>
+  <script src="js/wow.min.js"></script>
+  <script src="js/jquery.easing.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/owl.carousel.thumbs.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/jPushMenu.js"></script>
+  <script src="js/isotope.pkgd.min.js"></script>
+  <script src="js/imagesloaded.pkgd.min.js"></script>
+  <script src="js/countUp.min.js"></script>
+  <script src="js/jquery.countdown.min.js"></script>
+  <script src="js/main.js"></script>
 
-            // Evita doble inicialización
-            if ($main.data('owl.carousel')) {
-                $main.trigger('destroy.owl.carousel');
-                $main.find('.owl-stage-outer').children().unwrap();
-            }
-
-            $main.owlCarousel({
-                items: 1,
-                loop: true,
-                nav: true,
-                dots: false,
-                smartSpeed: 450,
-                navText: ['<span class="rg-arw">&lsaquo;</span>', '<span class="rg-arw">&rsaquo;</span>'],
-                autoplay: false,
-                autoplayHoverPause: true,
-                touchDrag: true,
-                mouseDrag: true,
-                autoHeight: true   // <--- clave para que no colapse en móvil
-            });
-
-            // Refresca cuando todo cargó (si el init fue temprano)
-            $(window).on('load', function () {
-                $main.trigger('refresh.owl.carousel');
-            });
-
-            // Refresca al rotar / cambiar tamaño
-            $(window).on('orientationchange resize', function () {
-                $main.trigger('refresh.owl.carousel');
-            });
-
-            // Thumbs
-            const $thumbsWrap = $('#roomGalleryThumbs');
-            $thumbsWrap.on('click', '.rg-thumb', function () {
-                $main.trigger('to.owl.carousel', [+this.dataset.index, 400, true]);
-            });
-            $main.on('changed.owl.carousel', function (e) {
-                const count = e.item.count;
-                let realIndex = (e.item.index - e.relatedTarget._clones.length / 2) % count;
-                if (realIndex < 0) realIndex += count;
-                $thumbsWrap.find('.rg-thumb').removeClass('is-active').eq(realIndex).addClass('is-active');
-            });
-
-            // Lightbox
-            if ($.fn.magnificPopup) {
-                $main.magnificPopup({
-                    delegate: 'a',
-                    type: 'image',
-                    gallery: { enabled: true },
-                    image: { titleSrc: 'title' },
-                    removalDelay: 150,
-                    mainClass: 'mfp-fade'
-                });
-            }
-
-            // Año en footer
-            document.getElementById('yearCopy').textContent = new Date().getFullYear();
+  <!-- Init unificado del carrusel (con fixes móvil) -->
+  <script>
+    $(function () {
+      const $service = $('#serviceGallery');
+      if ($service.length) {
+        // Inyecta el fondo blur-fill por slide
+        $('#serviceGallery .sg-item').each(function () {
+          const img = $(this).find('img')[0];
+          if (img && img.getAttribute('src')) {
+            this.style.setProperty('--sg-bg', `url("${img.getAttribute('src')}")`);
+          }
         });
-    </script>
-</body>
 
+        $service.owlCarousel({
+          items: 1,
+          loop: true,
+          nav: false,
+          dots: true,
+          smartSpeed: 400,
+          autoplay: true,
+          autoplayTimeout: 2000,
+          autoplayHoverPause: true,
+          autoHeight: false // altura controlada por CSS (--sg-h)
+        });
+
+        $(window).on('orientationchange resize', function () {
+          $service.trigger('refresh.owl.carousel');
+        });
+      }
+    });
+
+    $(function () {
+      const $main = $('#roomGalleryMain');
+
+      // Evita doble inicialización
+      if ($main.data('owl.carousel')) {
+        $main.trigger('destroy.owl.carousel');
+        $main.find('.owl-stage-outer').children().unwrap();
+      }
+
+      $main.owlCarousel({
+        items: 1,
+        loop: true,
+        nav: true,
+        dots: false,
+        smartSpeed: 450,
+        navText: ['<span class="rg-arw">&lsaquo;</span>', '<span class="rg-arw">&rsaquo;</span>'],
+        autoplay: false,
+        autoplayHoverPause: true,
+        touchDrag: true,
+        mouseDrag: true,
+        autoHeight: true
+      });
+
+      $(window).on('load', function () { $main.trigger('refresh.owl.carousel'); });
+      $(window).on('orientationchange resize', function () { $main.trigger('refresh.owl.carousel'); });
+
+      // Thumbs
+      const $thumbsWrap = $('#roomGalleryThumbs');
+      $thumbsWrap.on('click', '.rg-thumb', function () {
+        $main.trigger('to.owl.carousel', [+this.dataset.index, 400, true]);
+      });
+      $main.on('changed.owl.carousel', function (e) {
+        const count = e.item.count;
+        let realIndex = (e.item.index - e.relatedTarget._clones.length / 2) % count;
+        if (realIndex < 0) realIndex += count;
+        $thumbsWrap.find('.rg-thumb').removeClass('is-active').eq(realIndex).addClass('is-active');
+      });
+
+      // Lightbox
+      if ($.fn.magnificPopup) {
+        $main.magnificPopup({
+          delegate: 'a',
+          type: 'image',
+          gallery: { enabled: true },
+          image: { titleSrc: 'title' },
+          removalDelay: 150,
+          mainClass: 'mfp-fade'
+        });
+      }
+
+      // Año en footer
+      document.getElementById('yearCopy').textContent = new Date().getFullYear();
+    });
+  </script>
+</body>
 </html>
