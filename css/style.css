@@ -1817,38 +1817,48 @@ button {
 
 /* ---------- 4.1 Header ---------- */
 header {
-    width: 100%;
-    background: #fff;
-    border-bottom: 1px solid #23272f;
-    z-index: 9999;
+  position: fixed;          /* <- ya no cambia */
+  top: 0;
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #23272f;
+  z-index: 9999;
+  transition:
+    top .28s ease,
+    background-color .28s ease,
+    border-color .28s ease;
 }
+
 
 .mfp-zoom-out-cur header {
     padding-right: 17px;
 }
 
 header.transparent {
-    background: transparent;
-    border-bottom: none;
-    z-index: 99;
-    top: 50px;
+  background: transparent;
+  border-bottom: none;
+  z-index: 99;
+  top: 30px;                /* <- esto sí se anima */
 }
-
-header.nav_bg {
-    background: #0d2145;
-}
-
-header.transparent.fixed {
-    position: absolute;
-}
-
 header.transparent.navbar-fixed-top {
-    position: fixed;
+  top: 0;                  /* <- transición suave */
+  background: #0d2145;
+  border-bottom: 1px solid #23272f;
+}
+/* Utilidad existente */
+header .nodisplay { display: none; }
+
+/* Si usas este estado, que no toque position */
+header.transparent.nav_bg {
+  border-bottom: 1px solid #23272f;
+  top: 0;                  /* también se animará */
 }
 
-header .nodisplay {
-    display: none;
+/* Opcional: respetar accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  header { transition: none; }
 }
+
 
 header.transparent.nav_bg {
     border-bottom: 1px solid #23272f;
@@ -1857,9 +1867,13 @@ header.transparent.nav_bg {
 
 header .navbar-header .navbar-brand {
     padding: 0px 0;
-    margin-top: -10px; 
+    /* margin-top: -10px;  */
     -webkit-transition: all .3s;
     transition: all .3s;
+}
+
+header .navbar-header .navbar-brand {
+    margin-top: 10px;
 }
 
 header.scroll .navbar-header .navbar-brand {
@@ -5369,10 +5383,6 @@ figure:hover .room_list_slider .owl-nav .owl-next {
   background: #0d2145 !important;
   top: 0px !important;
 }
-.site-header {
-  background:#0d2145 !important;
-  top:0 !important;
-}
 /* Ensure card header styling (now a div, not <header>) */
 .room-card__header{display:flex;flex-direction:column;gap:6px;}
 .room-card__header .room-card__title{margin:0;}
@@ -5514,12 +5524,7 @@ figure:hover .room_list_slider .owl-nav .owl-next {
   border-radius:24px;
   padding:26px 24px 28px;
 }
-.room-services-panel__title{
-  margin:0 0 18px;
-  font:700 1rem 'Raleway',sans-serif;
-  letter-spacing:.5px;
-  color:#142a35;
-}
+
 .services-grid{
   list-style:none;
   margin:0;

@@ -1,4 +1,4 @@
- /*================================================
+/*================================================
 * Template Name: Hotel Marina Canek - Hotel & Resort HTML Template
 * Version: 1.3
 * Author Name: Jomin Muskaj (Eagle-Themes)
@@ -13,22 +13,22 @@
         $("#loading").fadeOut(500);
     });
 
-    
+
     /*Document is Raedy */
     $(document).ready(function () {
 
         /*========== SMOOTHSTATE ==========*/
-        $('#smoothpage').smoothState({ 
+        $('#smoothpage').smoothState({
             anchors: 'nav a',
-            blacklist: 'form',                         
+            blacklist: 'form',
         });
-        
+
         /*========== TEXT ROTATION ==========*/
         $("#text_rotating").Morphext({
             animation: "fadeInDown",
             separator: ",",
             speed: 5000,
-            complete: function () {}
+            complete: function () { }
         });
 
         /*========== WOW ==========*/
@@ -38,15 +38,15 @@
             offset: 0,
             mobile: true,
             live: true,
-            callback: function (box) {}
+            callback: function (box) { }
         });
         wow.init();
 
         /*========== MENU ==========*/
         $(window).on("scroll", function () {
-            
+
             var header = $('header')
-            
+
             if (header.length > 0) {
 
                 var window_height = $(this).scrollTop();
@@ -56,9 +56,7 @@
 
                     if (header.hasClass("transparent"))
                         header.addClass("nav_bg");
-                    // Logo
-                    $(".light").addClass("nodisplay");
-                    $(".dark").removeClass("nodisplay");
+
 
                     // Check if Header is fixed or not
                     if (header.hasClass('fixed')) {
@@ -71,38 +69,35 @@
                     if (header.hasClass("nav_bg"))
                         header.removeClass("nav_bg");
 
-                    $(".dark").addClass("nodisplay");
-                    $(".light").removeClass("nodisplay");
-
                     header.removeClass("scroll");
                     header.removeClass("navbar-fixed-top");
                 }
             }
         });
-        
+
         $(function () {
             function toggleNavbarMethod() {
                 if ($(window).width() > 992) {
-                    
+
                     $('.dropdown')
                         .on('mouseover', function () {
                             $(this).addClass('open');
                             $('b', this).toggleClass("caret caret-up");
                         })
 
-                    .on('mouseout', function () {
-                        $(this).removeClass('open');
-                        $('b', this).toggleClass("caret caret-up");
-                    });
+                        .on('mouseout', function () {
+                            $(this).removeClass('open');
+                            $('b', this).toggleClass("caret caret-up");
+                        });
 
 
                 } else {
                     $('.dropdown').off('mouseover').off('mouseout');
                     $('.dropdown-toggle')
 
-                    .on('click', function (e) {
-                        $('b', this).toggleClass("caret caret-up");
-                    });
+                        .on('click', function (e) {
+                            $('b', this).toggleClass("caret caret-up");
+                        });
 
                 }
             }
@@ -129,7 +124,7 @@
                     '<div class="count_box"><div class="inner"><div class="count_number">%D</div><div class="count_text">Days</div></div></div> ' + '<div class="count_box"><div class="inner"><div class="count_number">%H</div><div class="count_text">Hours</div></div></div> ' + '<div class="count_box"><div class="inner"><div class="count_number">%M</div><div class="count_text">Minutes</div></div></div> ' + '<div class="count_box"><div class="inner"><div class="count_number">%S</div><div class="count_text">Seconds</div><div></div>'));
             });
         });
-        
+
         /*========== REVOLUTION SLIDER ==========*/
 
         /* ----- Home Page 4 ----- */
@@ -172,50 +167,50 @@
                 }
             });
         };
-        
+
         /* ----- Coming Soon ----- */
         if ($("#hero_coming_soon").length > 0) {
-           var tpj = jQuery;
-           var revapi279;
-           tpj(document).ready(function () {
-               if (tpj("#hero_coming_soon").revolution == undefined) {
-                   revslider_showDoubleJqueryError("#hero_coming_soon");
-               } else {
-                   revapi279 = tpj("#hero_coming_soon").show().revolution({
-                       sliderType: "hero",
-                       jsFileLocation: "js/",
-                       sliderLayout: "fullscreen",
-                       dottedOverlay: "twoxtwo",
-                       delay: 9000,
-                       navigation: {},
-                       responsiveLevels: [1200, 992, 768, 480],
-                       visibilityLevels: [1200, 992, 768, 480],
-                       gridwidth: [1200, 992, 768, 480],
-                       gridheight: [1080, 800, 800, 800],
-                       lazyType: "none",
-                       parallax: {
-                           type: "scroll",
-                           origo: "slidercenter",
-                           speed: 1000,
-                           levels: [5, 10, 15, 20, 25, 30, 35, 40, 45, 46, 47, 48, 49, 50, 51, 55],
-                       },
-                       shadow: 0,
-                       spinner: "spinner2",
-                       disableProgressBar: "on",
-                       hideThumbsOnMobile: "off",
-                       hideSliderAtLimit: 0,
-                       hideCaptionAtLimit: 0,
-                       hideAllCaptionAtLilmit: 0,
-                       debugMode: false,
-                       fallbacks: {
-                           simplifyAll: "off",
-                           disableFocusListener: false,
-                       }
-                   });
-               }
-           });
+            var tpj = jQuery;
+            var revapi279;
+            tpj(document).ready(function () {
+                if (tpj("#hero_coming_soon").revolution == undefined) {
+                    revslider_showDoubleJqueryError("#hero_coming_soon");
+                } else {
+                    revapi279 = tpj("#hero_coming_soon").show().revolution({
+                        sliderType: "hero",
+                        jsFileLocation: "js/",
+                        sliderLayout: "fullscreen",
+                        dottedOverlay: "twoxtwo",
+                        delay: 9000,
+                        navigation: {},
+                        responsiveLevels: [1200, 992, 768, 480],
+                        visibilityLevels: [1200, 992, 768, 480],
+                        gridwidth: [1200, 992, 768, 480],
+                        gridheight: [1080, 800, 800, 800],
+                        lazyType: "none",
+                        parallax: {
+                            type: "scroll",
+                            origo: "slidercenter",
+                            speed: 1000,
+                            levels: [5, 10, 15, 20, 25, 30, 35, 40, 45, 46, 47, 48, 49, 50, 51, 55],
+                        },
+                        shadow: 0,
+                        spinner: "spinner2",
+                        disableProgressBar: "on",
+                        hideThumbsOnMobile: "off",
+                        hideSliderAtLimit: 0,
+                        hideCaptionAtLimit: 0,
+                        hideAllCaptionAtLilmit: 0,
+                        debugMode: false,
+                        fallbacks: {
+                            simplifyAll: "off",
+                            disableFocusListener: false,
+                        }
+                    });
+                }
+            });
         };
-        
+
         /* ----- Event Details ----- */
         if ($("#hero_event").length > 0) {
             var tpj = jQuery;
@@ -257,65 +252,24 @@
                     });
                 }
             });
-         };
-        
-         /* ----- Restaurant ----- */
-         if ($("#hero_restaurant").length > 0) {
-             var tpj = jQuery;
-             var revapi429;
-             tpj(document).ready(function () {
-                 if (tpj("#hero_restaurant").revolution == undefined) {
-                     revslider_showDoubleJqueryError("#hero_restaurant");
-                 } else {
-                     revapi429 = tpj("#hero_restaurant").show().revolution({
-                         sliderType: "hero",
-                         dottedOverlay: "twoxtwo",
-                         delay: 9000,
-                         responsiveLevels: [1200, 992, 768, 480],
-                         visibilityLevels: [1200, 992, 768, 480],
-                         gridwidth: [1200, 992, 768, 480],
-                         gridheight: [550, 550, 550, 550],
-                         lazyType: "none",
-                         parallax: {
-                             type: "scroll",
-                             origo: "enterpoint",
-                             speed: 400,
-                             levels: [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],
-                         },
-                         shadow: 0,
-                         spinner: "off",
-                         autoHeight: "off",
-                         forceFullWidth: "off",
-                         disableProgressBar: "on",
-                         hideSliderAtLimit: 0,
-                         hideCaptionAtLimit: 0,
-                         hideAllCaptionAtLilmit: 0,
-                         debugMode: false,
-                         fallbacks: {
-                             simplifyAll: "off",
-                             disableFocusListener: false,
-                         }
-                     });
-                 }
-             });
-         };
-        
-         /* ----- Spa ----- */
-         if ($("#hero_spa").length > 0) {
+        };
+
+        /* ----- Restaurant ----- */
+        if ($("#hero_restaurant").length > 0) {
             var tpj = jQuery;
             var revapi429;
             tpj(document).ready(function () {
-                if (tpj("#hero_spa").revolution == undefined) {
-                    revslider_showDoubleJqueryError("#hero_spa");
+                if (tpj("#hero_restaurant").revolution == undefined) {
+                    revslider_showDoubleJqueryError("#hero_restaurant");
                 } else {
-                    revapi429 = tpj("#hero_spa").show().revolution({
+                    revapi429 = tpj("#hero_restaurant").show().revolution({
                         sliderType: "hero",
-                        dottedOverlay: "twoxtwo",   
+                        dottedOverlay: "twoxtwo",
                         delay: 9000,
                         responsiveLevels: [1200, 992, 768, 480],
-                        visibilityLevels: [1200, 992, 768, 480], 
+                        visibilityLevels: [1200, 992, 768, 480],
                         gridwidth: [1200, 992, 768, 480],
-                        gridheight:[550, 550, 550, 550],
+                        gridheight: [550, 550, 550, 550],
                         lazyType: "none",
                         parallax: {
                             type: "scroll",
@@ -324,9 +278,9 @@
                             levels: [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],
                         },
                         shadow: 0,
-                        spinner: "off", 
+                        spinner: "off",
                         autoHeight: "off",
-                        forceFullWidth:"off",
+                        forceFullWidth: "off",
                         disableProgressBar: "on",
                         hideSliderAtLimit: 0,
                         hideCaptionAtLimit: 0,
@@ -339,8 +293,49 @@
                     });
                 }
             });
-         };
-        
+        };
+
+        /* ----- Spa ----- */
+        if ($("#hero_spa").length > 0) {
+            var tpj = jQuery;
+            var revapi429;
+            tpj(document).ready(function () {
+                if (tpj("#hero_spa").revolution == undefined) {
+                    revslider_showDoubleJqueryError("#hero_spa");
+                } else {
+                    revapi429 = tpj("#hero_spa").show().revolution({
+                        sliderType: "hero",
+                        dottedOverlay: "twoxtwo",
+                        delay: 9000,
+                        responsiveLevels: [1200, 992, 768, 480],
+                        visibilityLevels: [1200, 992, 768, 480],
+                        gridwidth: [1200, 992, 768, 480],
+                        gridheight: [550, 550, 550, 550],
+                        lazyType: "none",
+                        parallax: {
+                            type: "scroll",
+                            origo: "enterpoint",
+                            speed: 400,
+                            levels: [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],
+                        },
+                        shadow: 0,
+                        spinner: "off",
+                        autoHeight: "off",
+                        forceFullWidth: "off",
+                        disableProgressBar: "on",
+                        hideSliderAtLimit: 0,
+                        hideCaptionAtLimit: 0,
+                        hideAllCaptionAtLilmit: 0,
+                        debugMode: false,
+                        fallbacks: {
+                            simplifyAll: "off",
+                            disableFocusListener: false,
+                        }
+                    });
+                }
+            });
+        };
+
         /*========== COUNT UP ==========*/
         var options = {
             useEasing: true,
@@ -399,18 +394,18 @@
                     $buttonGroup.find('.active').removeClass('active');
                     $(this).addClass('active');
                 });
-            }); 
-            
+            });
+
             // fix for isotope overlapping images
             if ($("#gallery").length > 0) {
                 // layout Isotope after each image loads
-                $grid.imagesLoaded().progress( function() {
-                  $grid.isotope('layout');
+                $grid.imagesLoaded().progress(function () {
+                    $grid.isotope('layout');
                 });
             }
-            
+
         });
-        
+
         /*========== GALLERY SLIDER ==========*/
         var owl = $('#gallery_slider');
         owl.owlCarousel({
@@ -439,9 +434,9 @@
             duration = 300;
 
         $sync1.owlCarousel({
-                items: 1,
-                dots: false,
-            })
+            items: 1,
+            dots: false,
+        })
             .on('changed.owl.carousel', function (e) {
                 var syncedPosition = syncPosition(e.item.index);
 
@@ -585,7 +580,7 @@
                     $(this).addClass("scale-out");
                     next();
                 });
-                $(".notification").on("click", function(){ 
+                $(".notification").on("click", function () {
                     $(this).addClass("scale-out");
                 });
 
@@ -628,21 +623,21 @@
                     $("input, textarea").val('');
                 }
 
-                $("#notification").html(output); 
+                $("#notification").html(output);
 
                 $(".notification").delay(15000).queue(function (next) {
                     $(this).addClass("scale-out");
                     next();
                 });
-                $(".notification").on("click", function(){ 
+                $(".notification").on("click", function () {
                     $(this).addClass("scale-out");
                 });
 
             }, 'json');
         });
 
-       /*========== SUBSCRIBE FORM ==========*/
-       $("#subscribe-form").on('submit', function (e) {
+        /*========== SUBSCRIBE FORM ==========*/
+        $("#subscribe-form").on('submit', function (e) {
             e.preventDefault();
 
             //Get input field values from HTML form
@@ -674,13 +669,13 @@
                     $(this).addClass("scale-out");
                     next();
                 });
-                $(".notification").on("click", function(){ 
+                $(".notification").on("click", function () {
                     $(this).addClass("scale-out");
                 });
 
             }, 'json');
         });
-        
+
         /*========== MAGNIFIC POPUP ==========*/
         $(".magnific-popup, a[data-rel^='magnific-popup']").magnificPopup({
             type: 'image',
@@ -738,86 +733,86 @@
         /*========== POP OVER & TOOLTIP ==========*/
         $('[data-toggle="popover"]').popover();
         $('[data-toggle="tooltip"]').tooltip({
-           animated: 'fade', 
-           container: 'body'
+            animated: 'fade',
+            container: 'body'
         });
 
         /*========== GOOGLE MAP ==========*/
-         function initialize() {
-        var map;
-        var panorama;
+        function initialize() {
+            var map;
+            var panorama;
 
-        // Coordenadas de Hotel Marina Canek (Palenque, Chiapas)
-        var var_latitude = 17.509757; 
-        var var_longitude = -91.981700; 
-        var pin = 'images/icons/pin.svg';
+            // Coordenadas de Hotel Marina Canek (Palenque, Chiapas)
+            var var_latitude = 17.509757;
+            var var_longitude = -91.981700;
+            var pin = 'images/icons/pin.svg';
 
-        // Map pin-window details
-        var title = "Hotel Marina Canek - Click to see";
-        var hotel_name = "Hotel Marina Canek";
-        var hotel_address = "2a. Avenida Sur Pte., Centro, 29960 Palenque, Chis.";
-        var hotel_desc = "Tu puerto de descanso en Palenque";
-        var hotel_more_desc = "Habitaciones cómodas, excelente ubicación y un ambiente único.";
+            // Map pin-window details
+            var title = "Hotel Marina Canek - Click to see";
+            var hotel_name = "Hotel Marina Canek";
+            var hotel_address = "2a. Avenida Sur Pte., Centro, 29960 Palenque, Chis.";
+            var hotel_desc = "Tu puerto de descanso en Palenque";
+            var hotel_more_desc = "Habitaciones cómodas, excelente ubicación y un ambiente único.";
 
-        var hotel_location = new google.maps.LatLng(var_latitude, var_longitude);
+            var hotel_location = new google.maps.LatLng(var_latitude, var_longitude);
 
-        var mapOptions = {
-            center: hotel_location,
-            zoom: 16,
-            scrollwheel: false,
-            streetViewControl: true
-        };
-
-        map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-
-        var contentString =
-            '<div id="infowindow_content">' +
-            '<p><strong>' + hotel_name + '</strong><br>' +
-            hotel_address + '<br>' +
-            hotel_desc + '<br>' +
-            hotel_more_desc + '</p>' +
-            '</div>';
-
-        var var_infowindow = new google.maps.InfoWindow({
-            content: contentString
-        });
-
-        var marker = new google.maps.Marker({
-            position: hotel_location,
-            map: map,
-            icon: pin,
-            title: title,
-            optimized: false,
-        });
-
-        google.maps.event.addListener(marker, 'click', function () {
-            var_infowindow.open(map, marker);
-        });
-
-        panorama = map.getStreetView();
-        panorama.setPosition(hotel_location);
-        panorama.setPov({
-            heading: 265,
-            pitch: 0
-        });
-
-        var openStreet = document.getElementById('openStreetView');
-        if (openStreet) {
-            document.getElementById("openStreetView").onclick = function () {
-                toggleStreetView()
+            var mapOptions = {
+                center: hotel_location,
+                zoom: 16,
+                scrollwheel: false,
+                streetViewControl: true
             };
+
+            map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+            var contentString =
+                '<div id="infowindow_content">' +
+                '<p><strong>' + hotel_name + '</strong><br>' +
+                hotel_address + '<br>' +
+                hotel_desc + '<br>' +
+                hotel_more_desc + '</p>' +
+                '</div>';
+
+            var var_infowindow = new google.maps.InfoWindow({
+                content: contentString
+            });
+
+            var marker = new google.maps.Marker({
+                position: hotel_location,
+                map: map,
+                icon: pin,
+                title: title,
+                optimized: false,
+            });
+
+            google.maps.event.addListener(marker, 'click', function () {
+                var_infowindow.open(map, marker);
+            });
+
+            panorama = map.getStreetView();
+            panorama.setPosition(hotel_location);
+            panorama.setPov({
+                heading: 265,
+                pitch: 0
+            });
+
+            var openStreet = document.getElementById('openStreetView');
+            if (openStreet) {
+                document.getElementById("openStreetView").onclick = function () {
+                    toggleStreetView()
+                };
+            }
+
+            function toggleStreetView() {
+                var toggle = panorama.getVisible();
+                panorama.setVisible(!toggle);
+            }
         }
 
-        function toggleStreetView() {
-            var toggle = panorama.getVisible();
-            panorama.setVisible(!toggle);
+        //Check if google map div exist
+        if ($("#map-canvas").length > 0) {
+            google.maps.event.addDomListener(window, 'load', initialize);
         }
-    }
-
-    //Check if google map div exist
-    if ($("#map-canvas").length > 0) {
-        google.maps.event.addDomListener(window, 'load', initialize);
-    }
 
         /*========== BACK TO TOP ==========*/
         var amountScrolled = 500;
