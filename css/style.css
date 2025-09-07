@@ -1867,13 +1867,8 @@ header.transparent.nav_bg {
 
 header .navbar-header .navbar-brand {
     padding: 0px 0;
-    /* margin-top: -10px;  */
     -webkit-transition: all .3s;
     transition: all .3s;
-}
-
-header .navbar-header .navbar-brand {
-    margin-top: 10px;
 }
 
 header.scroll .navbar-header .navbar-brand {

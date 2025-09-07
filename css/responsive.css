@@ -134,7 +134,7 @@
          margin: 0 !important;
      }
      header .navbar-header .navbar-brand {
-         padding: 20px 0;
+         padding: 10px 0;
      }
      header .navbar-header .navbar-brand img {
          max-height: 45px;
@@ -269,13 +269,13 @@
      }
      #main_menu.mobile_menu .navbar-nav li a {
          padding: 12px 30px;
-         color: #a1b1be;
+         color: #0b3f69ff;
      }
      #main_menu.mobile_menu .navbar-nav li a:hover {
          color: #1dc1f8;
      }
      #main_menu.mobile_menu .navbar-nav li.mobile_menu_title {
-         color: #a1b1be;
+         color: #0b3f69ff;
          font-family: 'Raleway', sans-serif;
          display: block !important;
          text-align: center;
