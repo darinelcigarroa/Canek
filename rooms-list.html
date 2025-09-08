@@ -7,9 +7,11 @@
    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
 
    <!-- ========== SEO ========== -->
-   <title>Hotel Marina Canek - Photo Gallery</title>
-   <meta content="" name="description">
-   <meta content="" name="keywords">
+   <title data-i18n="page_rooms_list_title">Hotel Marina Canek - Lista de Habitaciones</title>
+   <meta name="description" content="Listado de habitaciones del Hotel Marina Canek en Palenque."
+      data-i18n="rooms_list_meta_desc" data-i18n-attr="content">
+   <meta name="keywords" content="hotel, palenque, habitaciones" data-i18n="rooms_list_meta_keywords"
+      data-i18n-attr="content">
    <meta content="" name="author">
 
    <!-- ========== FAVICON ========== -->
@@ -27,9 +29,9 @@
    <link href="css/owl.carousel.min.css" rel="stylesheet" type="text/css">
    <link href="css/style.css" rel="stylesheet" type="text/css">
    <link href="css/responsive.css" rel="stylesheet" type="text/css">
-
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
    <!-- ========== ICON FONTS ========== -->
-   <link href="fonts/font-awesome.min.css" rel="stylesheet">
    <link href="fonts/flaticon.css" rel="stylesheet">
 
    <!-- ========== GOOGLE FONTS ========== -->
@@ -46,7 +48,7 @@
          background: #0d2145 !important;
          top: 0px !important;
       }
-      
+
       .room_price_number {
          display: block;
          font-size: 20px;
@@ -115,22 +117,22 @@
             </div>
             <nav id="main_menu" class="mobile_menu navbar-collapse">
                <ul class="nav navbar-nav">
-                  <li class="mobile_menu_title" style="display:none;">MENU</li>
+                  <li class="mobile_menu_title" style="display:none;" data-i18n="nav_menu_title">MENÚ</li>
                   <li class="dropdown simple_menu active">
-                     <a href="index.html" style="font-weight: bold; letter-spacing: 1px;" data-i18n="HOME">HOME</a>
+                     <a href="index.html" style="font-weight:bold;letter-spacing:1px;" data-i18n="nav_home">INICIO</a>
                   </li>
                   <li class="dropdown simple_menu">
-                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-i18n="ROOMS">ROOMS <b
+                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-i18n="nav_rooms">HABITACIONES <b
                            class="caret"></b></a>
                      <ul class="dropdown-menu">
-                        <li><a href="#" data-i18n="VIEW ROOMS LIST">Rooms List View</a></li>
-                        <li><a href="#">Rooms Grid View</a></li>
-                        <li><a href="#">Rooms Block View</a></li>
-                        <li><a href="#">Room Details 1</a></li>
-                        <li><a href="#">Room Details 2</a></li>
+                        <li><a href="#" data-i18n="nav_rooms_list">Lista de Habitaciones</a></li>
+                        <li><a href="#" data-i18n="nav_rooms_grid">Habitaciones en Cuadrícula</a></li>
+                        <li><a href="#" data-i18n="nav_rooms_block">Habitaciones en Bloque</a></li>
+                        <li><a href="#" data-i18n="nav_room_details1">Detalles Habitación 1</a></li>
+                        <li><a href="#" data-i18n="nav_room_details2">Detalles Habitación 2</a></li>
                      </ul>
                   </li>
-                  <li><a href="#" data-i18n="CONTACT US">CONTACT US</a></li>
+                  <li><a href="#" data-i18n="nav_contact">CONTÁCTANOS</a></li>
                </ul>
             </nav>
          </div>
@@ -147,20 +149,21 @@
                   </div>
                   <div class="room-card__body">
                      <div class="room-card__header" role="group">
-                        <h3 class="room-card__title">Habitación Junior</h3>
-                        <span class="room-card__tag">2 camas matrimoniales</span>
+                        <h3 class="room-card__title" data-i18n="roomcard_junior_title">Habitación Junior</h3>
+                        <span class="room-card__tag" data-i18n="roomcard_junior_tag">2 camas matrimoniales</span>
                      </div>
-                     <p class="room-card__desc">Cómoda, luminosa y funcional para parejas o familias pequeñas.</p>
+                     <p class="room-card__desc" data-i18n="roomcard_junior_desc">Cómoda, luminosa y funcional para
+                        parejas o familias pequeñas.</p>
                      <ul class="room-card__services">
                         <li><i class="fa fa-wifi" data-toggle="tooltip" data-placement="top" title="WiFi Gratis"></i>
                         </li>
                         <li><i class="fa fa-television" data-toggle="tooltip" data-placement="top"
                               title="TV con cable"></i></li>
-                        <li><i class="fa fa-snowflake-o" data-toggle="tooltip" data-placement="top"
+                        <li><i class="fa-regular fa-snowflake" data-toggle="tooltip" data-placement="top"
                               title="Aire acondicionado"></i></li>
                      </ul>
                      <div class="room-card__controls">
-                        <label for="occ-junior">Personas</label>
+                        <label for="occ-junior" data-i18n="label_persons">Personas</label>
                         <div class="select-modern select-modern--sm">
                            <select id="occ-junior" class="select-modern__field">
                               <option value="1">1 - 2</option>
@@ -171,9 +174,10 @@
                      <div class="room-card__footer">
                         <div class="room-card__price">
                            <span id="price-junior" class="room_price_number">$900</span>
-                           <small>MXN / noche</small>
+                           <small data-i18n="price_unit">MXN / noche</small>
                         </div>
-                        <a href="room-junior.html" class="button btn_blue room-card__cta">Ver detalles</a>
+                        <a href="room-junior.html" class="button btn_blue room-card__cta"
+                           data-i18n="cta_view_details">Ver detalles</a>
                      </div>
                   </div>
                </article>
@@ -185,20 +189,21 @@
                   </div>
                   <div class="room-card__body">
                      <div class="room-card__header" role="group">
-                        <h3 class="room-card__title">Junior Familiar</h3>
-                        <span class="room-card__tag">1 matrimonial + 1 king</span>
+                        <h3 class="room-card__title" data-i18n="roomcard_familiar_title">Junior Familiar</h3>
+                        <span class="room-card__tag" data-i18n="roomcard_familiar_tag">1 matrimonial + 1 king</span>
                      </div>
-                     <p class="room-card__desc">Versátil y amplia para 3–4 personas con mayor confort.</p>
+                     <p class="room-card__desc" data-i18n="roomcard_familiar_desc">Versátil y amplia para 3–4 personas
+                        con mayor confort.</p>
                      <ul class="room-card__services">
                         <li><i class="fa fa-wifi" data-toggle="tooltip" data-placement="top" title="WiFi Gratis"></i>
                         </li>
                         <li><i class="fa fa-television" data-toggle="tooltip" data-placement="top"
                               title="TV con cable"></i></li>
-                        <li><i class="fa fa-snowflake-o" data-toggle="tooltip" data-placement="top"
+                        <li><i class="fa-regular fa-snowflake" data-toggle="tooltip" data-placement="top"
                               title="Aire acondicionado"></i></li>
                      </ul>
                      <div class="room-card__controls">
-                        <label for="occ-familiar">Personas</label>
+                        <label for="occ-familiar" data-i18n="label_persons">Personas</label>
                         <div class="select-modern select-modern--sm">
                            <select id="occ-familiar" class="select-modern__field">
                               <option value="1">1 - 2</option>
@@ -211,7 +216,8 @@
                            <span id="price-familiar" class="room_price_number">$1,200</span>
                            <small>MXN / noche</small>
                         </div>
-                        <a href="room.html" class="button btn_blue room-card__cta">Ver detalles</a>
+                        <a href="room-familiar.html" class="button btn_blue room-card__cta" data-i18n="cta_view_details">Ver
+                           detalles</a>
                      </div>
                   </div>
                </article>
@@ -223,10 +229,11 @@
                   </div>
                   <div class="room-card__body">
                      <div class="room-card__header" role="group">
-                        <h3 class="room-card__title">Master</h3>
-                        <span class="room-card__tag">2 camas matrimoniales</span>
+                        <h3 class="room-card__title" data-i18n="roomcard_master_title">Master</h3>
+                        <span class="room-card__tag" data-i18n="roomcard_master_tag">2 camas matrimoniales</span>
                      </div>
-                     <p class="room-card__desc">Más espacio y comodidad superior para grupos o familia.</p>
+                     <p class="room-card__desc" data-i18n="roomcard_master_desc">Más espacio y comodidad superior para
+                        grupos o familia.</p>
                      <ul class="room-card__services">
                         <li><i class="fa fa-coffee" data-toggle="tooltip" data-placement="top"
                               title="Desayuno incluido"></i></li>
@@ -234,11 +241,11 @@
                         </li>
                         <li><i class="fa fa-television" data-toggle="tooltip" data-placement="top"
                               title="TV con cable"></i></li>
-                        <li><i class="fa fa-snowflake-o" data-toggle="tooltip" data-placement="top"
+                        <li><i class="fa-regular fa-snowflake" data-toggle="tooltip" data-placement="top"
                               title="Aire acondicionado"></i></li>
                      </ul>
                      <div class="room-card__controls">
-                        <label for="occ-master">Personas</label>
+                        <label for="occ-master" data-i18n="label_persons">Personas</label>
                         <div class="select-modern select-modern--sm">
                            <select id="occ-master" class="select-modern__field">
                               <option value="1">1 - 2</option>
@@ -251,7 +258,8 @@
                            <span id="price-master" class="room_price_number">$1,300</span>
                            <small>MXN / noche</small>
                         </div>
-                        <a href="room.html" class="button btn_blue room-card__cta">Ver detalles</a>
+                        <a href="room-master.html" class="button btn_blue room-card__cta" data-i18n="cta_view_details">Ver
+                           detalles</a>
                      </div>
                   </div>
                </article>
@@ -263,10 +271,11 @@
                   </div>
                   <div class="room-card__body">
                      <div class="room-card__header" role="group">
-                        <h3 class="room-card__title">Extra Master</h3>
-                        <span class="room-card__tag">Diseño premium + desayuno</span>
+                        <h3 class="room-card__title" data-i18n="roomcard_extra_title">Extra Master</h3>
+                        <span class="room-card__tag" data-i18n="roomcard_extra_tag">Diseño premium + desayuno</span>
                      </div>
-                     <p class="room-card__desc">Baños premium, estilo moderno y desayuno incluido.</p>
+                     <p class="room-card__desc" data-i18n="roomcard_extra_desc">Baños premium, estilo moderno y desayuno
+                        incluido.</p>
                      <ul class="room-card__services">
                         <li><i class="fa fa-coffee" data-toggle="tooltip" data-placement="top"
                               title="Desayuno incluido"></i></li>
@@ -274,11 +283,11 @@
                         </li>
                         <li><i class="fa fa-television" data-toggle="tooltip" data-placement="top"
                               title="TV con cable"></i></li>
-                        <li><i class="fa fa-snowflake-o" data-toggle="tooltip" data-placement="top"
+                        <li><i class="fa-regular fa-snowflake" data-toggle="tooltip" data-placement="top"
                               title="Aire acondicionado"></i></li>
                      </ul>
                      <div class="room-card__controls">
-                        <label for="occ-extra-master">Personas</label>
+                        <label for="occ-extra-master" data-i18n="label_persons">Personas</label>
                         <div class="select-modern select-modern--sm">
                            <select id="occ-extra-master" class="select-modern__field">
                               <option value="1">1 - 2</option>
@@ -291,7 +300,8 @@
                            <span id="price-extra-master" class="room_price_number">$1,600</span>
                            <small>MXN / noche</small>
                         </div>
-                        <a href="room.html" class="button btn_blue room-card__cta">Ver detalles</a>
+                        <a href="room.html" class="button btn_blue room-card__cta" data-i18n="cta_view_details">Ver
+                           detalles</a>
                      </div>
                   </div>
                </article>
@@ -302,92 +312,88 @@
 
       <!-- ========== FOOTER ========== -->
       <footer class="footer_dark"
-         style="background:#0f1b2a; color:#d0d6dc; padding:60px 0 30px; font-size:14px; line-height:1.6;">
+         style="background:#0f1b2a;color:#d0d6dc;padding:60px 0 30px;font-size:14px;line-height:1.6;">
          <div class="container">
             <div class="row">
-               <!-- Brand / About -->
                <div class="col-md-4 col-sm-6">
-                  <h5 style="color:#fff; font-weight:700; margin-bottom:15px;">Hotel Marina Canek</h5>
-                  <p data-i18n="footer_tagline" style="margin-bottom:12px; color: #fff;">Tu puerto de descanso en
-                     Palenque.</p>
-                  <p style="opacity:.85; color: #fff;" data-i18n="footer_intro">
-                     Experiencia acogedora, ubicación céntrica y atención cordial para tu estancia.
-                  </p>
-               </div>
-
-               <!-- Contact Info -->
-               <div class="col-md-4 col-sm-6">
-                  <h5 style="color:#fff; font-weight:700; margin-bottom:15px;" data-i18n="contact_title">Contacto
+                  <h5 style="color:#fff;font-weight:700;margin-bottom:15px;" data-i18n="footer_about_title">Hotel
+                     Marina Canek
                   </h5>
-                  <ul style="list-style:none; padding:0; margin:0;">
-                     <li>
-                        <strong data-i18n="address_label">Dirección:</strong><br>
-                        <span data-i18n="address_full">2a. Avenida Sur Pte., Centro, 29960 Palenque, Chiapas,
-                           México</span>
+                  <p style="margin-bottom:12px;color:#fff;" data-i18n="footer_about_slogan">Tu puerto de descanso
+                     en Palenque.
+                  </p>
+                  <p style="opacity:.85;color:#fff;" data-i18n="footer_about_desc">Experiencia acogedora,
+                     ubicación céntrica y
+                     atención cordial para tu estancia.</p>
+               </div>
+               <div class="col-md-4 col-sm-6">
+                  <h5 style="color:#fff;font-weight:700;margin-bottom:15px;" data-i18n="footer_contact_title">
+                     Contacto</h5>
+                  <ul style="list-style:none;padding:0;margin:0;">
+                     <li><strong data-i18n="footer_address_label">Dirección:</strong><br><span
+                           data-i18n="footer_address_value">2a. Avenida Sur Pte., Centro, 29960 Palenque,
+                           Chiapas, México</span>
                      </li>
-                     <li style="margin-top:10px;">
-                        <strong>WhatsApp:</strong><br>
-                        <a href="https://wa.me/5219163489026" target="_blank"
-                           style="color:#58b1ff; text-decoration:none;">+52 1 916 348 9026</a>
-                     </li>
-                     <li style="margin-top:10px;">
-                        <strong>Email:</strong><br>
-                        <a href="mailto:reservas@hotelmarinacanek.com"
-                           style="color:#58b1ff; text-decoration:none;">reservas@hotelmarinacanek.com</a>
-                     </li>
-                     <li style="margin-top:10px;">
-                        <strong data-i18n="coords_label">Coordenadas:</strong><br>
-                        <span>17.509757, -91.981700</span>
-                     </li>
+                     <li style="margin-top:10px;"><strong data-i18n="footer_whatsapp_label">WhatsApp:</strong><br><a
+                           href="https://wa.me/5219163489026" target="_blank"
+                           style="color:#58b1ff;text-decoration:none;" data-i18n="footer_whatsapp_value">+52 1
+                           916 348 9026</a></li>
+                     <li style="margin-top:10px;"><strong data-i18n="footer_email_label">Email:</strong><br><a
+                           href="mailto:reservas@hotelmarinacanek.com" style="color:#58b1ff;text-decoration:none;"
+                           data-i18n="footer_email_value">reservas@hotelmarinacanek.com</a></li>
+                     <li style="margin-top:10px;"><strong data-i18n="footer_coords_label">Coordenadas:</strong><br><span
+                           data-i18n="footer_coords_value">17.509757, -91.981700</span></li>
                   </ul>
                </div>
-
-               <!-- Quick Links -->
                <div class="col-md-4 col-sm-12">
-                  <h5 style="color:#fff; font-weight:700; margin-bottom:15px;" data-i18n="quick_links">Enlaces
-                     rápidos</h5>
-                  <ul style="list-style:none; padding:0; margin:0; columns:2; -webkit-columns:2; gap:0;">
-                     <li><a href="#features" style="color:#d0d6dc; text-decoration:none;"
-                           data-i18n="nav_features">Características</a></li>
-                     <li><a href="#rooms" style="color:#d0d6dc; text-decoration:none;"
-                           data-i18n="nav_rooms">Habitaciones</a></li>
-                     <li><a href="#contact" style="color:#d0d6dc; text-decoration:none;"
-                           data-i18n="nav_contact">Contacto</a></li>
-                     <li><a href="#gallery" style="color:#d0d6dc; text-decoration:none;"
-                           data-i18n="nav_gallery">Galería</a></li>
-                     <li><a href="#offers" style="color:#d0d6dc; text-decoration:none;"
-                           data-i18n="nav_offers">Ofertas</a></li>
-                     <li><a href="#booking" style="color:#d0d6dc; text-decoration:none;"
-                           data-i18n="nav_book">Reservar</a></li>
+                  <h5 style="color:#fff;font-weight:700;margin-bottom:15px;" data-i18n="footer_links_title">
+                     Enlaces rápidos
+                  </h5>
+                  <ul style="list-style:none;padding:0;margin:0;columns:2;gap:0;">
+                     <li><a href="#features" style="color:#d0d6dc;text-decoration:none;"
+                           data-i18n="footer_link_features">Características</a></li>
+                     <li><a href="#rooms" style="color:#d0d6dc;text-decoration:none;"
+                           data-i18n="footer_link_rooms">Habitaciones</a></li>
+                     <li><a href="#contact" style="color:#d0d6dc;text-decoration:none;"
+                           data-i18n="footer_link_contact">Contacto</a></li>
+                     <li><a href="#gallery" style="color:#d0d6dc;text-decoration:none;"
+                           data-i18n="footer_link_gallery">Galería</a></li>
+                     <li><a href="#offers" style="color:#d0d6dc;text-decoration:none;"
+                           data-i18n="footer_link_offers">Ofertas</a></li>
+                     <li><a href="#booking" style="color:#d0d6dc;text-decoration:none;"
+                           data-i18n="footer_link_booking">Reservar</a></li>
                   </ul>
-                  <div style="margin-top:18px; display:flex; gap:10px;">
+                  <div style="margin-top:18px;display:flex;gap:10px;">
                      <a href="https://wa.me/5219163489026" target="_blank" aria-label="WhatsApp"
-                        style="width:38px; height:38px; background:#25d366; border-radius:50%; display:flex; align-items:center; justify-content:center; color:#fff; text-decoration:none; font-size:18px;">
-                        <span class="fa fa-whatsapp"></span>
+                        data-i18n-attr="footer_social_whatsapp_label"
+                        style="width:38px;height:38px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:18px;">
+                        <span class="fa-brands fa-whatsapp"></span>
                      </a>
-                     <!-- Placeholder social icons (remove if not needed) -->
-                     <a href="#" aria-label="Facebook"
-                        style="width:38px; height:38px; background:#154D71; border-radius:50%; display:flex; align-items:center; justify-content:center; color:#fff; text-decoration:none; font-size:15px;">
-                        <span class="fa fa-facebook"></span>
+                     <a href="#" aria-label="Facebook" data-i18n-attr="footer_social_facebook_label"
+                        style="width:38px;height:38px;background:#154D71;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:15px;">
+                        <span class="fa-brands fa-facebook-f"></span>
                      </a>
-                     <a href="#" aria-label="Instagram"
-                        style="width:38px; height:38px; background:#154D71; border-radius:50%; display:flex; align-items:center; justify-content:center; color:#fff; text-decoration:none; font-size:15px;">
-                        <span class="fa fa-instagram"></span>
+                     <a href="#" aria-label="Instagram" data-i18n-attr="footer_social_instagram_label"
+                        style="width:38px;height:38px;background:#154D71;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:15px;">
+                        <span class="fa-brands fa-instagram"></span>
                      </a>
                   </div>
                </div>
             </div>
-
-            <hr style="border:none; border-top:1px solid rgba(255,255,255,.08); margin:35px 0 20px;">
-
+            <hr style="border:none;border-top:1px solid rgba(255,255,255,.08);margin:35px 0 20px;">
             <div class="row">
                <div class="col-sm-6">
-                  <p style="margin:0; font-size:13px; color: #fff;">© <span id="yearCopy"></span> Hotel Marina
-                     Canek. <span data-i18n="rights_reserved">Todos los derechos reservados.</span></p>
+                  <!-- Separar el año del texto traducible para que i18n no borre el <span id="yearCopy"> -->
+                  <p id="footerCopy" style="margin:0;font-size:13px;color:#fff;">
+                     © <span id="yearCopy"></span> <span data-i18n="footer_copy_rest">Hotel Marina Canek. Todos
+                        los derechos
+                        reservados.</span>
+                  </p>
                </div>
                <div class="col-sm-6" style="text-align:right;">
-                  <a href="#top" style="color:#58b1ff; text-decoration:none; font-size:13px;"
-                     data-i18n="back_to_top">Volver arriba ↑</a>
+                  <a href="#top" style="color:#58b1ff;text-decoration:none;font-size:13px;"
+                     data-i18n="footer_back_top">Volver
+                     arriba ↑</a>
                </div>
             </div>
          </div>
@@ -496,7 +502,7 @@
                priceId: 'price-familiar',
                rules: (occ) => occ === '1'
                   ? { single: 1000 }
-                  : { single: 1350 }
+                  : { single: 1400 }
             },
             master: {
                selectId: 'occ-master',
