@@ -178,7 +178,20 @@ window.translations = {
     service_breakfast: "Breakfast included",
     feat_breakfast: "Breakfast included",
     highlight_breakfast_title: "Ready breakfast",
-    highlight_breakfast_text: "Included daily so you can start exploring early."
+    highlight_breakfast_text: "Included daily so you can start exploring early.",
+    per_night: "MXN / night",
+    highlight_finishes_title: "Finishes and details",
+    highlight_finishes_text: "Expanded decor and amenities for a superior experience.",
+    highlight_design_title: "Superior design",
+    highlight_design_text: "Refined finishes, lighting and decoration.",
+    service_premium_finishes: "Premium finishes",
+    service_extra_master_beds: '1 King Bed and 1 Double Bed',
+    select_room_label: "Choose a room...",
+    select_room_junior: "Junior (2 Double Beds)",
+    select_room_familiar: "Family (King + Double)",
+    select_room_master: "Master (2 Double Beds + Breakfast)",
+    select_room_extra_master: "Extra Master (King + Double, Premium)",
+    select_room_all: "View all"
   },
   es: {
     'HOME': 'INICIO',
@@ -354,7 +367,21 @@ window.translations = {
     service_breakfast: "Desayuno incluido",
     feat_breakfast: "Desayuno incluido",
     highlight_breakfast_title: "Desayuno listo",
-    highlight_breakfast_text: "Incluido diariamente para iniciar tus actividades."
+    highlight_breakfast_text: "Incluido diariamente para iniciar tus actividades.",
+    per_night: "MXN / noche",
+    highlight_finishes_title: "Acabados y detalles",
+    highlight_finishes_text: "Decoración y amenidades ampliadas para experiencia superior.",
+    highlight_design_title: "Diseño superior",
+    highlight_design_text: "Acabados, iluminación y decoración refinados.",
+    service_premium_finishes: "Acabados premium",
+    service_extra_master_beds: '1 King + 1 Matrimonial',
+    select_room_label: "Selecciona una habitación...",
+    select_room_junior: "Junior (2 Matrimoniales)",
+    select_room_familiar: "Familiar (King + Matrimonial)",
+    select_room_master: "Master (2 Matrimoniales + Desayuno)",
+    select_room_extra_master: "Extra Master (King + Matrimonial, Premium)",
+    select_room_all: "Ver todas"
+
   }
 };
 

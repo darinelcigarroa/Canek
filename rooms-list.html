@@ -115,26 +115,27 @@
                   <img src="images/icons/wp.png" alt="WhatsApp" style="height:36px; width:36px; display:block;">
                </a>
             </div>
-            <nav id="main_menu" class="mobile_menu navbar-collapse">
-               <ul class="nav navbar-nav">
-                  <li class="mobile_menu_title" style="display:none;" data-i18n="nav_menu_title">MENÚ</li>
-                  <li class="dropdown simple_menu active">
-                     <a href="index.html" style="font-weight:bold;letter-spacing:1px;" data-i18n="nav_home">INICIO</a>
-                  </li>
-                  <li class="dropdown simple_menu">
-                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-i18n="nav_rooms">HABITACIONES <b
-                           class="caret"></b></a>
-                     <ul class="dropdown-menu">
-                        <li><a href="#" data-i18n="nav_rooms_list">Lista de Habitaciones</a></li>
-                        <li><a href="#" data-i18n="nav_rooms_grid">Habitaciones en Cuadrícula</a></li>
-                        <li><a href="#" data-i18n="nav_rooms_block">Habitaciones en Bloque</a></li>
-                        <li><a href="#" data-i18n="nav_room_details1">Detalles Habitación 1</a></li>
-                        <li><a href="#" data-i18n="nav_room_details2">Detalles Habitación 2</a></li>
-                     </ul>
-                  </li>
-                  <li><a href="#" data-i18n="nav_contact">CONTÁCTANOS</a></li>
-               </ul>
-            </nav>
+              <nav id="main_menu" class="mobile_menu navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="mobile_menu_title" style="display:none;">MENU</li>
+                        <li class="dropdown simple_menu active">
+                            <a href="index.html" style="font-weight: bold; letter-spacing: 1px;"
+                                data-i18n="HOME">HOME</a>
+                        </li>
+                        <li class="dropdown simple_menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-i18n="ROOMS">ROOMS <b
+                                    class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="rooms-list.html" data-i18n="view_rooms_list">Rooms List View</a></li>
+                                <li><a href="room-junior.html" data-i18n="select_room_junior">Junior (2 Matrimoniales)</a></li>
+                                <li><a href="room-familiar.html" data-i18n="select_room_familiar">Familiar (King + Matrimonial)</a></li>
+                                <li><a href="room-master.html" data-i18n="select_room_master">Master (2 Matrimoniales + Desayuno)</a></li>
+                                <li><a href="room-extra-master.html" data-i18n="select_room_extra_master">Extra Master (King + Matrimonial, Premium)</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" data-i18n="CONTACT US">CONTACT US</a></li>
+                    </ul>
+                </nav>
          </div>
       </header>
 
@@ -174,7 +175,7 @@
                      <div class="room-card__footer">
                         <div class="room-card__price">
                            <span id="price-junior" class="room_price_number">$900</span>
-                           <small data-i18n="price_unit">MXN / noche</small>
+                           <small data-i18n="per_night">MXN / noche</small>
                         </div>
                         <a href="room-junior.html" class="button btn_blue room-card__cta"
                            data-i18n="cta_view_details">Ver detalles</a>
@@ -214,7 +215,7 @@
                      <div class="room-card__footer">
                         <div class="room-card__price">
                            <span id="price-familiar" class="room_price_number">$1,200</span>
-                           <small>MXN / noche</small>
+                           <small data-i18n="per_night">MXN / noche</small>
                         </div>
                         <a href="room-familiar.html" class="button btn_blue room-card__cta" data-i18n="cta_view_details">Ver
                            detalles</a>
@@ -256,7 +257,7 @@
                      <div class="room-card__footer">
                         <div class="room-card__price">
                            <span id="price-master" class="room_price_number">$1,300</span>
-                           <small>MXN / noche</small>
+                           <small data-i18n="per_night">MXN / noche</small>
                         </div>
                         <a href="room-master.html" class="button btn_blue room-card__cta" data-i18n="cta_view_details">Ver
                            detalles</a>
@@ -272,7 +273,7 @@
                   <div class="room-card__body">
                      <div class="room-card__header" role="group">
                         <h3 class="room-card__title" data-i18n="roomcard_extra_title">Extra Master</h3>
-                        <span class="room-card__tag" data-i18n="roomcard_extra_tag">Diseño premium + desayuno</span>
+                        <span class="room-card__tag" data-i18n="roomcard_extra_tag">King-size + Matrimonial</span>
                      </div>
                      <p class="room-card__desc" data-i18n="roomcard_extra_desc">Baños premium, estilo moderno y desayuno
                         incluido.</p>
@@ -298,9 +299,9 @@
                      <div class="room-card__footer">
                         <div class="room-card__price">
                            <span id="price-extra-master" class="room_price_number">$1,600</span>
-                           <small>MXN / noche</small>
+                           <small data-i18n="per_night">MXN / noche</small>
                         </div>
-                        <a href="room.html" class="button btn_blue room-card__cta" data-i18n="cta_view_details">Ver
+                        <a href="room-extra-master.html" class="button btn_blue room-card__cta" data-i18n="cta_view_details">Ver
                            detalles</a>
                      </div>
                   </div>
@@ -501,7 +502,7 @@
                selectId: 'occ-familiar',
                priceId: 'price-familiar',
                rules: (occ) => occ === '1'
-                  ? { single: 1000 }
+                  ? { single: 1200 }
                   : { single: 1400 }
             },
             master: {
