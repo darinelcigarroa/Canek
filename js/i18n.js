@@ -66,7 +66,7 @@ window.translations = {
     amenities_desc:
       "Each room is fully equipped with high-speed internet, private bathrooms, cleaning service, coffee maker, microwave, television, and an in-room dining area for your comfort.",
     rooms_intro: "Our hotel offers Junior, Master, and Extra Master rooms, each designed to provide you with a unique experience. The difference lies not only in the design, but also in the finishes, accessories, and details that make each category special. With carefully selected decoration, every room has its own style so you can choose the one that best suits your taste and enjoy a comfortable, distinctive stay.",
-    image_gallery_title: "IMAGE GALLERY",
+    image_gallery_title: "ROOM GALLERY",
     image_gallery_desc: "Explore our beautiful image gallery showcasing the best of our hotel.",
     title_galery: 'Discover our facilities through this gallery. Explore the rooms, common areas, and details that will make your stay a comfortable and pleasant experience.',
     location_info: "Find us easily in the heart of Palenque. Hotel Marina Canek is just 2 minutes from the Central Park, in a prime location that lets you enjoy the city with complete convenience. Here’s the exact location of our hotel.",
@@ -89,7 +89,6 @@ window.translations = {
     services_title: "Services",
     service_wifi: "Free WiFi",
     service_tv: "Flat-screen TV",
-    service_coffee: "Coffee maker",
     service_ac: "Air conditioning",
     service_bathroom: "Private bathroom",
     service_bed: "King-size bed",
@@ -191,7 +190,26 @@ window.translations = {
     select_room_familiar: "Family (King + Double)",
     select_room_master: "Master (2 Double Beds + Breakfast)",
     select_room_extra_master: "Extra Master (King + Double, Premium)",
-    select_room_all: "View all"
+    select_room_all: "View all",
+    events_gallery: "EVENTS GALLERY",
+    map_cta_directions: "🧭 Directions",
+    map_cta_open_maps: "🗺️ Open in Maps",
+    map_cta_street_view: "👤 Street View",
+    map_cta_from_here: "📍 From my location",
+    gallery_title_familiar: "FAMILY – KING + DOUBLE",
+    familiar_title: "Family Room",
+    familiar_subtitle: "1 King Bed + 1 Double Bed · Perfect for 3–4 guests.",
+    familiar_desc_p1: "Ideal for families who want to share the same space without sacrificing comfort, offering a warm environment that combines practicality and coziness.",
+    familiar_desc_p2: "Balanced layout allows easy movement without feeling crowded. Efficient air conditioning, stable WiFi, and functional furniture keep the stay organized and practical.",
+    familiar_desc_p3: "Perfect for those traveling in a group, whether with friends or family, offering the flexibility to adapt to different accommodation needs.",
+    service_fam_beds: "1 King Bed + 1 Double Bed",
+    service_coffee: "Coffee and Tea",
+    extra_master_title: "Extra Master Room",
+    extra_master_subtitle: "1 King bed + 1 double bed · Superior design & finishes · More included accessories.",
+    extra_master_desc_p1: "The Extra Master elevates the experience over the standard Master: it combines a King bed for deep rest and an additional double bed, in a space with upgraded finishes, ambient lighting, and selected decorative details.",
+    extra_master_desc_p2: "Higher quality materials and textures (surfaces, headboards, lighting) create a more refined feel. Includes an expanded amenity set: extra towels, slippers, light robe, iron, hair dryer, and upgraded bath amenities.",
+    extra_master_desc_p3: "Ideal for couples seeking more comfort without sacrificing a second bed, or families who value a more refined visual environment. Choose this option if you want design, detail, and ready-to-use accessories from the start."
+
   },
   es: {
     'HOME': 'INICIO',
@@ -256,7 +274,7 @@ window.translations = {
     amenities_desc:
       "Cada habitación está equipada con internet de alta velocidad, baño privado, servicio de limpieza, cafetera, microondas, televisión y un área de comedor dentro de la habitación para tu comodidad.",
     rooms_intro: "En nuestro hotel contamos con habitaciones Junior, Master y Extra Master, cada una pensada para ofrecerte una experiencia distinta. La diferencia no está únicamente en el diseño, sino también en los acabados, accesorios y detalles que hacen única a cada categoría. Decoración cuidadosamente seleccionada, cada habitación tiene su propio estilo para que elijas la que mejor se adapte a tu gusto y vivas una estancia cómoda y especial.",
-    image_gallery_title: 'GALERÍA DE IMÁGENES',
+    image_gallery_title: 'GALERÍA DE HABITACIONES',
     title_galery: 'Descubre nuestras instalaciones a través de esta galería. Conoce las habitaciones, áreas comunes y detalles que harán de tu estancia una experiencia cómoda y placentera.',
     location_info: 'Encuéntranos fácilmente en el corazón de Palenque. El Hotel Marina Canek está a solo 2 minutos del Parque Central, en una ubicación privilegiada que te permite disfrutar de la ciudad con total comodidad. Aquí está la ubicación exacta de nuestro hotel.',
     '/night': '/ por noche',
@@ -278,7 +296,6 @@ window.translations = {
     services_title: "Servicios",
     service_wifi: "WiFi Gratis",
     service_tv: "Televisión de pantalla plana",
-    service_coffee: "Cafetera",
     service_ac: "Aire acondicionado",
     service_bathroom: "Baño privado",
     service_bed: "Cama king-size",
@@ -380,8 +397,25 @@ window.translations = {
     select_room_familiar: "Familiar (King + Matrimonial)",
     select_room_master: "Master (2 Matrimoniales + Desayuno)",
     select_room_extra_master: "Extra Master (King + Matrimonial, Premium)",
-    select_room_all: "Ver todas"
-
+    select_room_all: "Ver todas",
+    events_gallery: "GALERÍA DE EVENTOS",
+    map_cta_directions: "🧭 Cómo llegar",
+    map_cta_open_maps: "🗺️ Abrir en Maps",
+    map_cta_street_view: "👤 Vista de la calle",
+    map_cta_from_here: "📍 Desde mi ubicación",
+    gallery_title_familiar: "FAMILIAR - KING + MATRIMONIAL",
+    familiar_title: "Habitación Familiar",
+    familiar_subtitle: "Configuración 1 cama King + 1 matrimonial · Espacio ideal para 3–4 huéspedes.",
+    familiar_desc_p1: "Ideal para familias que desean compartir el mismo espacio sin sacrificar confort, ofreciendo un entorno cálido que combina practicidad y comodidad.",
+    familiar_desc_p2: "Distribución equilibrada que permite circular sin sensación de saturación. Climatización eficiente, WiFi estable y mobiliario funcional mantienen la estancia ordenada y práctica.",
+    familiar_desc_p3: "Perfecta para quienes viajan en grupo, ya sea con amigos o familia, ofreciendo la flexibilidad de adaptarse a diferentes necesidades de alojamiento.",
+    service_fam_beds: "1 cama King + 1 cama matrimonial",
+    service_coffee: "Café y té",
+    extra_master_title: "Habitación Extra Master",
+    extra_master_subtitle: "1 cama King + 1 matrimonial · Diseño y acabados superiores · Más accesorios incluidos.",
+    extra_master_desc_p1: "La Extra Master eleva la experiencia sobre la Master estándar: combina una cama King para descanso profundo y una matrimonial adicional, dentro de un espacio con acabados mejorados, iluminación ambiental y detalles decorativos seleccionados.",
+    extra_master_desc_p2: "Materiales y texturas de mayor calidad (superficies, cabeceras y luminarias) generan una sensación más refinada. Incluye set ampliado de amenidades: toallas extra, pantuflas, bata ligera, plancha, secadora y amenidades de baño de presentación superior.",
+    extra_master_desc_p3: "Ideal para parejas que desean más confort sin sacrificar una segunda cama disponible, o familias que valoran un entorno visual más cuidado. Elige esta opción si buscas diseño, detalle y accesorios listos desde el primer momento."
   }
 };
 

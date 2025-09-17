@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es-MX">
 
 <head>
     <!-- Primary SEO -->
@@ -11,6 +11,9 @@
     <link rel="canonical" href="https://www.hotelmarinacanek.com/">
     <meta name="robots" content="index,follow">
     <meta name="author" content="Hotel Marina Canek">
+    <link rel="alternate" hreflang="es-MX" href="https://www.hotelmarinacanek.com/" />
+    <link rel="alternate" hreflang="en" href="https://www.hotelmarinacanek.com/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.hotelmarinacanek.com/" />
     <!-- Reemplaza la meta viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome 6 -->
@@ -26,11 +29,8 @@
     <meta property="og:image" content="https://www.hotelmarinacanek.com/images/og-cover.jpg">
     <meta property="og:image:alt" content="Fachada Hotel Marina Canek en Palenque Chiapas">
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Hotel Marina Canek | Hotel en Palenque">
-    <meta name="twitter:description" content="Ubicación ideal en Palenque. Reserva tu habitación con desayuno y WiFi.">
-    <meta name="twitter:image" content="https://www.hotelmarinacanek.com/images/og-cover.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 
     <!-- Local Business / Hotel Schema -->
     <script type="application/ld+json">
@@ -128,13 +128,6 @@
     <!-- ========== GOOGLE FONTS ========== -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900%7cRaleway:400,500,600,700"
         rel="stylesheet">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
 
 <!-- Añadir H1 accesible (no había etiqueta semántica principal) justo después de <body> -->
@@ -198,10 +191,14 @@
                                     class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="rooms-list.html" data-i18n="view_rooms_list">Rooms List View</a></li>
-                                <li><a href="room-junior.html" data-i18n="select_room_junior">Junior (2 Matrimoniales)</a></li>
-                                <li><a href="room-familiar.html" data-i18n="select_room_familiar">Familiar (King + Matrimonial)</a></li>
-                                <li><a href="room-master.html" data-i18n="select_room_master">Master (2 Matrimoniales + Desayuno)</a></li>
-                                <li><a href="room-extra-master.html" data-i18n="select_room_extra_master">Extra Master (King + Matrimonial, Premium)</a></li>
+                                <li><a href="room-junior.html" data-i18n="select_room_junior">Junior (2
+                                        Matrimoniales)</a></li>
+                                <li><a href="room-familiar.html" data-i18n="select_room_familiar">Familiar (King +
+                                        Matrimonial)</a></li>
+                                <li><a href="room-master.html" data-i18n="select_room_master">Master (2 Matrimoniales +
+                                        Desayuno)</a></li>
+                                <li><a href="room-extra-master.html" data-i18n="select_room_extra_master">Extra Master
+                                        (King + Matrimonial, Premium)</a></li>
                             </ul>
                         </li>
                         <li><a href="#" data-i18n="CONTACT US">CONTACT US</a></li>
@@ -285,7 +282,7 @@
                         <article class="room rounded-box">
                             <figure>
                                 <!-- <div class="price">$900 MXN <span data-i18n="/night"></span></div> -->
-                                <a class="hover_effect h_blue h_link" href="#">
+                                <a class="hover_effect h_blue h_link" href="rooms-list.html">
                                     <img src="images/rooms/junior/junior-1.jpg" class="img-responsive" alt="Image">
                                 </a>
                                 <figcaption class="text-center">
@@ -300,7 +297,7 @@
                         <article class="room rounded-box">
                             <figure>
                                 <!-- <div class="price">$1,300 MXN <span data-i18n="/night"></span></div> -->
-                                <a class="hover_effect h_blue h_link" href="#">
+                                <a class="hover_effect h_blue h_link" href="rooms-list.html">
                                     <img src="images/rooms/master/master-1.jpg" class="img-responsive" alt="Image">
                                 </a>
                                 <figcaption class="text-center">
@@ -516,6 +513,83 @@
                 style="width:100%; max-height:500px; object-fit:cover; display:block; margin:0 auto;">
         </section>
 
+        <section id="gallery_style_2" class="white_bg">
+            <div class="container">
+                <div class="main_title mt_wave mt_blue a_center wow animate__animated animate__fadeInUp">
+                    <h2 data-i18n="events_gallery">EVENTS GALLERY</h2>
+                </div>
+                <p class="main_description a_center" data-i18n="title_galery"></p>
+                <div class="row">
+                    <div class="image-gallery">
+                        <!-- ITEM -->
+                        <div class="col-md-3 col-sm-4">
+                            <figure class="gs2_item">
+                                <a href="images/events/event1.jpg" class="hover_effect h_lightbox h_blue">
+                                    <img src="images/events/event1.jpg" class="img-responsive" alt="Image">
+                                </a>
+                            </figure>
+                        </div>
+                        <!-- ITEM -->
+                        <div class="col-md-3 col-sm-4">
+                            <figure class="gs2_item">
+                                <a href="images/events/event2.jpg" class="hover_effect h_lightbox h_blue">
+                                    <img src="images/events/event2.jpg" class="img-responsive" alt="Image">
+                                </a>
+                            </figure>
+                        </div>
+                        <!-- ITEM -->
+                        <div class="col-md-3 col-sm-4">
+                            <figure class="gs2_item">
+                                <a href="images/events/event3.jpg" class="hover_effect h_lightbox h_blue">
+                                    <img src="images/events/event3.jpg" class="img-responsive" alt="Image">
+                                </a>
+                            </figure>
+                        </div>
+                        <!-- ITEM -->
+                        <div class="col-md-3 col-sm-4">
+                            <figure class="gs2_item">
+                                <a href="images/events/event4.jpg" class="hover_effect h_lightbox h_blue">
+                                    <img src="images/events/event4.jpg" class="img-responsive" alt="Image">
+                                </a>
+                            </figure>
+                        </div>
+                        <!-- ITEM -->
+                        <div class="col-md-3 col-sm-4">
+                            <figure class="gs2_item">
+                                <a href="images/events/event5.jpg" class="hover_effect h_lightbox h_blue">
+                                    <img src="images/events/event5.jpg" class="img-responsive" alt="Image">
+                                </a>
+                            </figure>
+                        </div>
+                        <!-- ITEM -->
+                        <div class="col-md-3 col-sm-4">
+                            <figure class="gs2_item">
+                                <a href="images/events/event6.jpg" class="hover_effect h_lightbox h_blue">
+                                    <img src="images/events/event6.jpg" class="img-responsive" alt="Image">
+                                </a>
+                            </figure>
+                        </div>
+                        <!-- ITEM -->
+                        <div class="col-md-3 col-sm-4">
+                            <figure class="gs2_item">
+                                <a href="images/events/event9.jpg" class="hover_effect h_lightbox h_blue">
+                                    <img src="images/events/event9.jpg" class="img-responsive" alt="Image">
+                                </a>
+                            </figure>
+                        </div>
+                        <!-- ITEM -->
+                        <div class="col-md-3 col-sm-4">
+                            <figure class="gs2_item">
+                                <a href="images/events/event10.jpg" class="hover_effect h_lightbox h_blue">
+                                    <img src="images/events/event10.jpg" class="img-responsive" alt="Image">
+                                </a>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- ========== CONTACT ========== -->
         <section class="white_bg" id="contact">
             <div class="container">
@@ -537,19 +611,13 @@
                 <div class="map-cta-bar">
                     <!-- Cómo llegar (directions) -->
                     <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=17.5084959,-91.9818346"
-                        target="_blank" rel="noopener">🧭 Cómo llegar</a>
-
-                    <!-- Abrir en Google Maps (mapa normal) -->
+                        target="_blank" rel="noopener" data-i18n="map_cta_directions">🧭 Cómo llegar</a>
                     <a class="btn" href="https://www.google.com/maps/search/?api=1&query=17.5084959,-91.9818346"
-                        target="_blank" rel="noopener">🗺️ Abrir en Maps</a>
-
-                    <!-- Street View (la “personita amarilla”) -->
+                        target="_blank" rel="noopener" data-i18n="map_cta_open_maps">🗺️ Abrir en Maps</a>
                     <a class="btn"
                         href="https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=17.5084959,-91.9818346"
-                        target="_blank" rel="noopener">👤 Street View</a>
-
-                    <!-- Usar mi ubicación para calcular ruta (permite geolocalizar) -->
-                    <button class="btn" id="btnRoute">📍 Desde mi ubicación</button>
+                        target="_blank" rel="noopener" data-i18n="map_cta_street_view">👤 Street View</a>
+                    <button class="btn" id="btnRoute" data-i18n="map_cta_from_here">📍 Desde mi ubicación</button>
                 </div>
             </div>
         </section>
