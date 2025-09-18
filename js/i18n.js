@@ -209,7 +209,7 @@ window.translations = {
     extra_master_desc_p1: "The Extra Master elevates the experience over the standard Master: it combines a King bed for deep rest and an additional double bed, in a space with upgraded finishes, ambient lighting, and selected decorative details.",
     extra_master_desc_p2: "Higher quality materials and textures (surfaces, headboards, lighting) create a more refined feel. Includes an expanded amenity set: extra towels, slippers, light robe, iron, hair dryer, and upgraded bath amenities.",
     extra_master_desc_p3: "Ideal for couples seeking more comfort without sacrificing a second bed, or families who value a more refined visual environment. Choose this option if you want design, detail, and ready-to-use accessories from the start.",
-    slogan: "Rest on the ocean waves"
+    slogan: "Rests in sea waves"
   },
   es: {
     'HOME': 'INICIO',
@@ -416,7 +416,7 @@ window.translations = {
     extra_master_desc_p1: "La Extra Master eleva la experiencia sobre la Master estándar: combina una cama King para descanso profundo y una matrimonial adicional, dentro de un espacio con acabados mejorados, iluminación ambiental y detalles decorativos seleccionados.",
     extra_master_desc_p2: "Materiales y texturas de mayor calidad (superficies, cabeceras y luminarias) generan una sensación más refinada. Incluye set ampliado de amenidades: toallas extra, pantuflas, bata ligera, plancha, secadora y amenidades de baño de presentación superior.",
     extra_master_desc_p3: "Ideal para parejas que desean más confort sin sacrificar una segunda cama disponible, o familias que valoran un entorno visual más cuidado. Elige esta opción si buscas diseño, detalle y accesorios listos desde el primer momento.",
-    slogan: "Descansa en olas del mar"
+    slogan: "Descansa en olas de mar"
   }
 };
 
