@@ -1958,9 +1958,6 @@ header .navbar-header .mobile_menu_btn.active .icon-bar:nth-of-type(3) {
     color: #fff;
 }
 
-.transparent.nav_bg #main_menu .navbar-nav li a {
-    color: #eaeaea;
-}
 
 .transparent.nav_bg #main_menu .navbar-nav li.active a.dropdown-toggle, .transparent #main_menu .navbar-nav li.active a.dropdown-toggle {
     color: #bfa14a;

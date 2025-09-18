@@ -317,14 +317,14 @@
          padding: 8px 50px;
          font-size: .8em;
      }
-     #main_menu.mobile_menu .navbar-nav .dropdown .dropdown-menu li a:hover {
+     /* #main_menu.mobile_menu .navbar-nav .dropdown .dropdown-menu li a:hover {
          color: #79868f;
      }
      #main_menu.mobile_menu .navbar-nav .dropdown.mega_menu .dropdown-menu li {
          padding: 9px 0;
          background: #f5f5f5;
          border-bottom: 1px solid #EEF2F5;
-     }
+     } */
      #main_menu.mobile_menu .dropdown .caret-up {
          width: 0;
          height: 0;
