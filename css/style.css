@@ -2124,8 +2124,8 @@ header #main_menu .navbar-nav .dropdown .dropdown-menu {
 
 /* ---------- 5.1 Global Sections ---------- */
 section {
-    padding-top: 60px;
-    padding-bottom: 20px;
+    /* padding-top: 20px; */
+    padding-bottom: 25px;
     overflow: hidden !important;
     max-width: 100%;
 }
