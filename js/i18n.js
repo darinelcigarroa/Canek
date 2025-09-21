@@ -120,6 +120,7 @@ window.translations = {
     footer_address_label: "Address:",
     footer_address_value: "2a. Avenida Sur Pte., Centro, 29960 Palenque, Chiapas, Mexico",
     footer_whatsapp_label: "WhatsApp:",
+    hotel_number: "call the hotel:",
     footer_whatsapp_value: "+52 1 916 348 9026",
     footer_email_label: "Email:",
     footer_email_value: "reservas@hotelmarinacanek.com",
@@ -416,7 +417,8 @@ window.translations = {
     extra_master_desc_p1: "La Extra Master eleva la experiencia sobre la Master estándar: combina una cama King para descanso profundo y una matrimonial adicional, dentro de un espacio con acabados mejorados, iluminación ambiental y detalles decorativos seleccionados.",
     extra_master_desc_p2: "Materiales y texturas de mayor calidad (superficies, cabeceras y luminarias) generan una sensación más refinada. Incluye set ampliado de amenidades: toallas extra, pantuflas, bata ligera, plancha, secadora y amenidades de baño de presentación superior.",
     extra_master_desc_p3: "Ideal para parejas que desean más confort sin sacrificar una segunda cama disponible, o familias que valoran un entorno visual más cuidado. Elige esta opción si buscas diseño, detalle y accesorios listos desde el primer momento.",
-    slogan: "Descansa en olas de mar"
+    slogan: "Descansa en olas de mar",
+    hotel_number: "Llama al hotel:",
   }
 };
 
