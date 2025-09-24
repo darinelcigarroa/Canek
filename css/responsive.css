@@ -44,9 +44,7 @@
          display: -ms-flexbox;
          display: flex;
      }
-     .video-wrapper {
-        aspect-ratio: 16 / 7;      /* o: height: 60vh; */
-    }
+   
  }
 
  /* Medium Devices, Desktops */
@@ -453,6 +451,9 @@
      .main_description.a_center {
          padding: 0;
      }
+       .video-wrapper {
+        aspect-ratio: 16 / 8;      /* o: height: 60vh; */
+    }
      
      /*========== PAGE TITLE ==========*/
      .page_title .price {

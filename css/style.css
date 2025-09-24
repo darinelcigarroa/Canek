@@ -2155,7 +2155,7 @@ section .main_title {
 }
 
 /* Sección sin espacios para que el video pegue a los bordes */
-.video-section { padding: 0; }
+.video-section { padding: 0;  }
 
 /* El wrapper define el alto del video.
    - Usa aspect-ratio para 16:9 o fija una altura en px/vh. */
