@@ -2154,6 +2154,33 @@ section .main_title {
     margin-top: 20px;
 }
 
+/* Sección sin espacios para que el video pegue a los bordes */
+.video-section { padding: 0; }
+
+/* El wrapper define el alto del video.
+   - Usa aspect-ratio para 16:9 o fija una altura en px/vh. */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 5;      /* o: height: 60vh; */
+  overflow: hidden;
+}
+
+/* El video cubre todo el wrapper */
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;         /* recorta para evitar barras negras */
+  /* border-radius: 12px;    si quieres esquinas redondeadas */
+}
+
+/* (Opcional) Si prefieres mantener el ancho “container” de Bootstrap, 
+   cambia a .container en el HTML y deja el CSS igual. */
+
+
 /* ---------- 5.2 Revolution Slider ---------- */
 .rev_slider {
     overflow-x: hidden !important;

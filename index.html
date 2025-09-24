@@ -517,9 +517,18 @@
             </div>
         </section>
 
-        <section id="video" style="width:100%; overflow:hidden;">
-            <img src="images/margen3.png" alt="Hotel Marina Canek"
-                style="width:100%; max-height:500px; object-fit:cover; display:block; margin:0 auto;">
+        <section id="video" class="video-section">
+            <!-- Si quieres que ocupe TODO el ancho de la ventana, usa container-fluid -->
+            <div class=" p-0">
+                <div class="video-wrapper">
+                    <video class="hero-video" autoplay muted loop playsinline preload="auto"
+                        poster="images/video-poster.jpg" controlslist="nodownload noplaybackrate nofullscreen"
+                        disablepictureinpicture oncontextmenu="return false">
+                        <source src="/videos/vd002.mp4" type="video/mp4" />
+                        Tu navegador no soporta video HTML5.
+                    </video>
+                </div>
+            </div>
         </section>
 
 
@@ -725,6 +734,24 @@
             }, () => {
                 alert('No se pudo obtener tu ubicación.');
             }, { enableHighAccuracy: true, timeout: 10000 });
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const video = document.querySelector('#video .hero-video');
+            if (!video) return;
+
+            // Intenta reproducir en cuanto pueda (algunos navegadores requieren el catch)
+            const tryPlay = () => video.play().catch(() => { });
+            if (video.readyState >= 2) tryPlay();
+            else video.addEventListener('canplay', tryPlay, { once: true });
+
+            // Pausa cuando salga del viewport para ahorrar recursos
+            const io = new IntersectionObserver(entries => {
+                const e = entries[0];
+                if (!e.isIntersecting) video.pause();
+                else tryPlay();
+            }, { threshold: 0.25 });
+            io.observe(video);
         });
     </script>
 
