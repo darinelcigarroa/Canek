@@ -44,6 +44,9 @@
          display: -ms-flexbox;
          display: flex;
      }
+     .video-wrapper {
+        aspect-ratio: 16 / 7;      /* o: height: 60vh; */
+    }
  }
 
  /* Medium Devices, Desktops */
