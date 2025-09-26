@@ -15,7 +15,7 @@ body {
     color: #23272f ;
     background: #fff;
     font-family: 'Lato', sans-serif;
-    font-size: 15px;
+    font-size: 14px;
     line-height: 1.5;
     letter-spacing: .2px;
     position: relative;
@@ -1945,7 +1945,7 @@ header .navbar-header .mobile_menu_btn.active .icon-bar:nth-of-type(3) {
     font-weight: 900;
     letter-spacing: .05em;
     text-transform: uppercase;
-    padding: 30px 20px;
+    padding: 20px 20px;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
 }
@@ -1965,6 +1965,15 @@ header .navbar-header .mobile_menu_btn.active .icon-bar:nth-of-type(3) {
 
 .scroll #main_menu .navbar-nav li a {
     padding: 20px 20px;
+}
+.logo-header {
+    height: 68px;
+   margin-top: -20px;
+}
+.scroll .logo-header {
+    height: 65px;
+   margin-top: 0px;
+
 }
 
 #main_menu .navbar-nav li a {
