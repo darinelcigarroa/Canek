@@ -1968,12 +1968,12 @@ header .navbar-header .mobile_menu_btn.active .icon-bar:nth-of-type(3) {
 }
 .logo-header {
     height: 68px;
-   margin-top: -20px;
+   /* margin-top: -20px; */
 }
+
 .scroll .logo-header {
     height: 65px;
    margin-top: 0px;
-
 }
 
 #main_menu .navbar-nav li a {

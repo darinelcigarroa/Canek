@@ -115,12 +115,7 @@
     <link href="revolution/css/layers.css" rel="stylesheet" type="text/css" />
     <link href="revolution/css/settings.css" rel="stylesheet" type="text/css" />
     <link href="revolution/css/navigation.css" rel="stylesheet" type="text/css" />
-    <!-- Bootstrap-select (selección estilizada) -->
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.18/dist/css/bootstrap-select.min.css">
-    <!-- Bootstrap-datepicker -->
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.10.0/dist/css/bootstrap-datepicker3.min.css">
+   
     <link href="css/famfamfam-flags.css" rel="stylesheet" type="text/css">
     <link href="css/magnific-popup.css" rel="stylesheet" type="text/css">
     <link href="css/owl.carousel.min.css" rel="stylesheet" type="text/css">
@@ -157,7 +152,7 @@
     <div class="wrapper">
 
         <!-- ========== HEADER ========== -->
-        <header class="fixed transparent">
+        <header class="fixed transparent ">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle mobile_menu_btn" data-toggle="collapse"
@@ -223,11 +218,11 @@
 
                     <li data-transition="fade">
                         <!-- MAIN IMAGE -->
-                        <img src="images/slider/video_fullscreen.jpg" alt="Image" data-bgposition="center center"
+                        <img src="images/slider/video_fullscreen.png" alt="Image" data-bgposition="center center"
                             data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="3" class="rev-slidebg"
                             data-no-retina>
                         <!-- VIDEO -->
-                        <div class="rs-background-video-layer" data-forcerewind="on" data-volume="mute"
+                        <div class="rs-background-video-layer"  data-forcerewind="on" data-volume="mute"
                             data-videomp4="videos/vd001.mp4"
                             data-videoattributes="title=0&amp;byline=0&amp;portrait=0&amp;api=1" data-videowidth="100%"
                             data-videoheight="100%" data-videocontrols="none" data-videostartat="00:00"
@@ -521,7 +516,7 @@
             <div class="p-0">
                 <div class="video-wrapper">
                     <video class="hero-video" autoplay muted loop playsinline preload="auto"
-                        poster="images/video-poster.jpg" controlslist="nodownload noplaybackrate nofullscreen"
+                        poster="images/slider/video_fullscreen.png" controlslist="nodownload noplaybackrate nofullscreen"
                         disablepictureinpicture oncontextmenu="return false">
                         <source src="/videos/vd002.mp4" type="video/mp4" />
                         Tu navegador no soporta video HTML5.
@@ -671,6 +666,7 @@
     <!-- ========== JAVASCRIPT ========== -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-select.min.js"></script>
 
     <!-- Plugins que usas en la página -->
     <script src="js/jquery.smoothState.js"></script>

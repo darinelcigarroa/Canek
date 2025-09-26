@@ -86,7 +86,7 @@
    <div class="wrapper">
 
       <!-- ========== HEADER ========== -->
-      <header class="fixed transparent">
+      <header class="fixed transparent scroll" style="margin-top: 0px;">
          <div class="container">
             <div class="navbar-header">
                <button type="button" class="navbar-toggle mobile_menu_btn" data-toggle="collapse"
@@ -96,11 +96,9 @@
                   <span class="icon-bar"></span>
                </button>
                <a class="navbar-brand light" href="index.html">
-                  <img src="images/logo_ligth.png" height="70" alt="Logo">
+                  <img src="images/logo_ligth.png" class="logo-header" alt="Logo">
                </a>
-               <a class="navbar-brand dark nodisplay" href="index.html">
-                  <img src="images/logo_ligth.png" height="70" alt="Logo">
-               </a>
+
             </div>
             <!-- ========== FLOATING LANGUAGE SWITCHER & WHATSAPP ========== -->
             <div id="floating-buttons-container">
@@ -126,16 +124,20 @@
                            class="caret"></b></a>
                      <ul class="dropdown-menu">
                         <li><a href="rooms-list.html" data-i18n="view_rooms_list">Rooms List View</a></li>
-                        <li><a href="room-junior.html" data-i18n="select_room_junior">Junior (2 Matrimoniales)</a></li>
+                        <li><a href="room-junior.html" data-i18n="select_room_junior">Junior (2
+                              Matrimoniales)</a></li>
                         <li><a href="room-familiar.html" data-i18n="select_room_familiar">Familiar (King +
                               Matrimonial)</a></li>
                         <li><a href="room-master.html" data-i18n="select_room_master">Master (2 Matrimoniales +
                               Desayuno)</a></li>
-                        <li><a href="room-extra-master.html" data-i18n="select_room_extra_master">Extra Master (King +
-                              Matrimonial, Premium)</a></li>
+                        <li><a href="room-extra-master.html" data-i18n="select_room_extra_master">Extra Master
+                              (King + Matrimonial, Premium)</a></li>
                      </ul>
                   </li>
-                  <li><a href="#" data-i18n="CONTACT US">CONTACT US</a></li>
+                  <!-- Reemplaza SOLO este <li> para que haga scroll al footer/contacto -->
+                  <li>
+                     <a href="#footer" data-i18n="CONTACT US">CONTACT US</a>
+                  </li>
                </ul>
             </nav>
          </div>
@@ -344,8 +346,8 @@
                            href="https://wa.me/5219163489026" target="_blank"
                            style="color:#58b1ff;text-decoration:none;" data-i18n="footer_whatsapp_value">+52 1
                            916 348 9026</a></li>
-                           <li style="margin-top:10px;"><strong data-i18n="hotel_number">Número hotel:</strong><br><a target="_blank"
-                  style="color:#58b1ff;text-decoration:none;">+52 9166905279</a></li>
+                     <li style="margin-top:10px;"><strong data-i18n="hotel_number">Número hotel:</strong><br><a
+                           target="_blank" style="color:#58b1ff;text-decoration:none;">+52 9166905279</a></li>
                      <li style="margin-top:10px;"><strong data-i18n="footer_email_label">Email:</strong><br><a
                            href="mailto:reservas@hotelmarinacanek.com" style="color:#58b1ff;text-decoration:none;"
                            data-i18n="footer_email_value">reservas@hotelmarinacanek.com</a></li>

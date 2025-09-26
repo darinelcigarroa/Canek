@@ -707,7 +707,7 @@
 <body>
   <div class="wrapper">
     <!-- HEADER -->
-    <header class="fixed transparent">
+    <header class="fixed transparent scroll">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle mobile_menu_btn" data-toggle="collapse" data-target=".mobile_menu"
@@ -717,11 +717,9 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand light" href="index.html">
-            <img src="images/logo_ligth.png" height="70" alt="Logo">
+            <img src="images/logo_ligth.png" class="logo-header" alt="Logo">
           </a>
-          <a class="navbar-brand dark nodisplay" href="index.html">
-            <img src="images/logo_ligth.png" height="70" alt="Logo">
-          </a>
+
         </div>
         <!-- ========== FLOATING LANGUAGE SWITCHER & WHATSAPP ========== -->
         <div id="floating-buttons-container">
@@ -756,7 +754,10 @@
                     (King + Matrimonial, Premium)</a></li>
               </ul>
             </li>
-            <li><a href="#" data-i18n="CONTACT US">CONTACT US</a></li>
+            <!-- Reemplaza SOLO este <li> para que haga scroll al footer/contacto -->
+            <li>
+              <a href="#footer" data-i18n="CONTACT US">CONTACT US</a>
+            </li>
           </ul>
         </nav>
       </div>
