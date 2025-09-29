@@ -1,11 +1,2 @@
-# Forzar codificación (opcional, no afecta redirecciones)
 AddDefaultCharset utf-8
 AddCharset utf-8 .html .htm .css .js .json .xml .txt
-
-# Activar mod_rewrite
-RewriteEngine On
-
-# Redirige todo a https con www
-RewriteCond %{HTTPS} !=on [OR]
-RewriteCond %{HTTP_HOST} !^www\.hotelmarinacanek\.com$ [NC]
-RewriteRule ^ https://www.hotelmarinacanek.com%{REQUEST_URI} [L,R=301]
