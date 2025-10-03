@@ -43,7 +43,12 @@
     <!-- Google Fonts (non-blocking) -->
     <link
         href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Raleway:wght@400;500;600;700&display=swap"
-        rel="stylesheet" />
+        rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Raleway:wght@400;500;600;700&display=swap"
+            rel="stylesheet" />
+    </noscript>
     <!-- Favicon para navegadores -->
     <link rel="icon" href="/images/favicon.ico" sizes="any">
     <!-- Versión PNG (recomendado por Google) -->
@@ -54,8 +59,14 @@
     <link rel="apple-touch-icon-precomposed" href="images/favicon-apple.webp" />
     <link rel="icon" href="images/favicon.webp" />
     <!-- === Critical CSS (load normally) === -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+        <link href="css/bootstrap.min.css" rel="stylesheet" />
+    </noscript>
+    <link href="css/index.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+        <link href="css/index.css" rel="stylesheet" />
+    </noscript>
 
     <!-- === Non-critical CSS (defer) === -->
     <link rel="preload" href="revolution/css/layers.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
@@ -390,7 +401,14 @@
                         <div data-slider-id="features" id="features_slider" class="owl-carousel">
                             <!-- <div><img src="images/terrace.jpg" class="img-responsive" alt="Image"></div> -->
                             <div><img src="images/breakfast.webp" class="img-responsive" alt="Image"></div>
-                            <div><img src="images/alarm.webp" class="img-responsive" alt="Image"></div>
+                            <div>
+                                <img src="images/alarm-500.webp" srcset="images/alarm-500.webp 500w,
+          images/alarm-768.webp 768w,
+          images/alarm.webp 1200w" sizes="(min-width: 992px) 505px, (min-width: 576px) 768px, 100vw" width="505"
+                                    height="337" class="img-responsive" alt="Alarma" loading="lazy" />
+
+                            </div>
+
                             <div><img src="images/serviceshotel.webp" class="img-responsive" alt="Image"></div>
                         </div>
                     </div>
@@ -457,11 +475,15 @@
                         <div class="col-md-3 col-sm-4">
                             <figure class="gs2_item">
                                 <a href="images/gallery/gallery1.webp" class="hover_effect h_lightbox h_blue">
-                                    <img src="images/gallery/gallery1.webp" class="img-responsive" alt="gallery1"
-                                        loading="lazy">
+                                    <img src="images/gallery/gallery1-500.webp" srcset="images/gallery/gallery1-500.webp 500w,
+                images/gallery/gallery1-768.webp 768w,
+                images/gallery/gallery1.webp 1200w" sizes="(max-width: 576px) 500px,
+               (max-width: 992px) 768px,
+               1200px" class="img-responsive" alt="gallery1" loading="lazy">
                                 </a>
                             </figure>
                         </div>
+
                         <!-- ITEM -->
                         <div class="col-md-3 col-sm-4">
                             <figure class="gs2_item">

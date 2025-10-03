@@ -6,18 +6,12 @@ import path from 'path';
 async function purgeAndMinify() {
   // Archivos que PurgeCSS debe analizar para encontrar clases usadas
   const contentFiles = [
-    'index.html',
-    'loading4.html',
-    'rooms-list.html',
-    'room-extra-master.html',
-    'room-familiar.html',
-    'room-junior.html',
-    'room-master.html',
+    'room-junior.html'
   ];
 
   // **Sólo** tus CSS (no vendors) para purgar/minificar
   const appCssFiles = [
-    'css/style.css',
+    'css/style2.css',
     // agrega aquí otros CSS propios si tienes
   ];
 
