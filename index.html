@@ -415,15 +415,6 @@
                     <div class="col-md-5">
                         <div class="owl-thumbs" data-slider-id="features">
 
-                            <!-- Rooftop Terrace -->
-                            <!-- <div class="owl-thumb-item">
-                                <span class="media-left"><i class="flaticon-person"></i></span>
-                                <div class="media-body">
-                                    <h5 data-i18n="rooftop_terrace_title">Rooftop Terrace</h5>
-                                    <p data-i18n="rooftop_terrace_desc">...</p>
-                                </div>
-                            </div> -->
-
                             <!-- American Breakfast -->
                             <div class="owl-thumb-item">
                                 <span class="media-left"><i class="flaticon-food"></i></span>
@@ -851,6 +842,79 @@
     <script type="text/javascript" src="revolution/js/extensions/revolution.extension.parallax.min.js"></script>
     <script type="text/javascript" src="revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
     <script type="text/javascript" src="revolution/js/extensions/revolution.extension.video.min.js"></script>
+
+    <!-- ========== MODAL AVISO LEGAL ========== -->
+    <div id="legalNoticeOverlay" class="legal-notice-overlay">
+        <div class="legal-notice-modal">
+            <a href="#" class="modal-close-x" id="closeNoticeX">&times;</a>
+            <h3>Aviso Legal</h3>
+            <p>LA PRESENTE PÁGINA WEB DEL HOTEL MARINA CANEK, INVÁLIDA LA ANTERIOR; HOTEL CANEK.</p>
+            <a href="#" class="btn-close-modal" id="closeNoticeBtn">Cerrar</a>
+            <div class="report-link-container mt-2">
+                ¿Me ayudas a reportarla?
+                <a href="https://www.facebook.com/hotelcanek" target="_blank" rel="noopener">Reportar
+                    página anterior 😊</a>
+            </div>
+            <p id="countdown-message" style="font-size: 12px; color: #888; margin-top: 5px;"></p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const overlay = document.getElementById('legalNoticeOverlay');
+            const closeBtn = document.getElementById('closeNoticeBtn');
+            const closeX = document.getElementById('closeNoticeX');
+            const countdownMessage = document.getElementById('countdown-message');
+            let autoCloseTimer;
+            let countdownInterval;
+
+            // Función para cerrar el modal
+            function closeModal() {
+                overlay.classList.remove('visible');
+                clearTimeout(autoCloseTimer);
+                clearInterval(countdownInterval); // Detiene el contador
+            }
+
+            // Función para mostrar el modal
+            function showModal() {
+                let secondsLeft = 8; // Segundos para la cuenta regresiva
+                overlay.classList.add('visible');
+                
+                // Iniciar mensaje del contador
+                countdownMessage.textContent = `Este mensaje se cerrará en ${secondsLeft} segundos.`;
+
+                // Actualizar el contador cada segundo
+                countdownInterval = setInterval(() => {
+                    secondsLeft--;
+                    countdownMessage.textContent = `Este mensaje se cerrará en ${secondsLeft} segundos.`;
+                    if (secondsLeft <= 0) {
+                        clearInterval(countdownInterval);
+                    }
+                }, 1000);
+
+                // Configurar el temporizador para cerrar automáticamente
+                autoCloseTimer = setTimeout(closeModal, secondsLeft * 1000); 
+            }
+
+            // Mostrar el modal 1.5 segundos después de que la página cargue
+            setTimeout(showModal, 1500);
+
+            // Eventos para cerrar manualmente
+            closeBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                closeModal();
+            });
+            closeX.addEventListener('click', function (e) {
+                e.preventDefault();
+                closeModal();
+            });
+            overlay.addEventListener('click', function (e) {
+                if (e.target === overlay) {
+                    closeModal();
+                }
+            });
+        });
+    </script>
 
 </body>
 
