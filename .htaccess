@@ -1,2 +1,34 @@
 AddDefaultCharset utf-8
 AddCharset utf-8 .html .htm .css .js .json .xml .txt
+
+<IfModule mod_expires.c>
+  # Activar el módulo de expiración
+  ExpiresActive On
+
+  # Por defecto, cachear por 1 mes
+  ExpiresDefault "access plus 1 month"
+
+  # Cachear videos e imágenes por 1 año
+  ExpiresByType video/webm "access plus 1 year"
+  ExpiresByType video/mp4 "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+
+  # Cachear CSS y JavaScript por 1 año
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+
+  # Cachear fuentes por 1 año
+  ExpiresByType application/font-woff "access plus 1 year"
+  ExpiresByType application/font-woff2 "access plus 1 year"
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(ico|jpe?g|png|gif|webp|svg|js|css|woff|woff2|mp4|webm)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+</IfModule>
